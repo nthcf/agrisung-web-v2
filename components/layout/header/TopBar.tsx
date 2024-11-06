@@ -5,7 +5,7 @@ export default function TopBar() {
   const t = useTranslations();
 
   return (
-    <div className="bg-bg-brand-deep">
+    <div className="bg-bg-brand-strong">
       <div className="container mx-auto px-4 lg:px-20 xl:px-34">
         <div className="flex justify-between py-[6px] text-fg-text-on-main">
           <div className="flex items-center gap-10">

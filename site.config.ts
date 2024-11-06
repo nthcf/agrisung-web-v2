@@ -21,3 +21,42 @@ export const SITE_MAIN_NAV = [
   { t: "priceTrends", href: "/price-trends" },
   { t: "tools", href: "/tools" },
 ] as const;
+
+export const SITE_FOOTER_NAV = [
+  {
+    t: "getSupport",
+    items: [
+      { t: "helpCenter", href: "/" },
+      { t: "liveChatWithStaff", href: "/" },
+      { t: "checkOrderStatus", href: "/" },
+      { t: "faq", href: "/" },
+    ],
+  },
+  {
+    t: "sourceOnAgriSung",
+    items: [
+      { t: "requestForQuotation", href: "/" },
+      { t: "subscribeForValueInsight", href: "/" },
+      { t: "membershipProgram", href: "/" },
+      { t: "logisticSolution", href: "/" },
+      { t: "partnershipWithAgs", href: "/" },
+    ],
+  },
+  {
+    t: "sellOnAgriSung",
+    items: [
+      { t: "startSelling", href: "/" },
+      { t: "sellingCenter", href: "/" },
+      { t: "becomeAVerifiedSupplier", href: "/" },
+    ],
+  },
+  {
+    t: "getToKnowUs",
+    items: [
+      { t: "aboutAgriSung", href: "/" },
+      { t: "whyChooseUs", href: "/" },
+      { t: "career", href: "/" },
+      { t: "lifeAtSung", href: "/" },
+    ],
+  },
+] as const;

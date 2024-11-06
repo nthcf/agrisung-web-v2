@@ -54,6 +54,7 @@ const config: Config = {
             },
             main: {
               DEFAULT: "#CCCED0",
+              lc: "#A1A5A8",
             },
             success: {
               lc: "#81E87F",
@@ -103,6 +104,7 @@ const config: Config = {
             },
             "on-main": {
               DEFAULT: "#E7E8E9",
+              hc: "#FFFFFF",
             },
           },
         },
@@ -121,6 +123,8 @@ const config: Config = {
       },
       fontSize: {
         xxs: ["0.625rem", "1rem"],
+        x2xl: ["1.375rem", "2rem"],
+
         "7": ["1.75rem", "2.25rem"],
         "10": ["2.5rem", "3.5rem"],
         "16": ["4rem", "4.75rem"],

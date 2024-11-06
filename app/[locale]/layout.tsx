@@ -7,6 +7,7 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import Footer from "@/components/layout/footer/Footer";
 import Header from "@/components/layout/header/Header";
 import { routing } from "@/i18n/routing";
 import { getHeaderPriceTable } from "@/libs/cms";
@@ -54,7 +55,8 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <Header priceTable={data} />
-          <main>{children}</main>
+          {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

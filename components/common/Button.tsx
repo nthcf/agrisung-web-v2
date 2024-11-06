@@ -33,10 +33,20 @@ const buttonVariants = cva(
         icon: ["bg-white/40", "text-white", "border-transparent"],
         invert: ["bg-white", "border-fg-border-brand", "text-fg-text-brand"],
         primary: ["bg-bg-brand", "border-fg-border-brand", "text-white"],
+        "transparent-white": ["bg-transparent", "border-white", "text-white"],
+      },
+      hover: {
+        primary: [
+          "hover:bg-bg-brand",
+          "hover:border-fg-border-brand",
+          "hover:text-white",
+        ],
       },
       size: {
         icon: ["w-7", "h-7", "p-1"],
+        "icon-sm": ["w-8", "h-8"],
         "icon-lg": ["w-10", "h-10"],
+        lg: ["h-12", "gap-2", "px-4", "py-3", "font-semibold"],
         md: ["h-10", "gap-1", "px-3", "py-2", "text-sm"],
         sm: ["h-8", "gap-1", "px-2", "py-2", "text-xs"],
       },
@@ -61,14 +71,23 @@ type ButtonComponent = <T extends React.ElementType = "button">(
 const Button: ButtonComponent = forwardRef(function Button<
   T extends React.ElementType,
 >(
-  { as, children, className, corner, color, size, ...rest }: ButtonProps<T>,
+  {
+    as,
+    children,
+    className,
+    corner,
+    color,
+    hover,
+    size,
+    ...rest
+  }: ButtonProps<T>,
   ref?: PolyRef<T>,
 ) {
   const Comp = as || "button";
 
   return (
     <Comp
-      className={cx(buttonVariants({ corner, color, size }), className)}
+      className={cx(buttonVariants({ corner, color, hover, size }), className)}
       {...rest}
       ref={ref}
     >
