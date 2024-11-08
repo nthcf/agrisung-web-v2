@@ -142,3 +142,40 @@ export type HomeConfig = {
   headerPriceTable: Price[];
   marketFollowProducts: RawProduct[];
 };
+
+export type Banner = {
+  ctaLink: string;
+  ctaTitle: string;
+  description: string;
+  imgMedia: Media;
+  position: "pos1" | "pos2" | "pos3";
+  style: "horizontal" | "vertical";
+  subtitle: string;
+  title: string;
+};
+
+export type Recommended = {
+  id: number;
+  products: {
+    ctaLink: string;
+    ctaTitle: string;
+    id: number;
+    products: Product[];
+    title: string;
+  }[];
+  suppliers: {
+    ctaLink: string;
+    ctaTitle: string;
+    id: number;
+    suppliers: Supplier[];
+    title: string;
+  }[];
+  title: string;
+};
+
+export type HomeConfigV2 = {
+  banners: Banner[];
+  featuredProduct: Product;
+  featuredSupplier: Supplier;
+  recommended: Recommended;
+};

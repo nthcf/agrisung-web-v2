@@ -18,6 +18,7 @@
     "next": "15.0.2",
     "next-intl": "^3.24.0",
     "qs": "^6.13.0",
+    "radash": "^12.1.0",
     "react": "rc",
     "react-dom": "rc",
     "react-fast-marquee": "^1.6.5",

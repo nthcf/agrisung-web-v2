@@ -17,7 +17,7 @@ export default function Footer() {
               <h3 className="text-lg font-bold text-fg-text-main">
                 {t(`nav.footer.${nav.t}`)}
               </h3>
-              <ul className="mt-6 space-y-6">
+              <ul className="mt-4 space-y-4">
                 {nav.items.map((item) => (
                   <li key={item.t} className="text-sm text-fg-text-main-hc">
                     <Link href={item.href}>{t(`nav.footer.${item.t}`)}</Link>
@@ -30,7 +30,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-fg-text-main">
               {t("shared.contact")}
             </h3>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-4 space-y-4">
               <li className="flex gap-1 text-sm text-fg-text-main-hc">
                 <PhoneCall className="flex-shrink-0" size={20} />
                 <span>{t("shared.phone")}</span>
@@ -47,7 +47,7 @@ export default function Footer() {
             <h3 className="mt-10 text-lg font-bold text-fg-text-main">
               {t("nav.footer.connectWithAgriSung")}
             </h3>
-            <ul className="mt-6 flex gap-3">
+            <ul className="mt-4 flex gap-3">
               <li>
                 <Button
                   color="gray"

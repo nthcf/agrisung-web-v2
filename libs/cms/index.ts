@@ -1,5 +1,6 @@
 export * from "./helpers";
 export * from "./home-config";
+export * from "./home-config-v2";
 export * from "./landing";
 export * from "./lark";
 export * from "./lead";

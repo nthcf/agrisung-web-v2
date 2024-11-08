@@ -55,6 +55,10 @@
         "rfqButton": "Post your request now",
         "rfqTitle": "Can’t find products you want? Post a custom request for an accurate quote."
       },
+      "featuredSection": {
+        "product": "Featured Product",
+        "supplier": "Featured Supplier"
+      },
       "mainCtaSection": {
         "button": "Login To See More"
       },

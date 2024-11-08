@@ -1,33 +1,44 @@
 import { ChevronRight } from "lucide-react";
 
 import { Link } from "@/i18n/routing";
+import { type Banner as TBanner } from "@/libs/cms";
 
+import Image from "next/image";
 import Button from "../common/Button";
 
 type BannerProps = {
-  data: {
-    style: "horizontal" | "vertical";
-  };
+  data: TBanner;
 };
 
 function BannerHorizontal({ data }: BannerProps) {
   return (
     <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-6 py-13">
-      <div className="relative z-10 flex items-center justify-between">
-        <h3 className="text-fg-text-on-main-hc text-x2xl font-semibold">
-          banner.title
+      <div className="relative z-20 flex items-center justify-between">
+        <h3 className="text-x2xl font-semibold text-fg-text-on-main-hc">
+          {data.title}
         </h3>
         <Button
           as={Link}
-          href="/banner.link"
+          href={data.ctaLink}
           color="transparent-white"
           size="sm"
         >
-          <span>banner.cta</span>
+          <span>{data.ctaTitle}</span>
           <ChevronRight size={16} />
         </Button>
       </div>
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 z-10 bg-black/50"></div>
+      {data.imgMedia && (
+        <Image
+          src={data.imgMedia.url}
+          alt={data.title}
+          sizes="100%"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -35,26 +46,37 @@ function BannerHorizontal({ data }: BannerProps) {
 function BannerVertical({ data }: BannerProps) {
   return (
     <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-34 py-13">
-      <div className="relative z-10 flex flex-col items-center justify-between gap-1">
-        <h3 className="text-fg-text-on-main-hc text-2xl font-bold">
-          banner.title
+      <div className="relative z-20 flex flex-col items-center justify-between gap-1">
+        <h3 className="text-2xl font-bold text-fg-text-on-main-hc">
+          {data.title}
         </h3>
         <h4 className="text-lg font-bold text-fg-text-on-main">
-          banner.subtitle
+          {data.subtitle}
         </h4>
-        <p className="text-sm text-fg-text-on-main">banner.description</p>
+        <p className="text-sm text-fg-text-on-main"> {data.description}</p>
         <Button
           as={Link}
-          href="/banner.link"
+          href={data.ctaLink}
           className="mt-4"
           color="transparent-white"
           size="sm"
         >
-          <span>banner.cta</span>
+          <span>{data.ctaTitle}</span>
           <ChevronRight size={16} />
         </Button>
       </div>
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 z-10 bg-black/50"></div>
+      {data.imgMedia && (
+        <Image
+          src={data.imgMedia.url}
+          alt={data.title}
+          sizes="100%"
+          fill
+          style={{
+            objectFit: "cover",
+          }}
+        />
+      )}
     </div>
   );
 }

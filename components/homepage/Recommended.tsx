@@ -1,61 +1,65 @@
 import { ChevronRight } from "lucide-react";
 
 import { Link } from "@/i18n/routing";
+import { type Recommended as TRecommended } from "@/libs/cms";
 
 import ProductCard from "../product/ProductCard";
 import SupplierCard from "../supplier/SupplierCard";
 
-export default function Recommended() {
+type RecommendedProps = {
+  data: TRecommended;
+};
+
+export default function Recommended({ data }: RecommendedProps) {
   return (
     <section className="space-y-6">
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">
-        homeconfig.recommended.title
-      </h2>
-      {/* loop */}
-      <div className="space-y-4">
-        <div className="flex justify-between">
-          <h3 className="text-sm font-semibold text-fg-text-main-hc">
-            sections[0].title
-          </h3>
-          <Link
-            className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-            href="/"
-          >
-            <span>sections[0].link</span>
-            <ChevronRight size={16} />
-          </Link>
+      <h2 className="text-x2xl font-bold text-fg-text-main-hc">{data.title}</h2>
+      {data.products.map((product) => (
+        <div key={product.id} className="space-y-4">
+          <div className="flex justify-between">
+            <h3 className="text-sm font-semibold text-fg-text-main-hc">
+              {product.title}
+            </h3>
+            <Link
+              className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+              href={product.ctaLink}
+            >
+              <span>{product.ctaTitle}</span>
+              <ChevronRight size={16} />
+            </Link>
+          </div>
+          <div className="flex gap-3">
+            {product.products.map((product) => (
+              <ProductCard key={product.id} className="flex-1" data={product} />
+            ))}
+          </div>
         </div>
-        <div className="flex gap-3">
-          {/* loop */}
-          {/* product/supplier card */}
-          <ProductCard className="flex-1" data="" />
-          <ProductCard className="flex-1" data="" />
-          <ProductCard className="flex-1" data="" />
-          <ProductCard className="flex-1" data="" />
+      ))}
+      {data.suppliers.map((supplier) => (
+        <div key={supplier.id} className="space-y-4">
+          <div className="flex justify-between">
+            <h3 className="text-sm font-semibold text-fg-text-main-hc">
+              {supplier.title}
+            </h3>
+            <Link
+              className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+              href={supplier.ctaLink}
+            >
+              <span>{supplier.ctaTitle}</span>
+              <ChevronRight size={16} />
+            </Link>
+          </div>
+          <div className="flex gap-3">
+            {supplier.suppliers.map((supplier) => (
+              <SupplierCard
+                key={supplier.id}
+                className="flex-1"
+                data={supplier}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      {/* loop */}
-      <div className="space-y-4">
-        <div className="flex justify-between">
-          <h3 className="text-sm font-semibold text-fg-text-main-hc">
-            sections[0].title
-          </h3>
-          <Link
-            className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-            href="/"
-          >
-            <span>sections[0].link</span>
-            <ChevronRight size={16} />
-          </Link>
-        </div>
-        <div className="flex gap-3">
-          {/* loop */}
-          {/* product/supplier card */}
-          <SupplierCard className="flex-1" data="" />
-          <SupplierCard className="flex-1" data="" />
-          <SupplierCard className="flex-1" data="" />
-        </div>
-      </div>
+      ))}
     </section>
   );
 }

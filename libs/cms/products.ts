@@ -2,20 +2,24 @@ import camelcaseKeys from "camelcase-keys";
 import qs from "qs";
 
 import { BASE_URL } from "./config";
-import { mediaFields } from "./helpers";
+import { allFields, mediaFields } from "./helpers";
 import { ApiResp, Product } from "./types";
 
-export async function getProducts(locale = "en") {
+export async function getProducts(page: number, locale = "en") {
   const search = qs.stringify({
     populate: {
       cover_media: mediaFields,
-      origin: "*",
+      origin: allFields,
       suppliers: {
         populate: {
           logo_media: mediaFields,
         },
       },
-      process_type: "*",
+      process_type: allFields,
+    },
+    pagination: {
+      page,
+      pageSize: 20,
     },
     locale,
   });

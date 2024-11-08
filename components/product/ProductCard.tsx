@@ -1,38 +1,65 @@
 import { cx } from "class-variance-authority";
+import { useFormatter, useTranslations } from "next-intl";
+import Image from "next/image";
+import { draw } from "radash";
 
-import Tag from "../common/Tag";
+import { type Product } from "@/libs/cms";
+
+// import Tag from "../common/Tag";
 
 type ProductCardProps = {
-  data: string;
+  data: Product;
+  featured?: boolean;
 } & React.ComponentPropsWithoutRef<"article">;
 
-export default function ProductCard({ className, data }: ProductCardProps) {
+export default function ProductCard({
+  className,
+  data,
+  featured,
+}: ProductCardProps) {
+  const format = useFormatter();
+  const t = useTranslations();
+
   return (
     <article
       className={cx("relative overflow-hidden rounded-lg bg-white", className)}
     >
-      {data && (
+      {featured && (
         <h3 className="p-4 pb-3 text-sm font-bold text-fg-text-main-hc">
-          card title
+          {t("page.homepage.featuredSection.product")}
         </h3>
       )}
       <div className="relative aspect-square w-full overflow-hidden bg-bg-brand-bright">
-        <div className="absolute left-2 top-2">
-          <Tag>items[0].tag</Tag>
+        <div className="absolute left-2 top-2 z-10">
+          {/* <Tag>items[0].tag</Tag> */}
         </div>
+        {data.coverMedia && (
+          <Image
+            src={data.coverMedia.url}
+            alt={data.name}
+            sizes="100%"
+            fill
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        )}
       </div>
       <div className="space-y-1 p-3">
-        <h4 className="max-h-10 text-ellipsis text-sm font-medium text-fg-text-main-hc">
-          items[0].title
+        <h4 className="max-h-10 truncate text-ellipsis text-sm font-medium text-fg-text-main-hc">
+          {data.name}
         </h4>
         <div className="text-xs text-fg-text-main">
-          <p>items[0].description</p>
-          <p>items[0].description2</p>
+          <p className="line-clamp-2">{data.description}</p>
         </div>
-        <p className="text-xs font-medium text-fg-text-main-hc underline">
-          items[0].subtitle
+        <p className="h-4 truncate text-xs font-medium text-fg-text-main-hc underline">
+          {draw(data.suppliers || [])?.name}
         </p>
-        <p className="font-bold text-fg-text-main-hc">items[0].price</p>
+        <p className="font-bold text-fg-text-main-hc">
+          {format.number(10, { style: "currency", currency: "USD" })}
+          {" - "}
+          {format.number(30, { style: "currency", currency: "USD" })}
+        </p>
       </div>
     </article>
   );

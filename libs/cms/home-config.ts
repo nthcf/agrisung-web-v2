@@ -2,13 +2,13 @@ import camelcaseKeys from "camelcase-keys";
 import qs from "qs";
 
 import { BASE_URL } from "./config";
-import { mediaFields } from "./helpers";
+import { allFields, mediaFields } from "./helpers";
 import { ApiResp, HomeConfig } from "./types";
 
 export async function getHeaderPriceTable(locale = "en") {
   const search = qs.stringify({
     populate: {
-      header_price_table: "*",
+      header_price_table: allFields,
     },
     locale,
   });

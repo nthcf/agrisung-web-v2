@@ -2,7 +2,6 @@ import { Search as ISearch } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import Button from "@/components/common/Button";
-import Tag from "@/components/common/Tag";
 
 export default function Search() {
   const t = useTranslations();
@@ -22,13 +21,6 @@ export default function Search() {
           >
             <ISearch />
           </Button>
-        </div>
-        <div className="mt-3 flex justify-center gap-1">
-          <Tag>SEARCH_TREND</Tag>
-          <Tag>SEARCH_TREND</Tag>
-          <Tag>SEARCH_TREND</Tag>
-          <Tag>SEARCH_TREND</Tag>
-          <Tag>SEARCH_TREND</Tag>
         </div>
       </div>
     </div>
