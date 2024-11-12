@@ -7,10 +7,7 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import Footer from "@/components/layout/footer/Footer";
-import Header from "@/components/layout/header/Header";
 import { routing } from "@/i18n/routing";
-import { getHeaderPriceTable } from "@/libs/cms";
 import { FontBody, FontHeading } from "@/site.config";
 
 import { type PropsWithLocale } from "../types";
@@ -46,17 +43,13 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
-  const data = await getHeaderPriceTable();
-
   return (
     <html lang={locale}>
       <body
         className={cx(FontBody.variable, FontHeading.variable, "font-body")}
       >
         <NextIntlClientProvider messages={messages}>
-          <Header priceTable={data} />
           {children}
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

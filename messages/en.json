@@ -7,7 +7,12 @@
       "title": "Tell us what you need and try the easy way to get quotes!"
     },
     "headerSearch": {
-      "placeholder": "Search products, suppliers, news..."
+      "advanced": "Advanced",
+      "noResult": "No Results",
+      "noResultText1": "There are no results for your search",
+      "noResultText2": "Please try searching with different keywords",
+      "placeholder": "Search products, suppliers, news...",
+      "result": "{count} {count, plural, =1 {result} other {results}} for"
     }
   },
   "nav": {
@@ -73,6 +78,7 @@
     "createMyRfq": "Create My RFQ",
     "description": "Agri Sung - Vietnam Sourcing Company, with a diverse range of advantages, stands out with its access to premium farming regions, partnerships with top-tier suppliers, and a strong reputation for reliability. Our mission is to bring the finest Vietnamese agricultural products to the global market, ensuring quality and sustainability at every step.",
     "email": "info@agrisung.com",
+    "home": "Home",
     "language": {
       "en": "EN",
       "zh": "中文"

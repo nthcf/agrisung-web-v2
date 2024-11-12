@@ -1,10 +1,10 @@
 import { cx } from "class-variance-authority";
 import { Bookmark } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { Supplier } from "@/libs/cms";
 
-import Image from "next/image";
 import Button from "../common/Button";
 
 type SupplierCardProps = {

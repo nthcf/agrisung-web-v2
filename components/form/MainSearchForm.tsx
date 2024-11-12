@@ -1,9 +1,9 @@
 import { Search as ISearch } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import Button from "@/components/common/Button";
+import Button from "../common/Button";
 
-export default function Search() {
+export default function MainSearchForm() {
   const t = useTranslations();
 
   return (

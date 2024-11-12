@@ -77,6 +77,7 @@ const Button: ButtonComponent = forwardRef(function Button<
     className,
     corner,
     color,
+    disabled,
     hover,
     size,
     ...rest
@@ -87,7 +88,11 @@ const Button: ButtonComponent = forwardRef(function Button<
 
   return (
     <Comp
-      className={cx(buttonVariants({ corner, color, hover, size }), className)}
+      className={cx(
+        buttonVariants({ corner, color, hover, size }),
+        className,
+        disabled && "cursor-not-allowed opacity-50",
+      )}
       {...rest}
       ref={ref}
     >

@@ -1,6 +1,6 @@
+import Banner from "@/components/common/Banner";
+import RfqForm1 from "@/components/form/RfqForm1";
 import AsideCta from "@/components/homepage/AsideCta";
-import Banner from "@/components/homepage/Banner";
-import CreateRfq from "@/components/homepage/CreateRfq";
 import MainCta from "@/components/homepage/MainCta";
 import ProductList from "@/components/homepage/ProductList";
 import Recommended from "@/components/homepage/Recommended";
@@ -26,10 +26,10 @@ export default async function Home() {
               <Recommended data={hcf.recommended} />
             </div>
             {banner2 && <Banner data={banner2} />}
-            <CreateRfq />
+            <RfqForm1 />
             {banner3 && <Banner data={banner3} />}
             <ProductList data={prd} />
-            <CreateRfq className="!mt-6" />
+            <RfqForm1 className="!mt-6" />
             <MainCta className="!mt-6" />
           </div>
           <aside className="sticky top-5 w-64 space-y-3">

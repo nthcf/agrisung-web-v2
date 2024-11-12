@@ -1,8 +1,8 @@
+import MainSearchForm from "@/components/form/MainSearchForm";
 import { type Price } from "@/libs/cms";
 
 import LogoAndMenu from "./LogoAndMenu";
 import PriceTable from "./PriceTable";
-import Search from "./Search";
 import TopBar from "./TopBar";
 
 type HeaderProps = {
@@ -15,7 +15,7 @@ export default function Header({ priceTable }: HeaderProps) {
       <TopBar />
       <LogoAndMenu />
       <PriceTable priceTable={priceTable} />
-      <Search />
+      <MainSearchForm />
     </header>
   );
 }

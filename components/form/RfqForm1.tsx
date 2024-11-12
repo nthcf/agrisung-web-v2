@@ -7,9 +7,9 @@ import { useId } from "react";
 
 import Button from "../common/Button";
 
-type CreateRfqProps = {} & React.ComponentPropsWithoutRef<"div">;
+type RfqForm1Props = React.ComponentPropsWithoutRef<"div">;
 
-export default function CreateRfq({ className }: CreateRfqProps) {
+export default function RfqForm1({ className }: RfqForm1Props) {
   const productFieldId = useId();
   const t = useTranslations();
 
@@ -34,7 +34,7 @@ export default function CreateRfq({ className }: CreateRfqProps) {
           </label>
           <input
             id={productFieldId}
-            className="border-fg-border-main-lc w-48 rounded border px-3 py-2 text-sm text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-brand focus:ring-0"
+            className="w-48 rounded border border-fg-border-main-lc px-3 py-2 text-sm text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-brand focus:ring-0"
             placeholder={t("form.createRfq.placeholder")}
           />
         </div>

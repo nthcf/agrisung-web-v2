@@ -1,11 +1,11 @@
+import { Search, Target } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import Button from "@/components/common/Button";
 import { Link } from "@/i18n/routing";
 
 import Navbar from "./Navbar";
-import Button from "@/components/common/Button";
-import { Target } from "lucide-react";
 
 export default function LogoAndMenu() {
   const t = useTranslations();
@@ -27,7 +27,9 @@ export default function LogoAndMenu() {
           <Navbar />
         </div>
         <div className="flex gap-3">
-          <Button color="gray">{t("shared.signIn")}</Button>
+          <Button color="gray" size="icon-lg">
+            <Search size={20} />
+          </Button>
           <Button>
             <Target size={20} />
             <span>{t("shared.createMyRfq")}</span>

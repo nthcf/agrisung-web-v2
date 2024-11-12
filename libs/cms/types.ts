@@ -13,10 +13,8 @@ export type ApiResp<T> = {
 };
 
 export type Media = {
-  height: number;
   name: string;
   url: string;
-  width: number;
 };
 
 export type Country = {

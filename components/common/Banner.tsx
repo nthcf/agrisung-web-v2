@@ -1,10 +1,10 @@
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 import { Link } from "@/i18n/routing";
 import { type Banner as TBanner } from "@/libs/cms";
 
-import Image from "next/image";
-import Button from "../common/Button";
+import Button from "./Button";
 
 type BannerProps = {
   data: TBanner;
