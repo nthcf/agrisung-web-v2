@@ -2,7 +2,7 @@ import camelcaseKeys from "camelcase-keys";
 import qs from "qs";
 
 import { BASE_URL } from "./config";
-import { mediaFields } from "./helpers";
+import { allFields, mediaFields } from "./helpers";
 import { ApiResp, Supplier } from "./types";
 
 export async function getSuppliers(locale = "en") {
@@ -38,12 +38,12 @@ export async function getSupplier(slug: string, locale = "en") {
       logo_media: mediaFields,
       cover_media: mediaFields,
       certs: mediaFields,
-      country: "*",
-      export_history: "*",
+      country: allFields,
+      export_history: allFields,
       products: {
         populate: {
           cover_media: mediaFields,
-          origin: "*",
+          origin: allFields,
         },
       },
       news: {
@@ -75,7 +75,7 @@ export async function getSupplier(slug: string, locale = "en") {
   const json = await res.json();
 
   if (json.data.length === 0) {
-    throw new Error("Failed to fetch data!");
+    throw new Error("Not found supplier!");
   }
 
   return camelcaseKeys<ApiResp<Supplier[]>>(json, { deep: true });

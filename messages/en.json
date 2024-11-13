@@ -4,6 +4,7 @@
       "label": "Create an RFQ for",
       "placeholder": "Enter product",
       "submitButton": "Create RFQ",
+      "subtitle": "Inform suppliers of your sourcing needs and discover the best deals.",
       "title": "Tell us what you need and try the easy way to get quotes!"
     },
     "headerSearch": {
@@ -70,6 +71,41 @@
       "productListSection": {
         "title": "Products you may be interested in"
       }
+    },
+    "productDetail": {
+      "aboutTheSupplier": "About The Supplier",
+      "aboutThisProduct": "About This Product",
+      "countryOfOrigin": "Country of Origin",
+      "cta1": "Get quotation for this product",
+      "cta2": "I want to customize this product",
+      "ingredients": "Ingredients",
+      "moq": "MOQ",
+      "otherProductsFromTheSupplier": "Other products from the supplier",
+      "packagingType": "Packaging Type",
+      "paymentTerms": "Payment Terms",
+      "processStyle": "Process Style",
+      "productDescription": "Product Description",
+      "productName": "Product Name",
+      "productType": "Product Type",
+      "rawProduct": "Raw Product",
+      "referencePricePerKg": "Reference price per kg:",
+      "samples": "Samples",
+      "shelfLife": "Shelf Life",
+      "shipment": "Shipment",
+      "supplierCta": "Visit Supplier Page",
+      "variety": "Variety"
+    },
+    "supplierDetail": {
+      "annualSalesRevenue": "Annual Sales Revenue",
+      "businessType": "Business Type",
+      "certificates": "Certificates",
+      "companyAddress": "Company Address",
+      "companyName": "Company Name",
+      "country": "Country",
+      "exportHistory": "Export History",
+      "numberOfEmployees": "Number of Employees",
+      "totalProducts": "{count} {count, plural, =1 {product} other {products}}",
+      "yearEstablished": "Year Established"
     }
   },
   "shared": {
@@ -84,7 +120,9 @@
       "zh": "中文"
     },
     "phone": "(+84) 906 750 776",
+    "product": "product",
     "signIn": "Sign In",
-    "title": "Agri Sung"
+    "title": "Agri Sung",
+    "viewAll": "View All"
   }
 }

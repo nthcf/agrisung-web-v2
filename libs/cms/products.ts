@@ -39,14 +39,14 @@ export async function getProduct(slug: string, locale = "en") {
   const search = qs.stringify({
     populate: {
       images: mediaFields,
-      origin: "*",
+      origin: allFields,
       suppliers: {
         populate: {
           logo_media: mediaFields,
-          country: "*",
+          country: allFields,
         },
       },
-      process_type: "*",
+      process_type: allFields,
       raw_products: {
         fields: ["name"],
       },
@@ -68,7 +68,7 @@ export async function getProduct(slug: string, locale = "en") {
   const json = await res.json();
 
   if (json.data.length === 0) {
-    throw new Error("Failed to fetch data!");
+    throw new Error("Not found product!");
   }
 
   return camelcaseKeys<ApiResp<Product[]>>(json, { deep: true });

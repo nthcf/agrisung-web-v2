@@ -54,6 +54,7 @@ const config: Config = {
             },
             main: {
               DEFAULT: "#CCCED0",
+              disable: "#E7E8E9",
               lc: "#A1A5A8",
             },
             success: {
@@ -124,6 +125,7 @@ const config: Config = {
       fontSize: {
         xxs: ["0.625rem", "1rem"],
         x2xl: ["1.375rem", "2rem"],
+        x4xl: ["1.75rem", "2.5rem"],
 
         "7": ["1.75rem", "2.25rem"],
         "10": ["2.5rem", "3.5rem"],

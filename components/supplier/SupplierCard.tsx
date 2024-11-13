@@ -3,7 +3,7 @@ import { Bookmark } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { Supplier } from "@/libs/cms";
+import { type Supplier } from "@/libs/cms";
 
 import Button from "../common/Button";
 

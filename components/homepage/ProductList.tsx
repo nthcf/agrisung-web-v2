@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { Product } from "@/libs/cms";
+import { type Product } from "@/libs/cms";
 
 import ProductCard from "../product/ProductCard";
 

@@ -34,20 +34,30 @@ export type Product = {
   availablitiy: string;
   color: string;
   coverMedia: Media;
+  currency: string;
   description: string;
   formAndCut: string;
   id: number;
   images: Media[];
   ingredients: string;
+  moq: string;
   name: string;
   origin: Country;
+  packagingType: string;
+  paymentTerms: string;
+  priceMin: number;
+  priceMax: number;
   processedStyle: string;
   processType: ProcessType;
   rawProducts: RawProduct[];
+  samples: string;
   season: string;
+  shelfLife: string;
+  shipment: string;
   sizeOrWeight: string;
   slug: string;
   suppliers: Supplier[];
+  variety: string;
 };
 
 export type RawProduct = {
@@ -60,6 +70,7 @@ export type RawProduct = {
 
 export type Supplier = {
   address: string;
+  annualSalesRevenue: string;
   businessType: string;
   certs: Media[];
   country: Country;

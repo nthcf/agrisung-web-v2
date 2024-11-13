@@ -7,7 +7,7 @@ import { useId } from "react";
 
 import Button from "../common/Button";
 
-type RfqForm1Props = React.ComponentPropsWithoutRef<"div">;
+type RfqForm1Props = {} & React.ComponentPropsWithoutRef<"div">;
 
 export default function RfqForm1({ className }: RfqForm1Props) {
   const productFieldId = useId();
@@ -20,11 +20,14 @@ export default function RfqForm1({ className }: RfqForm1Props) {
         className,
       )}
     >
-      <FilePen className="shrink-0 text-fg-text-main" size={56} />
+      <FilePen className="shrink-0 text-fg-icon-main-lc" size={56} />
       <div className="flex-1">
-        <h4 className="text-sm font-bold text-fg-icon-main">
+        <h4 className="font-bold text-fg-text-main-hc">
           {t("form.createRfq.title")}
         </h4>
+        <p className="text-sm text-fg-text-main">
+          {t("form.createRfq.subtitle")}
+        </p>
         <div className="mt-2 flex items-center gap-2">
           <label
             htmlFor={productFieldId}

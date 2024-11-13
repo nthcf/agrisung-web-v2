@@ -21,7 +21,10 @@ export default function ProductCard({
 
   return (
     <article
-      className={cx("relative overflow-hidden rounded-lg bg-white", className)}
+      className={cx(
+        "relative overflow-hidden rounded-lg border border-transparent bg-white",
+        className,
+      )}
     >
       {featured && (
         <h3 className="p-4 pb-3 text-sm font-bold text-fg-text-main-hc">
@@ -40,7 +43,7 @@ export default function ProductCard({
               sizes="100%"
               fill
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
               }}
             />
           )}
@@ -56,9 +59,19 @@ export default function ProductCard({
             {draw(data.suppliers || [])?.name}
           </p>
           <p className="font-bold text-fg-text-main-hc">
-            {format.number(10, { style: "currency", currency: "USD" })}
+            {data.priceMin
+              ? format.number(data.priceMin, {
+                  style: "currency",
+                  currency: data.currency,
+                })
+              : "N/A"}
             {" - "}
-            {format.number(30, { style: "currency", currency: "USD" })}
+            {data.priceMax
+              ? format.number(data.priceMax, {
+                  style: "currency",
+                  currency: data.currency,
+                })
+              : "N/A"}
           </p>
         </div>
       </Link>

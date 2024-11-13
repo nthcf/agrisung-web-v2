@@ -1,15 +1,22 @@
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/routing";
+import { cx } from "class-variance-authority";
 
 type BreadcrumbItemProps = {
   link: string;
   text: string;
+  active?: boolean;
 };
 
-function BreadcrumbItem({ link, text }: BreadcrumbItemProps) {
+function BreadcrumbItem({ link, text, active }: BreadcrumbItemProps) {
   return (
-    <li className="text-sm text-fg-text-main after:mx-2 after:content-['/'] last:after:content-none">
+    <li
+      className={cx(
+        "text-sm after:mx-2 after:content-['/'] last:after:content-none",
+        active ? "text-fg-text-main-hc" : "text-fg-text-main",
+      )}
+    >
       <Link href={link}>{text}</Link>
     </li>
   );
@@ -27,7 +34,12 @@ export default function Breadcrumb({ data }: BreadcrumbProps) {
       <ul className="flex items-center">
         <BreadcrumbItem link="/" text={t("shared.home")} />
         {data.map((item, i) => (
-          <BreadcrumbItem key={i} link={item.link} text={item.text} />
+          <BreadcrumbItem
+            key={i}
+            link={item.link}
+            text={item.text}
+            active={item.active}
+          />
         ))}
       </ul>
     </nav>
