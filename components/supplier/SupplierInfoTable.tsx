@@ -5,35 +5,41 @@ import { type Supplier } from "@/libs/cms";
 
 type SupplierInfoTableProps = {
   data: Supplier;
+  hideLogo?: boolean;
 };
 
-export default function SupplierInfoTable({ data }: SupplierInfoTableProps) {
+export default function SupplierInfoTable({
+  data,
+  hideLogo,
+}: SupplierInfoTableProps) {
   const t = useTranslations();
 
   return (
     <div>
-      <div className="flex items-center gap-3">
-        <div className="ovherflow-hidden relative size-25 rounded border border-fg-border-main bg-bg-brand-bright">
-          {data.logoMedia && (
-            <Image
-              src={data.logoMedia.url}
-              alt={data.name}
-              fill
-              style={{ objectFit: "contain" }}
-            />
-          )}
+      {!hideLogo && (
+        <div className="flex items-center gap-3">
+          <div className="ovherflow-hidden relative size-25 rounded border border-fg-border-main bg-bg-brand-bright">
+            {data.logoMedia && (
+              <Image
+                src={data.logoMedia.url}
+                alt={data.name}
+                fill
+                style={{ objectFit: "contain" }}
+              />
+            )}
+          </div>
+          <div>
+            <p className="text-lg font-medium text-fg-text-main-hc">
+              {data.name}
+            </p>
+            <p className="text-sm font-medium text-fg-text-brand underline">
+              {t("shared.productWithCount2", {
+                count: data.products?.length ?? 0,
+              })}
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="text-lg font-medium text-fg-text-main-hc">
-            {data.name}
-          </p>
-          <p className="text-sm font-medium text-fg-text-brand underline">
-            {t("page.supplierDetail.totalProducts", {
-              count: data.products?.length ?? 0,
-            })}
-          </p>
-        </div>
-      </div>
+      )}
       <table className="mt-4 w-full text-sm">
         <tbody>
           <tr>
@@ -105,7 +111,22 @@ export default function SupplierInfoTable({ data }: SupplierInfoTableProps) {
               {t("page.supplierDetail.certificates")}
             </th>
             <td className="border border-fg-border-main p-3 text-fg-text-main">
-              TODO: certs
+              {data.certifications?.map((item) => (
+                <div
+                  key={item.id}
+                  className="relative size-20 overflow-hidden rounded bg-bg-brand-bright"
+                >
+                  {item.logoMedia && (
+                    <Image
+                      src={item.logoMedia.url}
+                      alt={item.name}
+                      sizes="100%"
+                      fill
+                      style={{ objectFit: "contain" }}
+                    />
+                  )}
+                </div>
+              ))}
             </td>
           </tr>
         </tbody>

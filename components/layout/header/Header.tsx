@@ -2,19 +2,19 @@ import MainSearchForm from "@/components/form/MainSearchForm";
 import { type Price } from "@/libs/cms";
 
 import LogoAndMenu from "./LogoAndMenu";
-import PriceTable from "./PriceTable";
+import PriceList from "./PriceList";
 import TopBar from "./TopBar";
 
 type HeaderProps = {
-  priceTable: Price[];
+  priceList: Price[];
 };
 
-export default function Header({ priceTable }: HeaderProps) {
+export default function Header({ priceList }: HeaderProps) {
   return (
     <header className="border-brand-gray-3 overflow-hidden border-b">
       <TopBar />
       <LogoAndMenu />
-      <PriceTable priceTable={priceTable} />
+      <PriceList priceList={priceList} />
       <MainSearchForm />
     </header>
   );

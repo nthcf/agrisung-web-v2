@@ -26,17 +26,17 @@
       "faq": "FAQ",
       "getSupport": "Get support",
       "getToKnowUs": "Get to know us",
-      "helpCenter": "Help Center",
+      "helpCenter": "Help center",
       "lifeAtSung": "Life at Sung",
       "liveChatWithStaff": "Live chat with staff",
-      "logisticSolution": "Logistic Solution",
-      "membershipProgram": "Membership Program",
+      "logisticSolution": "Logistic solution",
+      "membershipProgram": "Membership program",
       "partnershipWithAgs": "Partnership with AGS",
       "requestForQuotation": "Request for quotation",
-      "sellingCenter": "Selling Center",
+      "sellingCenter": "Selling center",
       "sellOnAgriSung": "Sell on Agri Sung",
       "sourceOnAgriSung": "Source on Agri Sung",
-      "startSelling": "Start Selling",
+      "startSelling": "Start selling",
       "subscribeForValueInsight": "Subscribe for value insight",
       "whyChooseUs": "Why choose us?"
     },
@@ -51,8 +51,7 @@
     "topBar": {
       "aboutAgriSung": "About Agri Sung",
       "contactUs": "Contact Us",
-      "helpCenterFaq": "Help Center (FAQ)",
-      "seeAllMenu": "See All Menu"
+      "signIn": "Sign In"
     }
   },
   "page": {
@@ -101,10 +100,11 @@
       "certificates": "Certificates",
       "companyAddress": "Company Address",
       "companyName": "Company Name",
+      "companyOverview": "Company Overview",
       "country": "Country",
       "exportHistory": "Export History",
       "numberOfEmployees": "Number of Employees",
-      "totalProducts": "{count} {count, plural, =1 {product} other {products}}",
+      "photosAndVideos": "Photos & Videos",
       "yearEstablished": "Year Established"
     }
   },
@@ -119,8 +119,13 @@
       "en": "EN",
       "zh": "中文"
     },
+    "overview": "Overview",
     "phone": "(+84) 906 750 776",
     "product": "product",
+    "products": "Products",
+    "productWithCount1": " {count, plural, =1 {Product} other {Products}} ({count})",
+    "productWithCount2": "{count} {count, plural, =1 {product} other {products}}",
+    "save": "Save",
     "signIn": "Sign In",
     "title": "Agri Sung",
     "viewAll": "View All"

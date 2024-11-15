@@ -2,13 +2,32 @@ import camelcaseKeys from "camelcase-keys";
 import qs from "qs";
 
 import { BASE_URL } from "./config";
-import { mediaFields } from "./helpers";
+import { allFields, mediaFields } from "./helpers";
 import { ApiResp, HomeConfigV2 } from "./types";
+
+export async function getPublicPriceList(locale = "en") {
+  const search = qs.stringify({
+    populate: {
+      public_price_list: allFields,
+    },
+    locale,
+  });
+  const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
+
+  const json = await res.json();
+
+  return camelcaseKeys<ApiResp<HomeConfigV2>>(json, { deep: true });
+}
 
 export async function getHomeConfigV2(locale = "en") {
   const search = qs.stringify({
     populate: {
-      banners: {
+      homepage_banners: {
         populate: {
           img_media: mediaFields,
         },

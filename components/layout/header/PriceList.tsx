@@ -49,20 +49,23 @@ function Trend({ value }: TrendProps) {
   );
 }
 
-type PriceTableProps = {
-  priceTable: Price[];
+type PriceListProps = {
+  priceList: Price[];
 };
 
-export default function PriceTable({ priceTable }: PriceTableProps) {
+export default function PriceList({ priceList }: PriceListProps) {
   return (
     <div className="container mx-auto px-4 lg:px-20 xl:px-34">
       <div className="-z-10 flex-1 overflow-hidden py-5">
         <Marquee className="h-full">
           <div className="relative mr-6 flex h-full gap-6 overflow-hidden">
-            {priceTable.map((item) => (
+            {priceList.map((item) => (
               <div key={item.id} className="flex shrink-0 items-center gap-1">
                 <p className="text-xs">{item.title}</p>
-                <FormattedPrice currency="VND" value={item.currentPrice} />
+                <FormattedPrice
+                  currency={item.currency}
+                  value={item.currentPrice}
+                />
                 <Trend
                   value={(item.currentPrice - item.oldPrice) / item.oldPrice}
                 />

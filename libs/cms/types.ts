@@ -68,10 +68,17 @@ export type RawProduct = {
   slug: string;
 };
 
+export type Certification = {
+  id: number;
+  logoMedia: Media;
+  name: string;
+};
+
 export type Supplier = {
   address: string;
   annualSalesRevenue: string;
   businessType: string;
+  certifications: Certification[];
   certs: Media[];
   country: Country;
   coverMedia: Media;
@@ -79,6 +86,7 @@ export type Supplier = {
   exportHistory: Country[];
   id: number;
   logoMedia: Media;
+  medias: Media[];
   name: string;
   news: News[];
   numberOfEmployees: string;
@@ -127,6 +135,7 @@ export type Lead = {
 };
 
 export type Price = {
+  currency: string;
   currentPrice: number;
   id: number;
   oldPrice: number;
@@ -183,8 +192,10 @@ export type Recommended = {
 };
 
 export type HomeConfigV2 = {
-  banners: Banner[];
   featuredProduct: Product;
   featuredSupplier: Supplier;
+  homepageBanners: Banner[];
+  publicPriceList: Price[];
   recommended: Recommended;
+  searchResultBanners: Banner[];
 };

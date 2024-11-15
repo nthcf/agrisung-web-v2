@@ -11,6 +11,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        "dialog-overlay-fade-in":
+          "dialog-overlay-fade-in 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "dialog-content-fade-in-zoom":
+          "dialog-content-fade-in-zoom 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+      },
       colors: {
         bg: {
           brand: {
@@ -134,6 +140,26 @@ const config: Config = {
       gridTemplateColumns: {
         "16": "repeat(16, minmax(0, 1fr))",
       },
+      keyframes: {
+        "dialog-overlay-fade-in": {
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+        "dialog-content-fade-in-zoom": {
+          from: {
+            opacity: "0",
+            transform: "translate(-50%, -48%) scale(0.96)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+        },
+      },
       padding: {
         "30": "7.5rem",
       },
@@ -144,6 +170,7 @@ const config: Config = {
         "25": "6.25rem",
         "30": "7.5rem",
         "34": "8.5rem",
+        "45": "11.25rem",
         "46": "11.5rem",
         "50": "12.5rem",
         "54": "13.5rem",

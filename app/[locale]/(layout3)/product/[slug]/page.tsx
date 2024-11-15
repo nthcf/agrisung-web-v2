@@ -1,4 +1,4 @@
-import { PropsWithLocale } from "@/app/types";
+import { type PropsWithLocale } from "@/app/types";
 import RfqForm1 from "@/components/form/RfqForm1";
 import Breadcrumb from "@/components/layout/content/Breadcrumb";
 import DetailProductCarousel from "@/components/product/DetailProductCarousel";

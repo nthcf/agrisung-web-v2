@@ -42,9 +42,7 @@ export default function ProductCard({
               alt={data.name}
               sizes="100%"
               fill
-              style={{
-                objectFit: "contain",
-              }}
+              style={{ objectFit: "contain" }}
             />
           )}
         </div>
@@ -53,7 +51,9 @@ export default function ProductCard({
             {data.name}
           </h4>
           <div className="text-xs text-fg-text-main">
-            <p className="line-clamp-2">{data.description}</p>
+            <p className="line-clamp-2 whitespace-pre-wrap">
+              {data.description}
+            </p>
           </div>
           <p className="h-4 truncate text-xs font-medium text-fg-text-main-hc underline">
             {draw(data.suppliers || [])?.name}

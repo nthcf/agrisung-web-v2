@@ -21,7 +21,7 @@ export default function DetailProductDescriptionPrice({
         <p className="text-xs text-fg-text-main">
           {t("page.productDetail.referencePricePerKg")}
         </p>
-        <p className="text-x4xl font-heading font-bold text-fg-text-brand-hover">
+        <p className="font-heading text-x4xl font-bold text-fg-text-brand-hover">
           {data.priceMin
             ? format.number(data.priceMin, {
                 style: "currency",
@@ -44,7 +44,9 @@ export default function DetailProductDescriptionPrice({
         <h4 className="text-sm font-bold text-fg-text-main-hc">
           {t("page.productDetail.aboutThisProduct")}
         </h4>
-        <p className="text-sm text-fg-text-main">{data.description}</p>
+        <p className="whitespace-pre-wrap text-sm text-fg-text-main">
+          {data.description}
+        </p>
       </div>
       <div className="flex flex-col gap-2">
         <Button color="primary">

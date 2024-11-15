@@ -9,11 +9,11 @@ export async function getSuppliers(locale = "en") {
   const search = qs.stringify({
     populate: {
       logo_media: mediaFields,
-      country: "*",
+      country: allFields,
       products: {
         populate: {
           cover_media: mediaFields,
-          origin: "*",
+          origin: allFields,
         },
       },
     },
@@ -37,7 +37,6 @@ export async function getSupplier(slug: string, locale = "en") {
     populate: {
       logo_media: mediaFields,
       cover_media: mediaFields,
-      certs: mediaFields,
       country: allFields,
       export_history: allFields,
       products: {
@@ -56,6 +55,12 @@ export async function getSupplier(slug: string, locale = "en") {
           cover_media: mediaFields,
         },
       },
+      certifications: {
+        populate: {
+          logo_media: mediaFields,
+        },
+      },
+      medias: mediaFields,
     },
     filters: {
       slug: {

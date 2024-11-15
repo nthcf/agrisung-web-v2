@@ -28,9 +28,9 @@ export default function Recommended({ data }: RecommendedProps) {
               <ChevronRight size={16} />
             </Link>
           </div>
-          <div className="flex gap-3">
+          <div className="grid grid-cols-4 gap-3">
             {product.products.map((product) => (
-              <ProductCard key={product.id} className="flex-1" data={product} />
+              <ProductCard key={product.id} data={product} />
             ))}
           </div>
         </div>
@@ -49,13 +49,9 @@ export default function Recommended({ data }: RecommendedProps) {
               <ChevronRight size={16} />
             </Link>
           </div>
-          <div className="flex gap-3">
+          <div className="grid grid-cols-3 gap-3">
             {supplier.suppliers.map((supplier) => (
-              <SupplierCard
-                key={supplier.id}
-                className="flex-1"
-                data={supplier}
-              />
+              <SupplierCard key={supplier.id} data={supplier} />
             ))}
           </div>
         </div>

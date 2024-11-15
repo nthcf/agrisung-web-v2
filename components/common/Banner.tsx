@@ -34,9 +34,7 @@ function BannerHorizontal({ data }: BannerProps) {
           alt={data.title}
           sizes="100%"
           fill
-          style={{
-            objectFit: "cover",
-          }}
+          style={{ objectFit: "cover" }}
         />
       )}
     </div>
@@ -72,9 +70,7 @@ function BannerVertical({ data }: BannerProps) {
           alt={data.title}
           sizes="100%"
           fill
-          style={{
-            objectFit: "cover",
-          }}
+          style={{ objectFit: "cover" }}
         />
       )}
     </div>

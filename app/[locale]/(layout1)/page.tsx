@@ -12,9 +12,9 @@ export default async function Home() {
   const { data: hcf } = await getHomeConfigV2();
   const { data: prd } = await getProducts(1);
 
-  const banner1 = hcf.banners.find((b) => b.position === "pos1");
-  const banner2 = hcf.banners.find((b) => b.position === "pos2");
-  const banner3 = hcf.banners.find((b) => b.position === "pos3");
+  const banner1 = hcf.homepageBanners.find((b) => b.position === "pos1");
+  const banner2 = hcf.homepageBanners.find((b) => b.position === "pos2");
+  const banner3 = hcf.homepageBanners.find((b) => b.position === "pos3");
 
   return (
     <main className="bg-bg-main-pale">
