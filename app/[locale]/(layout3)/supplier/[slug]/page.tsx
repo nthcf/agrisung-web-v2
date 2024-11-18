@@ -1,4 +1,3 @@
-import { type PropsWithLocale } from "@/app/types";
 import RfqForm1 from "@/components/form/RfqForm1";
 import DetailSupplierCover from "@/components/supplier/DetailSupplierCover";
 import DetailSupplierHeader from "@/components/supplier/DetailSupplierHeader";
@@ -8,9 +7,11 @@ import DetailSupplierProducts from "@/components/supplier/DetailSupplierProducts
 import DetailSupplierTabs from "@/components/supplier/DetailSupplierTabs";
 import { getSupplier } from "@/libs/cms";
 
-type SupplierDetailProps = PropsWithLocale<unknown, { slug: string }>;
-
-export default async function SupplierDetail({ params }: SupplierDetailProps) {
+export default async function SupplierDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const { data: ss } = await getSupplier(slug);
 

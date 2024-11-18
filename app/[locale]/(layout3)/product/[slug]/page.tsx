@@ -1,4 +1,3 @@
-import { type PropsWithLocale } from "@/app/types";
 import RfqForm1 from "@/components/form/RfqForm1";
 import Breadcrumb from "@/components/layout/content/Breadcrumb";
 import DetailProductCarousel from "@/components/product/DetailProductCarousel";
@@ -9,9 +8,11 @@ import DetailProductSupplierProducts from "@/components/product/DetailProductSup
 import SupplierInfoBar from "@/components/supplier/SupplierInfoBar";
 import { getProduct, getSupplier } from "@/libs/cms";
 
-type ProductDetailProps = PropsWithLocale<unknown, { slug: string }>;
-
-export default async function ProductDetail({ params }: ProductDetailProps) {
+export default async function ProductDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const { data: ps } = await getProduct(slug);
 

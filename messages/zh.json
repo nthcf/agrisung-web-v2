@@ -1,0 +1,133 @@
+{
+  "form": {
+    "createRfq": {
+      "label": "Create an RFQ for",
+      "placeholder": "Enter product",
+      "submitButton": "Create RFQ",
+      "subtitle": "Inform suppliers of your sourcing needs and discover the best deals.",
+      "title": "Tell us what you need and try the easy way to get quotes!"
+    },
+    "headerSearch": {
+      "advanced": "Advanced",
+      "noResult": "No Results",
+      "noResultText1": "There are no results for your search",
+      "noResultText2": "Please try searching with different keywords",
+      "placeholder": "Search products, suppliers, news...",
+      "result": "{count} {count, plural, =1 {result} other {results}} for"
+    }
+  },
+  "nav": {
+    "footer": {
+      "aboutAgriSung": "About Agri Sung",
+      "becomeAVerifiedSupplier": "Become a verified supplier",
+      "career": "Career",
+      "checkOrderStatus": "Check order status",
+      "connectWithAgriSung": "Connect with Agri Sung",
+      "faq": "FAQ",
+      "getSupport": "Get support",
+      "getToKnowUs": "Get to know us",
+      "helpCenter": "Help center",
+      "lifeAtSung": "Life at Sung",
+      "liveChatWithStaff": "Live chat with staff",
+      "logisticSolution": "Logistic solution",
+      "membershipProgram": "Membership program",
+      "partnershipWithAgs": "Partnership with AGS",
+      "requestForQuotation": "Request for quotation",
+      "sellingCenter": "Selling center",
+      "sellOnAgriSung": "Sell on Agri Sung",
+      "sourceOnAgriSung": "Source on Agri Sung",
+      "startSelling": "Start selling",
+      "subscribeForValueInsight": "Subscribe for value insight",
+      "whyChooseUs": "Why choose us?"
+    },
+    "main": {
+      "marketInsights": "Market Insights",
+      "news": "News",
+      "priceTrends": "Price Trennds",
+      "products": "Products",
+      "suppliers": "Suppliers",
+      "tools": "Tools"
+    },
+    "topBar": {
+      "aboutAgriSung": "About Agri Sung",
+      "contactUs": "Contact Us",
+      "signIn": "Sign In"
+    }
+  },
+  "page": {
+    "homepage": {
+      "aside": {
+        "rfqButton": "Post your request now",
+        "rfqTitle": "Can’t find products you want? Post a custom request for an accurate quote."
+      },
+      "featuredSection": {
+        "product": "Featured Product",
+        "supplier": "Featured Supplier"
+      },
+      "mainCtaSection": {
+        "button": "Login To See More"
+      },
+      "productListSection": {
+        "title": "Products you may be interested in"
+      }
+    },
+    "productDetail": {
+      "aboutTheSupplier": "About The Supplier",
+      "aboutThisProduct": "About This Product",
+      "countryOfOrigin": "Country of Origin",
+      "cta1": "Get quotation for this product",
+      "cta2": "I want to customize this product",
+      "ingredients": "Ingredients",
+      "moq": "MOQ",
+      "otherProductsFromTheSupplier": "Other products from the supplier",
+      "packagingType": "Packaging Type",
+      "paymentTerms": "Payment Terms",
+      "processStyle": "Process Style",
+      "productDescription": "Product Description",
+      "productName": "Product Name",
+      "productType": "Product Type",
+      "rawProduct": "Raw Product",
+      "referencePricePerKg": "Reference price per kg:",
+      "samples": "Samples",
+      "shelfLife": "Shelf Life",
+      "shipment": "Shipment",
+      "supplierCta": "Visit Supplier Page",
+      "variety": "Variety"
+    },
+    "supplierDetail": {
+      "annualSalesRevenue": "Annual Sales Revenue",
+      "businessType": "Business Type",
+      "certificates": "Certificates",
+      "companyAddress": "Company Address",
+      "companyName": "Company Name",
+      "companyOverview": "Company Overview",
+      "country": "Country",
+      "exportHistory": "Export History",
+      "numberOfEmployees": "Number of Employees",
+      "photosAndVideos": "Photos & Videos",
+      "yearEstablished": "Year Established"
+    }
+  },
+  "shared": {
+    "address": "462 Phan Xich Long, Ward 2, Phu Nhuan District, Ho Chi Minh City, Vietnam, 700000",
+    "contact": "Contact",
+    "createMyRfq": "Create My RFQ",
+    "description": "Agri Sung - Vietnam Sourcing Company, with a diverse range of advantages, stands out with its access to premium farming regions, partnerships with top-tier suppliers, and a strong reputation for reliability. Our mission is to bring the finest Vietnamese agricultural products to the global market, ensuring quality and sustainability at every step.",
+    "email": "info@agrisung.com",
+    "home": "Home",
+    "language": {
+      "en": "EN",
+      "zh": "中文"
+    },
+    "overview": "Overview",
+    "phone": "(+84) 906 750 776",
+    "product": "product",
+    "products": "Products",
+    "productWithCount1": " {count, plural, =1 {Product} other {Products}} ({count})",
+    "productWithCount2": "{count} {count, plural, =1 {product} other {products}}",
+    "save": "Save",
+    "signIn": "Sign In",
+    "title": "Agri Sung",
+    "viewAll": "View All"
+  }
+}

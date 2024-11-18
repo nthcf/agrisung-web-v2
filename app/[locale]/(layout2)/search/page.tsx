@@ -1,4 +1,3 @@
-import { PropsWithLocale } from "@/app/types";
 import RfqForm1 from "@/components/form/RfqForm1";
 import HeaderAndFilter from "@/components/search/HeaderAndFilter";
 import NoResult from "@/components/search/NoResult";
@@ -26,9 +25,11 @@ async function DoSearch({ q }: { q: string | string[] }) {
   );
 }
 
-type SearchProps = PropsWithLocale<unknown>;
-
-export default async function Search({ searchParams }: SearchProps) {
+export default async function Search({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const { q } = await searchParams;
 
   if (!q) {

@@ -8,13 +8,15 @@ import {
 import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
-import { FontBody, FontHeading } from "@/site.config";
-
-import { type PropsWithLocale } from "../types";
+import { FontBody, FontHeading, type Locale } from "@/site.config";
 
 import "../globals.css";
 
-export async function generateMetadata({ params }: PropsWithLocale) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
@@ -31,7 +33,10 @@ export function generateStaticParams() {
 export default async function RootLayout({
   children,
   params,
-}: PropsWithLocale) {
+}: {
+  params: Promise<{ locale: Locale }>;
+  children?: React.ReactNode;
+}) {
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
