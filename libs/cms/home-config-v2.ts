@@ -13,6 +13,7 @@ export async function getPublicPriceList(locale = "en") {
     locale,
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -70,6 +71,7 @@ export async function getHomeConfigV2(locale = "en") {
     locale,
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {

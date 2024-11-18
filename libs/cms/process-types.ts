@@ -13,6 +13,7 @@ export async function getProcessTypes(locale = "en") {
     locale,
   });
   const url = new URL("/api/process-types?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {

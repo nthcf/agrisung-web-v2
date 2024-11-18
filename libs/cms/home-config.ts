@@ -13,6 +13,7 @@ export async function getHeaderPriceTable(locale = "en") {
     locale,
   });
   const url = new URL("/api/homeconfig?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -47,6 +48,7 @@ export async function getHomeConfig(locale = "en") {
     locale,
   });
   const url = new URL("/api/homeconfig?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {

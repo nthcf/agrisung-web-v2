@@ -24,6 +24,7 @@ export async function getProducts(page: number, locale = "en") {
     locale,
   });
   const url = new URL("/api/products?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -59,6 +60,7 @@ export async function getProduct(slug: string, locale = "en") {
     locale,
   });
   const url = new URL("/api/products?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -97,6 +99,7 @@ export async function getProductsByRawProduct(name: string, locale = "en") {
     locale,
   });
   const url = new URL("/api/products?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -110,4 +113,23 @@ export async function getProductsByRawProduct(name: string, locale = "en") {
   }
 
   return camelcaseKeys<ApiResp<Product[]>>(json, { deep: true });
+}
+
+export async function searchProducts(q: string, locale = "en") {
+  const search = qs.stringify({
+    keyword: q,
+  });
+  const url = new URL("/api/products/search?" + search, BASE_URL);
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
+
+  const json = await res.json();
+
+  return camelcaseKeys<ApiResp<{ products: Product[]; total: number }>>(json, {
+    deep: true,
+  });
 }

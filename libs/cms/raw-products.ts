@@ -2,8 +2,8 @@ import camelcaseKeys from "camelcase-keys";
 import qs from "qs";
 
 import { BASE_URL } from "./config";
-import { ApiResp, RawProduct } from "./types";
 import { mediaFields } from "./helpers";
+import { ApiResp, RawProduct } from "./types";
 
 export async function getRawProducts(locale = "en") {
   const search = qs.stringify({
@@ -18,6 +18,7 @@ export async function getRawProducts(locale = "en") {
     locale,
   });
   const url = new URL("/api/raw-products?" + search, BASE_URL);
+
   const res = await fetch(url);
 
   if (!res.ok) {
