@@ -12,8 +12,8 @@ type DetailProductDescriptionPriceProps = {
 export default function DetailProductDescriptionPrice({
   data,
 }: DetailProductDescriptionPriceProps) {
-  const format = useFormatter();
   const t = useTranslations();
+  const format = useFormatter();
 
   return (
     <div className="space-y-4 rounded-lg bg-white p-4">

@@ -18,6 +18,7 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
+
   const t = await getTranslations({ locale });
 
   return {

@@ -1,21 +1,38 @@
 "use client";
 
-import { useRouter } from "@/i18n/routing";
+import { cx } from "class-variance-authority";
 import { Command } from "cmdk";
 import { Search as ISearch } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useSWR from "swr";
+import { useOnClickOutside } from "usehooks-ts";
 
+import { useRouter } from "@/i18n/routing";
 import { getSuggestion } from "@/libs/cms";
 
 import Button from "../common/Button";
 
 export default function MainSearchForm() {
-  const router = useRouter();
-  const t = useTranslations();
+  const resultRef = useRef<HTMLDivElement>(null);
+
   const [search, setSearch] = useState("");
-  const { data, error, isLoading } = useSWR("certs", () => getSuggestion());
+  const [showResult, setShowResult] = useState(false);
+
+  const t = useTranslations();
+
+  const router = useRouter();
+
+  const { data, error, isLoading } = useSWR(
+    showResult ? "suggestion" : null,
+    () => getSuggestion(),
+  );
+
+  useOnClickOutside(resultRef, () => {
+    if (showResult) {
+      setShowResult(false);
+    }
+  });
 
   return (
     <div className="container mx-auto px-4 lg:px-20 xl:px-34">
@@ -25,10 +42,15 @@ export default function MainSearchForm() {
           className="relative mx-auto flex w-2/3 items-center rounded border border-fg-border-main pl-4"
         >
           <Command.Input
-            className="peer mr-4 h-11 flex-1 border-0 p-0 text-sm text-fg-text-main-hc ring-0 placeholder:text-fg-text-main-lc focus:ring-0"
+            className="mr-4 h-11 flex-1 border-0 p-0 text-sm text-fg-text-main-hc ring-0 placeholder:text-fg-text-main-lc focus:ring-0"
             placeholder={t("form.headerSearch.placeholder")}
             value={search}
             onValueChange={setSearch}
+            onFocus={() => {
+              if (!showResult) {
+                setShowResult(true);
+              }
+            }}
           />
           <Button
             className="!h-11 !w-15 !rounded-none !rounded-l"
@@ -39,7 +61,13 @@ export default function MainSearchForm() {
           >
             <ISearch />
           </Button>
-          <Command.List className="absolute left-0 right-0 top-full z-[89] mt-2 hidden h-90 overflow-auto rounded-lg bg-white p-2 shadow-md peer-focus:block">
+          <Command.List
+            ref={resultRef}
+            className={cx(
+              "absolute left-0 right-0 top-full z-[89] mt-2 h-90 overflow-auto rounded-lg bg-white p-2 shadow-md",
+              showResult ? "block" : "hidden",
+            )}
+          >
             {isLoading && (
               <Command.Loading className="p-2 text-sm text-fg-text-main">
                 {t("shared.loading")}

@@ -16,8 +16,8 @@ export default function ProductCard({
   data,
   featured,
 }: ProductCardProps) {
-  const format = useFormatter();
   const t = useTranslations();
+  const format = useFormatter();
 
   return (
     <article

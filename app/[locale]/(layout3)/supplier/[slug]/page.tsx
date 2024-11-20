@@ -13,6 +13,7 @@ export default async function SupplierDetail({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   const { data: ss } = await getSupplier(slug);
 
   const sup = ss[0];

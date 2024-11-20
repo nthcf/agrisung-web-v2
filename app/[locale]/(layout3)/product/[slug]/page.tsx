@@ -14,6 +14,7 @@ export default async function ProductDetail({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   const { data: ps } = await getProduct(slug);
 
   const pro = ps[0];

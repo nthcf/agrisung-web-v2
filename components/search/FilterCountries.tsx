@@ -17,6 +17,7 @@ export default function FilterCountries({
   onValueChange,
 }: FilterCountriesProps) {
   const t = useTranslations();
+
   const { data, error, isLoading } = useSWR("countries", () => getCountries());
 
   if (error) {

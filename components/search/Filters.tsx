@@ -18,11 +18,13 @@ type FilterProps = {
 };
 
 export default function Filters({ q }: FilterProps) {
-  const router = useRouter();
-  const t = useTranslations();
   const [open, setOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [selectedCerts, setSelectedCerts] = useState<string[]>([]);
+
+  const t = useTranslations();
+
+  const router = useRouter();
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>

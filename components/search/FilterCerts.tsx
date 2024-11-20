@@ -15,6 +15,7 @@ type FilterCertsProps = {
 
 export default function FilterCerts({ selected, onSelect }: FilterCertsProps) {
   const t = useTranslations();
+
   const { data, error, isLoading } = useSWR("certs", () => getCertifications());
 
   if (error) {

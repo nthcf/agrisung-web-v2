@@ -31,8 +31,9 @@ type DetailSupplierTabsProps = {
 };
 
 export default function DetailSupplierTabs({ slug }: DetailSupplierTabsProps) {
-  const pathname = usePathname();
   const t = useTranslations();
+
+  const pathname = usePathname();
 
   const isActive = (href: string) => pathname.endsWith(href);
 
