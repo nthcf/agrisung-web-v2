@@ -32,6 +32,8 @@ export default function FilterCerts({ selected, onSelect }: FilterCertsProps) {
       }
       selected={selected}
       placeholder={t("form.headerSearch.filterCertsPlaceholder")}
+      cmdLabel="Filter Certs"
+      cmdInputPlaceholder={t("shared.search")}
       onSelect={onSelect}
     />
   );

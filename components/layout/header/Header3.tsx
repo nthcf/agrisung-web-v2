@@ -3,7 +3,7 @@ import TopBar from "./TopBar";
 
 export default function Header3() {
   return (
-    <header className="border-brand-gray-3 overflow-hidden border-b">
+    <header className="border-brand-gray-3 border-b">
       <TopBar />
       <LogoAndMenu />
     </header>

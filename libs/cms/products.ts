@@ -141,3 +141,22 @@ export async function searchProducts(
     deep: true,
   });
 }
+
+export async function getSuggestion(locale = "en") {
+  const search = qs.stringify({
+    locale,
+  });
+  const url = new URL("/api/products/recommend?" + search, BASE_URL);
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
+
+  const json = await res.json();
+
+  return camelcaseKeys<ApiResp<string[]>>(json, {
+    deep: true,
+  });
+}

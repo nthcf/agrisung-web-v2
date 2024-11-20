@@ -126,6 +126,8 @@
       "en": "EN",
       "zh": "中文"
     },
+    "loading": "Loading...",
+    "noResultsFound": "No results found.",
     "overview": "Overview",
     "phone": "(+84) 906 750 776",
     "product": "product",
@@ -133,6 +135,7 @@
     "productWithCount1": " {count, plural, =1 {Product} other {Products}} ({count})",
     "productWithCount2": "{count} {count, plural, =1 {product} other {products}}",
     "save": "Save",
+    "search": "Search",
     "signIn": "Sign In",
     "title": "Agri Sung",
     "viewAll": "View All"

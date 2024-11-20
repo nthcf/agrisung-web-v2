@@ -1,8 +1,7 @@
-"use client";
-
 import * as Popover from "@radix-ui/react-popover";
 import { Command } from "cmdk";
 import { ChevronDown, Square, SquareCheckBig } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { type Dispatch } from "./types";
 
@@ -13,6 +12,8 @@ type MultiSelectProps<T> = {
     value: T;
   }[];
   placeholder?: string;
+  cmdLabel?: string;
+  cmdInputPlaceholder?: string;
   selected: T[];
   onSelect: Dispatch<T[]>;
 };
@@ -22,8 +23,12 @@ export default function MultiSelect<T>({
   options = [],
   selected = [],
   placeholder,
+  cmdLabel,
+  cmdInputPlaceholder,
   onSelect,
 }: MultiSelectProps<T>) {
+  const t = useTranslations();
+
   return (
     <Popover.Root>
       <Popover.Trigger className="mt-1 flex w-full items-center justify-between gap-2 rounded border border-fg-border-main p-2 text-sm text-fg-text-main-hc outline-0">
@@ -45,20 +50,22 @@ export default function MultiSelect<T>({
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className="mt-2 w-[var(--radix-popover-trigger-width)] rounded-md bg-white p-2 shadow-md">
-          <Command label="Search">
+          <Command label={cmdLabel}>
             <Command.Input
               className="w-full rounded border-fg-border-main p-2 text-sm text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-main focus:ring-0"
-              placeholder="Search"
+              placeholder={cmdInputPlaceholder}
             />
             <Command.List className="mt-2 h-45 overflow-auto">
               {loading && (
                 <Command.Loading className="p-2 text-sm text-fg-text-main">
-                  Hang on…
+                  {t("shared.loading")}
                 </Command.Loading>
               )}
-              <Command.Empty className="p-2 text-sm text-fg-text-main">
-                No results found.
-              </Command.Empty>
+              {!loading && (
+                <Command.Empty className="p-2 text-sm text-fg-text-main">
+                  {t("shared.noResultsFound")}
+                </Command.Empty>
+              )}
               {options.map((item, i) => (
                 <Command.Item
                   key={i}

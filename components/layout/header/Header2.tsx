@@ -11,7 +11,7 @@ type Header2Props = {
 
 export default function Header2({ banner }: Header2Props) {
   return (
-    <header className="border-brand-gray-3 overflow-hidden border-b">
+    <header className="border-brand-gray-3 border-b">
       <TopBar />
       <LogoAndMenu />
       {banner && (

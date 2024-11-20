@@ -11,7 +11,7 @@ type HeaderProps = {
 
 export default function Header({ priceList }: HeaderProps) {
   return (
-    <header className="border-brand-gray-3 overflow-hidden border-b">
+    <header className="border-brand-gray-3 border-b">
       <TopBar />
       <LogoAndMenu />
       <PriceList priceList={priceList} />
