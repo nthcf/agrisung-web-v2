@@ -7,8 +7,11 @@ import Recommended from "@/components/homepage/Recommended";
 import ProductCard from "@/components/product/ProductCard";
 import SupplierCard from "@/components/supplier/SupplierCard";
 import { getHomeConfigV2, getProducts } from "@/libs/cms";
+import { connection } from "next/server";
 
 export default async function Home() {
+  await connection();
+
   const { data: hcf } = await getHomeConfigV2();
   const { data: prd } = await getProducts(1);
 
