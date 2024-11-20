@@ -9,6 +9,11 @@
     },
     "headerSearch": {
       "advanced": "Advanced",
+      "certifications": "Certifications",
+      "countryOfOrigin": "Country of Origin",
+      "filter": "Filter",
+      "filterCertsPlaceholder": "Select certifications",
+      "filterCountriesPlaceholder": "Select a country",
       "noResult": "No Results",
       "noResultText1": "There are no results for your search",
       "noResultText2": "Please try searching with different keywords",
@@ -110,6 +115,8 @@
   },
   "shared": {
     "address": "462 Phan Xich Long, Ward 2, Phu Nhuan District, Ho Chi Minh City, Vietnam, 700000",
+    "apply": "Apply",
+    "clear": "Clear",
     "contact": "Contact",
     "createMyRfq": "Create My RFQ",
     "description": "Agri Sung - Vietnam Sourcing Company, with a diverse range of advantages, stands out with its access to premium farming regions, partnerships with top-tier suppliers, and a strong reputation for reliability. Our mission is to bring the finest Vietnamese agricultural products to the global market, ensuring quality and sustainability at every step.",

@@ -115,9 +115,17 @@ export async function getProductsByRawProduct(name: string, locale = "en") {
   return camelcaseKeys<ApiResp<Product[]>>(json, { deep: true });
 }
 
-export async function searchProducts(q: string, locale = "en") {
+export async function searchProducts(
+  q: string,
+  origin: string,
+  certs: string,
+  locale = "en",
+) {
   const search = qs.stringify({
     keyword: q,
+    originCode: origin,
+    certs,
+    locale,
   });
   const url = new URL("/api/products/search?" + search, BASE_URL);
 

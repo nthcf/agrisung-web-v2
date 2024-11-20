@@ -25,6 +25,30 @@ export async function getPublicPriceList(locale = "en") {
   return camelcaseKeys<ApiResp<HomeConfigV2>>(json, { deep: true });
 }
 
+export async function getSearchBanner(locale = "en") {
+  const search = qs.stringify({
+    populate: {
+      search_result_banners: {
+        populate: {
+          img_media: mediaFields,
+        },
+      },
+    },
+    locale,
+  });
+  const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
+
+  const json = await res.json();
+
+  return camelcaseKeys<ApiResp<HomeConfigV2>>(json, { deep: true });
+}
+
 export async function getHomeConfigV2(locale = "en") {
   const search = qs.stringify({
     populate: {

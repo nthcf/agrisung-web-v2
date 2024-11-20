@@ -19,3 +19,5 @@ export type PolyWithRefProps<
 > = PolyProps<T, U> & {
   ref?: PolyRef<T>;
 };
+
+export type Dispatch<A> = (value: A | ((prev: A) => A)) => void;

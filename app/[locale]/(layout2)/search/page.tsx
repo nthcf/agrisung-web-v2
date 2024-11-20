@@ -4,14 +4,30 @@ import NoResult from "@/components/search/NoResult";
 import Result from "@/components/search/Result";
 import { searchProducts } from "@/libs/cms";
 
-async function DoSearch({ q }: { q: string | string[] }) {
+async function DoSearch({
+  q,
+  origin = "",
+  certs = "",
+}: {
+  q: string | string[];
+  origin?: string | string[];
+  certs?: string | string[];
+}) {
   const qstr = typeof q === "string" ? q : q.join(",");
-  const { data } = await searchProducts(qstr);
+  const ostr = typeof origin === "string" ? origin : origin.join(",");
+  const cstr = typeof certs === "string" ? certs : certs.join(",");
+
+  const { data } = await searchProducts(qstr, ostr, cstr);
 
   return (
     <main className="bg-bg-main-pale">
       <div className="container mx-auto px-4 py-5 lg:px-20 xl:px-34">
-        <HeaderAndFilter q={q} total={data.total} />
+        <HeaderAndFilter
+          q={qstr}
+          origin={ostr}
+          certs={cstr}
+          total={data.total}
+        />
         {data.total === 0 ? (
           <NoResult />
         ) : (
@@ -30,7 +46,7 @@ export default async function Search({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { q } = await searchParams;
+  const { q, origin, certs } = await searchParams;
 
   if (!q) {
     return (
@@ -42,5 +58,5 @@ export default async function Search({
     );
   }
 
-  return <DoSearch q={q} />;
+  return <DoSearch q={q} origin={origin} certs={certs} />;
 }

@@ -13,7 +13,17 @@ type BannerProps = {
 function BannerHorizontal({ data }: BannerProps) {
   return (
     <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-6 py-13">
-      <div className="relative z-20 flex items-center justify-between">
+      {data.imgMedia && (
+        <Image
+          src={data.imgMedia.url}
+          alt={data.title}
+          sizes="100%"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      )}
+      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="relative flex items-center justify-between">
         <h3 className="text-x2xl font-semibold text-fg-text-on-main-hc">
           {data.title}
         </h3>
@@ -27,7 +37,13 @@ function BannerHorizontal({ data }: BannerProps) {
           <ChevronRight size={16} />
         </Button>
       </div>
-      <div className="absolute inset-0 z-10 bg-black/50"></div>
+    </div>
+  );
+}
+
+function BannerVertical({ data }: BannerProps) {
+  return (
+    <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-34 py-13">
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}
@@ -37,14 +53,8 @@ function BannerHorizontal({ data }: BannerProps) {
           style={{ objectFit: "cover" }}
         />
       )}
-    </div>
-  );
-}
-
-function BannerVertical({ data }: BannerProps) {
-  return (
-    <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-34 py-13">
-      <div className="relative z-20 flex flex-col items-center justify-between gap-1">
+      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="relative flex flex-col items-center justify-between gap-1">
         <h3 className="text-2xl font-bold text-fg-text-on-main-hc">
           {data.title}
         </h3>
@@ -63,16 +73,6 @@ function BannerVertical({ data }: BannerProps) {
           <ChevronRight size={16} />
         </Button>
       </div>
-      <div className="absolute inset-0 z-10 bg-black/50"></div>
-      {data.imgMedia && (
-        <Image
-          src={data.imgMedia.url}
-          alt={data.title}
-          sizes="100%"
-          fill
-          style={{ objectFit: "cover" }}
-        />
-      )}
     </div>
   );
 }

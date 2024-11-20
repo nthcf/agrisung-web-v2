@@ -1,3 +1,5 @@
+export * from "./certifications";
+export * from "./countries";
 export * from "./helpers";
 export * from "./home-config";
 export * from "./home-config-v2";

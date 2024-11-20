@@ -1,51 +1,94 @@
-import * as Select from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+"use client";
 
-export default function Filters() {
+import * as Dialog from "@radix-ui/react-dialog";
+import { Filter } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+
+import { useRouter } from "@/i18n/routing";
+
+import Button from "../common/Button";
+import FilterCerts from "./FilterCerts";
+import FilterCountries from "./FilterCountries";
+
+type FilterProps = {
+  q: string;
+  origin: string;
+  certs: string;
+};
+
+export default function Filters({ q }: FilterProps) {
+  const router = useRouter();
+  const t = useTranslations();
+  const [open, setOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
+  const [selectedCerts, setSelectedCerts] = useState<string[]>([]);
+
   return (
-    <div className="w-100 bg-white p-3">
-      <div>
-        <p className="text-sm font-medium text-fg-text-main">
-          Country of Origin
-        </p>
-        <Select.Root>
-          <Select.Trigger
-            className="mt-1 flex w-full items-center justify-between rounded border border-fg-border-main-lc p-2 text-sm text-fg-text-main-hc outline-0 data-[placeholder]:text-fg-text-main-lc"
-            aria-label="Countries"
-          >
-            <Select.Value placeholder="Select a country" />
-            <Select.Icon className="text-fg-icon-main-lc">
-              <ChevronDown size={24} />
-            </Select.Icon>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Content className="overflow-hidden rounded bg-white shadow-md">
-              <Select.ScrollUpButton className="text-fg-icon-main-lc">
-                <ChevronUp size={24} />
-              </Select.ScrollUpButton>
-              <Select.Viewport className="p-2">
-                {["apple", "banana", "blueberry", "grapes", "pineapple"].map(
-                  (i) => (
-                    <Select.Item
-                      key={i}
-                      className="relative rounded p-2 pl-8 text-sm text-fg-text-main-hc outline-0 data-[highlighted]:bg-bg-brand-bright data-[highlighted]:text-fg-text-brand"
-                      value={i}
-                    >
-                      <Select.ItemText>{i}</Select.ItemText>
-                      <Select.ItemIndicator className="absolute left-2 top-1/2 -translate-y-1/2">
-                        <Check size={16} />
-                      </Select.ItemIndicator>
-                    </Select.Item>
-                  ),
-                )}
-              </Select.Viewport>
-              <Select.ScrollDownButton className="text-fg-icon-main-lc">
-                <ChevronDown size={24} />
-              </Select.ScrollDownButton>
-            </Select.Content>
-          </Select.Portal>
-        </Select.Root>
-      </div>
-    </div>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      <Dialog.Trigger asChild>
+        <Button color="gray">
+          <Filter size={20} />
+          <span>{t("form.headerSearch.advanced")}</span>
+        </Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in">
+          <Dialog.Content className="fixed left-1/2 top-1/2 w-145 -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6 focus:outline-none data-[state=open]:animate-dialog-content-fade-in-zoom">
+            <Dialog.Title className="text-x2xl font-bold text-fg-text-main-hc">
+              {t("form.headerSearch.filter")}
+            </Dialog.Title>
+            <Dialog.Description className="text-sm text-fg-text-main-lc">
+              Filter your results
+            </Dialog.Description>
+            <div className="mt-6">
+              <p className="text-sm font-medium text-fg-text-main">
+                {t("form.headerSearch.countryOfOrigin")}
+              </p>
+              <FilterCountries
+                value={selectedCountry}
+                onValueChange={setSelectedCountry}
+              />
+            </div>
+            <div className="mt-2">
+              <p className="text-sm font-medium text-fg-text-main">
+                {t("form.headerSearch.certifications")}
+              </p>
+              <FilterCerts
+                selected={selectedCerts}
+                onSelect={setSelectedCerts}
+              />
+            </div>
+            <div className="mt-6 flex justify-end gap-3">
+              <Button
+                onClick={() => {
+                  setSelectedCountry("");
+                  setSelectedCerts([]);
+                }}
+              >
+                {t("shared.clear")}
+              </Button>
+              <Button
+                color="primary"
+                onClick={() => {
+                  router.replace({
+                    pathname: "/search",
+                    query: {
+                      q,
+                      origin: selectedCountry,
+                      certs: selectedCerts.join(","),
+                    },
+                  });
+
+                  setOpen(false);
+                }}
+              >
+                {t("shared.apply")}
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Overlay>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
