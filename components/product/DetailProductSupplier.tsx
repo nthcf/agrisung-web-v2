@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 
+import { Link } from "@/i18n/routing";
 import { type Supplier } from "@/libs/cms";
 
 import Button from "../common/Button";
@@ -21,7 +22,9 @@ export default function DetailProductSupplier({
       </h2>
       <SupplierInfoTable data={data} />
       <div>
-        <Button>{t("page.productDetail.supplierCta")}</Button>
+        <Button as={Link} href={`/supplier/${data.slug}`}>
+          {t("page.productDetail.supplierCta")}
+        </Button>
       </div>
     </div>
   );

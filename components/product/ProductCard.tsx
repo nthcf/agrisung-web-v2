@@ -19,6 +19,8 @@ export default function ProductCard({
   const t = useTranslations();
   const format = useFormatter();
 
+  const sup = draw(data.suppliers || []);
+
   return (
     <article
       className={cx(
@@ -46,35 +48,33 @@ export default function ProductCard({
             />
           )}
         </div>
-        <div className="space-y-1 p-3">
-          <h4 className="max-h-10 truncate text-ellipsis text-sm font-medium text-fg-text-main-hc">
-            {data.name}
-          </h4>
-          <div className="text-xs text-fg-text-main">
-            <p className="line-clamp-2 whitespace-pre-wrap">
-              {data.description}
-            </p>
-          </div>
-          <p className="h-4 truncate text-xs font-medium text-fg-text-main-hc underline">
-            {draw(data.suppliers || [])?.name}
-          </p>
-          <p className="font-bold text-fg-text-main-hc">
-            {data.priceMin
-              ? format.number(data.priceMin, {
-                  style: "currency",
-                  currency: data.currency,
-                })
-              : "N/A"}
-            {" - "}
-            {data.priceMax
-              ? format.number(data.priceMax, {
-                  style: "currency",
-                  currency: data.currency,
-                })
-              : "N/A"}
-          </p>
-        </div>
       </Link>
+      <div className="space-y-1 p-3">
+        <h4 className="max-h-10 truncate text-ellipsis text-sm font-medium text-fg-text-main-hc">
+          <Link href={`/product/${data.slug}`}>{data.name}</Link>
+        </h4>
+        <div className="text-xs text-fg-text-main">
+          <p className="line-clamp-2 whitespace-pre-wrap">{data.description}</p>
+        </div>
+        <p className="h-4 truncate text-xs font-medium text-fg-text-main-hc underline">
+          <Link href={`/supplier/${sup?.slug}`}>{sup?.name}</Link>
+        </p>
+        <p className="font-bold text-fg-text-main-hc">
+          {data.priceMin
+            ? format.number(data.priceMin, {
+                style: "currency",
+                currency: data.currency,
+              })
+            : "N/A"}
+          {" - "}
+          {data.priceMax
+            ? format.number(data.priceMax, {
+                style: "currency",
+                currency: data.currency,
+              })
+            : "N/A"}
+        </p>
+      </div>
     </article>
   );
 }

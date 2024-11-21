@@ -1,14 +1,11 @@
 import RfqForm1 from "@/components/form/RfqForm1";
 import DetailSupplierCover from "@/components/supplier/DetailSupplierCover";
 import DetailSupplierHeader from "@/components/supplier/DetailSupplierHeader";
-import DetailSupplierMedia from "@/components/supplier/DetailSupplierMedia";
-import DetailSupplierOverview from "@/components/supplier/DetailSupplierOverview";
 import DetailSupplierProducts from "@/components/supplier/DetailSupplierProducts";
-import DetailSupplierRecommended from "@/components/supplier/DetailSupplierRecommended";
 import DetailSupplierTabs from "@/components/supplier/DetailSupplierTabs";
-import { getRecommendedSuppliers, getSupplier } from "@/libs/cms";
+import { getSupplier } from "@/libs/cms";
 
-export default async function SupplierDetail({
+export default async function SupplierDetailProducts({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -19,8 +16,6 @@ export default async function SupplierDetail({
 
   const sup = ss[0];
 
-  const { data } = await getRecommendedSuppliers();
-
   return (
     <main>
       <DetailSupplierCover data={sup} />
@@ -28,14 +23,12 @@ export default async function SupplierDetail({
       <DetailSupplierTabs slug={slug} />
       <div className="bg-bg-main-pale">
         <div className="container mx-auto space-y-4 px-4 py-4 lg:px-20 xl:px-34">
-          <DetailSupplierOverview data={sup} />
           <DetailSupplierProducts
-            data={sup.products.slice(0, 8)}
+            data={sup.products}
             slug={sup.slug}
+            hideViewAll
           />
-          {sup.medias && <DetailSupplierMedia data={sup.medias} />}
           <RfqForm1 />
-          <DetailSupplierRecommended data={data.recommended.suppliers} />
         </div>
       </div>
     </main>

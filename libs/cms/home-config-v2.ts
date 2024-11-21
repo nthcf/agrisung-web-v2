@@ -49,6 +49,38 @@ export async function getSearchBanner(locale = "en") {
   return camelcaseKeys<ApiResp<HomeConfigV2>>(json, { deep: true });
 }
 
+export async function getRecommendedSuppliers(locale = "en") {
+  const search = qs.stringify({
+    populate: {
+      recommended: {
+        populate: {
+          suppliers: {
+            populate: {
+              suppliers: {
+                populate: {
+                  logo_media: mediaFields,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    locale,
+  });
+  const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
+
+  const json = await res.json();
+
+  return camelcaseKeys<ApiResp<HomeConfigV2>>(json, { deep: true });
+}
+
 export async function getHomeConfigV2(locale = "en") {
   const search = qs.stringify({
     populate: {

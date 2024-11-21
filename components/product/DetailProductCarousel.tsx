@@ -2,9 +2,16 @@
 
 import { cx } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
+import {
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+} from "lucide-react";
 import Image from "next/image";
 
 import { type Product } from "@/libs/cms";
+import Button from "../common/Button";
 
 type DetailProductCarouselProps = {
   data: Product;
@@ -15,7 +22,7 @@ export default function DetailProductCarousel({
   data,
 }: DetailProductCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel();
-  const [emblaThumbsRef] = useEmblaCarousel({
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     axis: "y",
     containScroll: "keepSnaps",
   });
@@ -23,7 +30,7 @@ export default function DetailProductCarousel({
   return (
     <div className={cx("flex gap-3", className)}>
       <div className="w-25">
-        <div ref={emblaThumbsRef} className="overflow-hidden">
+        <div ref={emblaThumbsRef} className="relative overflow-hidden">
           <div className="-mt-3 flex h-[474px] flex-col">
             {data.images?.map((image, i) => (
               <div
@@ -48,9 +55,31 @@ export default function DetailProductCarousel({
               </div>
             ))}
           </div>
+          <Button
+            className="absolute left-1/2 top-0 -translate-x-1/2"
+            color="gray"
+            corner="pill"
+            size="icon-lg"
+            onClick={() => {
+              emblaThumbsApi?.scrollPrev();
+            }}
+          >
+            <ChevronUp />
+          </Button>
+          <Button
+            className="absolute bottom-0 left-1/2 -translate-x-1/2"
+            color="gray"
+            corner="pill"
+            size="icon-lg"
+            onClick={() => {
+              emblaThumbsApi?.scrollNext();
+            }}
+          >
+            <ChevronDown />
+          </Button>
         </div>
       </div>
-      <div ref={emblaRef} className="flex-1 overflow-hidden">
+      <div ref={emblaRef} className="relative flex-1 overflow-hidden">
         <div className="-ml-4 flex">
           {data.images?.map((image, i) => (
             <div key={i} className="min-w-0 flex-[0_0_100%] pl-4">
@@ -65,6 +94,28 @@ export default function DetailProductCarousel({
               </div>
             </div>
           ))}
+        </div>
+        <div className="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 items-center justify-between">
+          <Button
+            color="gray"
+            corner="pill"
+            size="icon-xl"
+            onClick={() => {
+              emblaApi?.scrollPrev();
+            }}
+          >
+            <ChevronLeft size={32} />
+          </Button>
+          <Button
+            color="gray"
+            corner="pill"
+            size="icon-xl"
+            onClick={() => {
+              emblaApi?.scrollNext();
+            }}
+          >
+            <ChevronRight size={32} />
+          </Button>
         </div>
       </div>
     </div>

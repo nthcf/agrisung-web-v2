@@ -1,7 +1,9 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import { Link } from "@/i18n/routing";
 import { type Supplier } from "@/libs/cms";
+import SupplierCert from "./SupplierCert";
 
 type SupplierInfoTableProps = {
   data: Supplier;
@@ -18,7 +20,10 @@ export default function SupplierInfoTable({
     <div>
       {!hideLogo && (
         <div className="flex items-center gap-3">
-          <div className="ovherflow-hidden relative size-25 rounded border border-fg-border-main bg-bg-brand-bright">
+          <Link
+            className="ovherflow-hidden relative size-25 rounded border border-fg-border-main bg-bg-brand-bright"
+            href={`/supplier/${data.slug}`}
+          >
             {data.logoMedia && (
               <Image
                 src={data.logoMedia.url}
@@ -27,10 +32,10 @@ export default function SupplierInfoTable({
                 style={{ objectFit: "contain" }}
               />
             )}
-          </div>
+          </Link>
           <div>
             <p className="text-lg font-medium text-fg-text-main-hc">
-              {data.name}
+              <Link href={`/supplier/${data.slug}`}>{data.name}</Link>
             </p>
             <p className="text-sm font-medium text-fg-text-brand underline">
               {t("shared.productWithCount2", {
@@ -111,22 +116,11 @@ export default function SupplierInfoTable({
               {t("page.supplierDetail.certificates")}
             </th>
             <td className="border border-fg-border-main p-3 text-fg-text-main">
-              {data.certifications?.map((item) => (
-                <div
-                  key={item.id}
-                  className="relative size-20 overflow-hidden rounded bg-bg-brand-bright"
-                >
-                  {item.logoMedia && (
-                    <Image
-                      src={item.logoMedia.url}
-                      alt={item.name}
-                      sizes="100%"
-                      fill
-                      style={{ objectFit: "contain" }}
-                    />
-                  )}
-                </div>
-              ))}
+              <div className="grid grid-cols-5 gap-4">
+                {data.certifications?.map((item) => (
+                  <SupplierCert key={item.id} data={item} />
+                ))}
+              </div>
             </td>
           </tr>
         </tbody>

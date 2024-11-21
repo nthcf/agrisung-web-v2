@@ -1,6 +1,10 @@
-import { Bookmark } from "lucide-react";
+"use client";
+
+import { cx } from "class-variance-authority";
+import { Bookmark, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useState } from "react";
 
 import { type Supplier } from "@/libs/cms";
 
@@ -13,6 +17,8 @@ type DetailSupplierHeaderProps = {
 export default function DetailSupplierHeader({
   data,
 }: DetailSupplierHeaderProps) {
+  const [expandDesc, setExpandDesc] = useState(false);
+
   const t = useTranslations();
 
   return (
@@ -30,13 +36,31 @@ export default function DetailSupplierHeader({
           )}
         </div>
         <div className="flex flex-1 justify-between gap-3 pt-6">
-          <div>
+          <div className="relative">
             <h1 className="text-2xl font-bold text-fg-text-main-hc">
               {data.name}
             </h1>
-            <p className="whitespace-pre-wrap text-sm text-fg-text-main">
+            <p
+              className={cx(
+                "whitespace-pre-wrap text-sm text-fg-text-main",
+                !expandDesc && "line-clamp-4",
+              )}
+            >
               {data.description}
             </p>
+            {!expandDesc && (
+              <Button
+                className="absolute -bottom-2 right-0"
+                color="ghost-primary"
+                size="sm"
+                onClick={() => {
+                  setExpandDesc(true);
+                }}
+              >
+                <span>{t("shared.viewAll")}</span>
+                <ChevronDown size={14} />
+              </Button>
+            )}
           </div>
           <Button className="shrink-0" color="gray">
             <Bookmark size={20} />

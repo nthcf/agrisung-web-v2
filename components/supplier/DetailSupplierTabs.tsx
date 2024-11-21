@@ -46,8 +46,8 @@ export default function DetailSupplierTabs({ slug }: DetailSupplierTabsProps) {
         {t("shared.overview")}
       </TabItem>
       <TabItem
-        active={isActive(`/supplier/${slug}/products`)}
-        href={`/supplier/${slug}/products`}
+        active={isActive(`/supplier/${slug}/product`)}
+        href={`/supplier/${slug}/product`}
       >
         {t("shared.products")}
       </TabItem>

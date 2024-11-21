@@ -26,37 +26,40 @@ export const SITE_FOOTER_NAV = [
   {
     t: "getSupport",
     items: [
-      { t: "helpCenter", href: "/" },
+      // { t: "helpCenter", href: "/" },
       { t: "liveChatWithStaff", href: "/" },
-      { t: "checkOrderStatus", href: "/" },
-      { t: "faq", href: "/" },
+      // { t: "checkOrderStatus", href: "/" },
+      // { t: "faq", href: "/" },
     ],
   },
   {
     t: "sourceOnAgriSung",
     items: [
       { t: "requestForQuotation", href: "/" },
-      { t: "subscribeForValueInsight", href: "/" },
-      { t: "membershipProgram", href: "/" },
-      { t: "logisticSolution", href: "/" },
-      { t: "partnershipWithAgs", href: "/" },
+      // { t: "subscribeForValueInsight", href: "/" },
+      // { t: "membershipProgram", href: "/" },
+      // { t: "logisticSolution", href: "/" },
     ],
   },
   {
     t: "sellOnAgriSung",
     items: [
       { t: "startSelling", href: "/" },
-      { t: "sellingCenter", href: "/" },
-      { t: "becomeAVerifiedSupplier", href: "/" },
+      { t: "partnershipWithAgs", href: "/" },
+      // { t: "sellingCenter", href: "/" },
+      // { t: "becomeAVerifiedSupplier", href: "/" },
     ],
   },
   {
     t: "getToKnowUs",
     items: [
-      { t: "aboutAgriSung", href: "/" },
-      { t: "whyChooseUs", href: "/" },
-      { t: "career", href: "/" },
-      { t: "lifeAtSung", href: "/" },
+      { t: "aboutAgriSung", href: "/about-us" },
+      // { t: "whyChooseUs", href: "/" },
+      // { t: "career", href: "/" },
+      {
+        t: "lifeAtSung",
+        href: "https://www.facebook.com/groups/456141860303857",
+      },
     ],
   },
 ] as const;

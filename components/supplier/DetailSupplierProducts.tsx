@@ -8,10 +8,14 @@ import ProductCard from "../product/ProductCard";
 
 type DetailSupplierProductsProps = {
   data: Product[];
+  slug: string;
+  hideViewAll?: boolean;
 };
 
 export default function DetailSupplierProducts({
   data,
+  slug,
+  hideViewAll,
 }: DetailSupplierProductsProps) {
   const t = useTranslations();
 
@@ -21,13 +25,15 @@ export default function DetailSupplierProducts({
         <h2 className="text-x2xl font-bold text-fg-text-main-hc">
           {t("shared.products")} ({data.length})
         </h2>
-        <Link
-          className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-          href="/"
-        >
-          <span>{t("shared.viewAll")}</span>
-          <ChevronRight size={16} />
-        </Link>
+        {!hideViewAll && (
+          <Link
+            className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+            href={`/supplier/${slug}/product`}
+          >
+            <span>{t("shared.viewAll")}</span>
+            <ChevronRight size={16} />
+          </Link>
+        )}
       </div>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {data.map((product) => (

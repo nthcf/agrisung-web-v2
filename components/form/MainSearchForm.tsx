@@ -40,6 +40,12 @@ export default function MainSearchForm() {
         <Command
           label="Main Search With Suggestion"
           className="relative mx-auto flex w-2/3 items-center rounded border border-fg-border-main pl-4"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              router.push({ pathname: "/search", query: { q: search } });
+            }
+          }}
         >
           <Command.Input
             className="mr-4 h-11 flex-1 border-0 p-0 text-sm text-fg-text-main-hc ring-0 placeholder:text-fg-text-main-lc focus:ring-0"

@@ -50,6 +50,8 @@ export default function Footer() {
             <ul className="mt-4 flex gap-3">
               <li>
                 <Button
+                  as={Link}
+                  href="https://www.facebook.com/profile.php?id=61564057781575"
                   color="gray"
                   corner="pill"
                   hover="primary"
@@ -68,6 +70,8 @@ export default function Footer() {
               </li>
               <li>
                 <Button
+                  as={Link}
+                  href="https://www.linkedin.com/company/agri-sung/"
                   color="gray"
                   corner="pill"
                   hover="primary"
@@ -86,6 +90,8 @@ export default function Footer() {
               </li>
               <li>
                 <Button
+                  as={Link}
+                  href="https://www.youtube.com/channel/UCSiL4tIo8nXPViwvZCgNbBw"
                   color="gray"
                   corner="pill"
                   hover="primary"

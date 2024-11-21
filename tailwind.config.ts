@@ -34,6 +34,7 @@ const config: Config = {
           main: {
             bright: "#FAFAFA",
             pale: "#E7E8E9",
+            strong: "#3E4143",
           },
           secondary: {
             bright: "#F0F7FB",

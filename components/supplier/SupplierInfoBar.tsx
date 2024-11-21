@@ -1,6 +1,7 @@
 import { cx } from "class-variance-authority";
 import Image from "next/image";
 
+import { Link } from "@/i18n/routing";
 import { type Supplier } from "@/libs/cms";
 
 type SupplierInfoBarProps = {
@@ -18,7 +19,10 @@ export default function SupplierInfoBar({
         className,
       )}
     >
-      <div className="relative size-8 overflow-hidden rounded border border-fg-border-main bg-bg-brand-bright">
+      <Link
+        className="relative size-8 overflow-hidden rounded border border-fg-border-main bg-bg-brand-bright"
+        href={`/supplier/${data.slug}`}
+      >
         {data.logoMedia && (
           <Image
             src={data.logoMedia.url}
@@ -27,10 +31,12 @@ export default function SupplierInfoBar({
             style={{ objectFit: "contain" }}
           />
         )}
-      </div>
+      </Link>
       <p className="text-xs text-fg-text-main-hc">
-        <span className="underline">{data.name}</span> &bull;{" "}
-        {data.yearEstablished} &bull; {data.country?.name}
+        <Link href={`/supplier/${data.slug}`}>
+          <span className="underline">{data.name}</span>
+        </Link>{" "}
+        &bull; {data.yearEstablished} &bull; {data.country?.name}
       </p>
     </div>
   );

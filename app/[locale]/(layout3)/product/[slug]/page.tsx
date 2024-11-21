@@ -43,7 +43,11 @@ export default async function ProductDetail({
             <DetailProductDescriptionPrice data={pro} />
           </aside>
         </div>
-        <DetailProductSupplierProducts data={sup.products.slice(0, 8)} />
+        <DetailProductSupplierProducts
+          data={sup.products.slice(0, 8)}
+          slug={sup.slug}
+          total={sup.products.length}
+        />
         <RfqForm1 />
       </div>
     </main>

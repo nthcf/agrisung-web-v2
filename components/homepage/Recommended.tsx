@@ -20,13 +20,15 @@ export default function Recommended({ data }: RecommendedProps) {
             <h3 className="text-sm font-semibold text-fg-text-main-hc">
               {product.title}
             </h3>
-            <Link
-              className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-              href={product.ctaLink}
-            >
-              <span>{product.ctaTitle}</span>
-              <ChevronRight size={16} />
-            </Link>
+            {product.ctaTitle && (
+              <Link
+                className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+                href={product.ctaLink}
+              >
+                <span>{product.ctaTitle}</span>
+                <ChevronRight size={16} />
+              </Link>
+            )}
           </div>
           <div className="grid grid-cols-4 gap-3">
             {product.products.map((product) => (
@@ -41,13 +43,15 @@ export default function Recommended({ data }: RecommendedProps) {
             <h3 className="text-sm font-semibold text-fg-text-main-hc">
               {supplier.title}
             </h3>
-            <Link
-              className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-              href={supplier.ctaLink}
-            >
-              <span>{supplier.ctaTitle}</span>
-              <ChevronRight size={16} />
-            </Link>
+            {supplier.ctaTitle && (
+              <Link
+                className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+                href={supplier.ctaLink}
+              >
+                <span>{supplier.ctaTitle}</span>
+                <ChevronRight size={16} />
+              </Link>
+            )}
           </div>
           <div className="grid grid-cols-3 gap-3">
             {supplier.suppliers.map((supplier) => (

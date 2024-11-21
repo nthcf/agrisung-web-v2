@@ -8,10 +8,14 @@ import ProductCard from "./ProductCard";
 
 type DetailProductSupplierProductsProps = {
   data: Product[];
+  slug: string;
+  total: number;
 };
 
 export default function DetailProductSupplierProducts({
   data,
+  slug,
+  total,
 }: DetailProductSupplierProductsProps) {
   const t = useTranslations();
 
@@ -21,13 +25,15 @@ export default function DetailProductSupplierProducts({
         <h2 className="text-x2xl font-bold text-fg-text-main-hc">
           {t("page.productDetail.otherProductsFromTheSupplier")}
         </h2>
-        <Link
-          className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-          href="/"
-        >
-          <span>{t("shared.viewAll")}</span>
-          <ChevronRight size={16} />
-        </Link>
+        {total > 8 && (
+          <Link
+            className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+            href={`/supplier/${slug}/products`}
+          >
+            <span>{t("shared.viewAll")}</span>
+            <ChevronRight size={16} />
+          </Link>
+        )}
       </div>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {data.map((product) => (
