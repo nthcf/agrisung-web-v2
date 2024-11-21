@@ -1,3 +1,4 @@
+import { addDynamicIconSelectors } from "@iconify/tailwind";
 import form from "@tailwindcss/forms";
 import typo from "@tailwindcss/typography";
 import { type Config } from "tailwindcss";
@@ -198,7 +199,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [animate, form, typo],
+  plugins: [animate, form, typo, addDynamicIconSelectors()],
 };
 
 export default config;

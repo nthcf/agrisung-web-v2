@@ -12,7 +12,7 @@ type BannerProps = {
 
 function BannerHorizontal({ data }: BannerProps) {
   return (
-    <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-6 py-13">
+    <div className="relative overflow-hidden rounded bg-bg-brand-bright px-6 py-13">
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}
@@ -43,7 +43,7 @@ function BannerHorizontal({ data }: BannerProps) {
 
 function BannerVertical({ data }: BannerProps) {
   return (
-    <div className="relative overflow-hidden rounded-lg bg-bg-brand-bright px-34 py-13">
+    <div className="relative overflow-hidden rounded bg-bg-brand-bright px-34 py-13">
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}

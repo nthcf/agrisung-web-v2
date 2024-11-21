@@ -29,15 +29,25 @@ export default async function Home() {
               <Recommended data={hcf.recommended} />
             </div>
             {banner2 && <Banner data={banner2} />}
-            <RfqForm1 />
+            <RfqForm1 hideDescription />
             {banner3 && <Banner data={banner3} />}
             <ProductList data={prd} />
-            <RfqForm1 className="!mt-6" />
+            <RfqForm1 className="!mt-6" hideDescription />
             <MainCta className="!mt-6" />
           </div>
           <aside className="sticky top-5 w-64 space-y-3">
-            <ProductCard data={hcf.featuredProduct} featured />
-            <SupplierCard data={hcf.featuredSupplier} featured />
+            <ProductCard
+              className="p-3"
+              contentClassname="pt-3"
+              data={hcf.featuredProduct}
+              featured
+            />
+            <SupplierCard
+              className="p-3"
+              contentClassname="pt-3"
+              data={hcf.featuredSupplier}
+              featured
+            />
             <AsideCta />
           </aside>
         </div>

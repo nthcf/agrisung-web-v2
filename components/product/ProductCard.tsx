@@ -9,12 +9,14 @@ import { type Product } from "@/libs/cms";
 type ProductCardProps = {
   data: Product;
   featured?: boolean;
+  contentClassname?: string;
 } & React.ComponentPropsWithoutRef<"article">;
 
 export default function ProductCard({
   className,
   data,
   featured,
+  contentClassname,
 }: ProductCardProps) {
   const t = useTranslations();
   const format = useFormatter();
@@ -29,12 +31,17 @@ export default function ProductCard({
       )}
     >
       {featured && (
-        <h3 className="p-4 pb-3 text-sm font-bold text-fg-text-main-hc">
+        <h3 className="pb-3 pt-1 text-sm font-bold text-fg-text-main-hc">
           {t("page.homepage.featuredSection.product")}
         </h3>
       )}
       <Link href={`/product/${data.slug}`}>
-        <div className="relative aspect-square w-full overflow-hidden bg-bg-brand-bright">
+        <div
+          className={cx(
+            "relative w-full overflow-hidden rounded bg-bg-brand-bright",
+            featured ? "aspect-[4_/_3]" : "aspect-square",
+          )}
+        >
           <div className="absolute left-2 top-2 z-10">
             {/* <Tag>items[0].tag</Tag> */}
           </div>
@@ -49,7 +56,7 @@ export default function ProductCard({
           )}
         </div>
       </Link>
-      <div className="space-y-1 p-3">
+      <div className={cx("space-y-1", contentClassname)}>
         <h4 className="max-h-10 truncate text-ellipsis text-sm font-medium text-fg-text-main-hc">
           <Link href={`/product/${data.slug}`}>{data.name}</Link>
         </h4>
@@ -73,6 +80,7 @@ export default function ProductCard({
                 currency: data.currency,
               })
             : "N/A"}
+          <span className="text-sm font-medium text-fg-text-main"> / kg</span>
         </p>
       </div>
     </article>

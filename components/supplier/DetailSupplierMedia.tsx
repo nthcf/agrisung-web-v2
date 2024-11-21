@@ -1,7 +1,10 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { Media } from "@/libs/cms";
+
 import Lightbox from "../common/Lightbox";
 
 type DetailSupplierMediaProps = {
@@ -20,17 +23,20 @@ export default function DetailSupplierMedia({
       </h2>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {data.map((media, i) => (
-          <Lightbox key={i} data={media}>
-            <div className="relative aspect-square cursor-pointer overflow-hidden rounded">
-              <Image
-                src={media.url}
-                alt={media.name}
-                sizes="100%"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-          </Lightbox>
+          <div key={i}>
+            <Lightbox data={media}>
+              <div className="relative aspect-square cursor-pointer overflow-hidden rounded border border-fg-border-main">
+                <Image
+                  src={media.url}
+                  alt={media.name}
+                  sizes="100%"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </Lightbox>
+            <p className="mt-3 text-sm text-fg-text-main-hc">{media.name}</p>
+          </div>
         ))}
       </div>
     </div>

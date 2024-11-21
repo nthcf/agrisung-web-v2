@@ -40,6 +40,7 @@ export default function DetailProductSupplierProducts({
           <ProductCard
             key={product.id}
             className="!border-fg-border-main-disable"
+            contentClassname="p-3"
             data={product}
           />
         ))}

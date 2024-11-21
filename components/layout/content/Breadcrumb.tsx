@@ -13,7 +13,7 @@ function BreadcrumbItem({ link, text, active }: BreadcrumbItemProps) {
   return (
     <li
       className={cx(
-        "text-sm after:mx-2 after:content-['/'] last:after:content-none",
+        "text-sm after:mx-2 after:content-['>'] last:after:content-none",
         active ? "text-fg-text-main-hc" : "text-fg-text-main",
       )}
     >

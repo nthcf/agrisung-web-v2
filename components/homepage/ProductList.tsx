@@ -18,7 +18,7 @@ export default function ProductList({ data }: ProductListProps) {
       </h2>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {data.map((product) => (
-          <ProductCard key={product.id} data={product} />
+          <ProductCard key={product.id} contentClassname="p-3" data={product} />
         ))}
       </div>
     </section>

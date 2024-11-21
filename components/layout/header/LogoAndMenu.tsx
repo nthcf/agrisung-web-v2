@@ -1,4 +1,3 @@
-import { Search, Target } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -28,10 +27,10 @@ export default function LogoAndMenu() {
         </div>
         <div className="flex gap-3">
           <Button color="gray" size="icon-lg">
-            <Search size={20} />
+            <span className="icon-[octicon--search-16] size-5" />
           </Button>
           <Button>
-            <Target size={20} />
+            <span className="icon-[octicon--goal-16] size-5" />
             <span>{t("shared.createMyRfq")}</span>
           </Button>
         </div>

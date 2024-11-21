@@ -25,7 +25,19 @@ export default async function ProductDetail({
 
   return (
     <main className="bg-bg-main-pale">
-      <Breadcrumb data={[{ link: pro.slug, text: pro.name, active: true }]} />
+      <Breadcrumb
+        data={[
+          {
+            link: `/search?q=${pro.processType.name}`,
+            text: pro.processType.name,
+          },
+          {
+            link: `/search?q=${pro.rawProducts[0].name}`,
+            text: pro.rawProducts[0].name,
+            active: true,
+          },
+        ]}
+      />
       <div className="container mx-auto space-y-4 px-4 py-5 lg:px-20 xl:px-34">
         <div className="relative flex items-start gap-6">
           <div className="flex-1 space-y-4">

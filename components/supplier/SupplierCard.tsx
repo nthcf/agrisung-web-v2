@@ -11,12 +11,14 @@ import Button from "../common/Button";
 type SupplierCardProps = {
   data: Supplier;
   featured?: boolean;
+  contentClassname?: string;
 } & React.ComponentPropsWithoutRef<"article">;
 
 export default function SupplierCard({
   className,
   data,
   featured,
+  contentClassname,
 }: SupplierCardProps) {
   const t = useTranslations();
 
@@ -25,7 +27,7 @@ export default function SupplierCard({
       className={cx("relative overflow-hidden rounded-lg bg-white", className)}
     >
       {featured && (
-        <h3 className="p-4 pb-3 text-sm font-bold text-fg-text-main-hc">
+        <h3 className="pb-3 pt-1 text-sm font-bold text-fg-text-main-hc">
           {t("page.homepage.featuredSection.supplier")}
         </h3>
       )}
@@ -41,7 +43,7 @@ export default function SupplierCard({
             />
           )}
         </div>
-        <div className="space-y-1 p-3">
+        <div className={cx("space-y-1", contentClassname)}>
           <h4 className="max-h-10 text-ellipsis text-sm font-medium text-fg-text-main-hc">
             {data.name}
           </h4>
@@ -55,7 +57,7 @@ export default function SupplierCard({
           </div>
           <div className="!mt-3 flex items-center gap-2">
             <Button color="gray" size="sm">
-              {t("shared.contact")}
+              {t("shared.contactNow")}
             </Button>
             <Button color="gray" size="icon-sm">
               <Bookmark size={14} />

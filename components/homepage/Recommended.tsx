@@ -32,7 +32,11 @@ export default function Recommended({ data }: RecommendedProps) {
           </div>
           <div className="grid grid-cols-4 gap-3">
             {product.products.map((product) => (
-              <ProductCard key={product.id} data={product} />
+              <ProductCard
+                key={product.id}
+                contentClassname="pt-3"
+                data={product}
+              />
             ))}
           </div>
         </div>
@@ -55,7 +59,11 @@ export default function Recommended({ data }: RecommendedProps) {
           </div>
           <div className="grid grid-cols-3 gap-3">
             {supplier.suppliers.map((supplier) => (
-              <SupplierCard key={supplier.id} data={supplier} />
+              <SupplierCard
+                key={supplier.id}
+                contentClassname="pt-3"
+                data={supplier}
+              />
             ))}
           </div>
         </div>

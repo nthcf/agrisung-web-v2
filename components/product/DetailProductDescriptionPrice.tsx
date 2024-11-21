@@ -40,11 +40,12 @@ export default function DetailProductDescriptionPrice({
           {t("page.productDetail.moq")}: {data.moq}
         </p>
       </div>
+      <hr />
       <div className="space-y-1">
         <h4 className="text-sm font-bold text-fg-text-main-hc">
           {t("page.productDetail.aboutThisProduct")}
         </h4>
-        <p className="whitespace-pre-wrap text-sm text-fg-text-main">
+        <p className="max-h-30 overflow-auto whitespace-pre-wrap text-sm text-fg-text-main">
           {data.description}
         </p>
       </div>
