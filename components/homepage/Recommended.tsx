@@ -61,6 +61,7 @@ export default function Recommended({ data }: RecommendedProps) {
             {supplier.suppliers.map((supplier) => (
               <SupplierCard
                 key={supplier.id}
+                className="pb-1"
                 contentClassname="pt-3"
                 data={supplier}
               />

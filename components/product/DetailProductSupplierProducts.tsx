@@ -28,7 +28,7 @@ export default function DetailProductSupplierProducts({
         {total > 8 && (
           <Link
             className="inline-flex items-center text-sm font-medium text-fg-text-brand"
-            href={`/supplier/${slug}/products`}
+            href={`/supplier/${slug}/product`}
           >
             <span>{t("shared.viewAll")}</span>
             <ChevronRight size={16} />

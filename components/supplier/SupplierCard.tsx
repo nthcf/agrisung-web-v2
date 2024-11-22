@@ -1,5 +1,4 @@
 import { cx } from "class-variance-authority";
-import { Bookmark } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -58,9 +57,6 @@ export default function SupplierCard({
           <div className="!mt-3 flex items-center gap-2">
             <Button color="gray" size="sm">
               {t("shared.contactNow")}
-            </Button>
-            <Button color="gray" size="icon-sm">
-              <Bookmark size={14} />
             </Button>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import { CircleHelp } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import Button from "../common/Button";
@@ -13,9 +12,6 @@ export default function AsideCta() {
       </p>
       <div className="mt-3 flex items-center gap-1">
         <Button className="flex-1">{t("page.homepage.aside.rfqButton")}</Button>
-        <Button color="ghost-gray" size="icon-lg">
-          <CircleHelp size={24} />
-        </Button>
       </div>
     </div>
   );

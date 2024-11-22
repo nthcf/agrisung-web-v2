@@ -11,6 +11,8 @@ import {
 import Image from "next/image";
 
 import { type Product } from "@/libs/cms";
+import { useEmblaPrevNext } from "@/libs/hooks/embla";
+
 import Button from "../common/Button";
 
 type DetailProductCarouselProps = {
@@ -24,8 +26,17 @@ export default function DetailProductCarousel({
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     axis: "y",
-    containScroll: "keepSnaps",
+    slidesToScroll: "auto",
   });
+
+  const { nextDisabled, prevDisabled, onNext, onPrev } =
+    useEmblaPrevNext(emblaApi);
+  const {
+    nextDisabled: thumbNextDisabled,
+    prevDisabled: thumbPrevDisabled,
+    onNext: onThumbNext,
+    onPrev: onThumbPrev,
+  } = useEmblaPrevNext(emblaThumbsApi);
 
   return (
     <div className={cx("flex gap-3", className)}>
@@ -55,28 +66,28 @@ export default function DetailProductCarousel({
               </div>
             ))}
           </div>
-          <Button
-            className="absolute left-1/2 top-0 -translate-x-1/2"
-            color="gray"
-            corner="pill"
-            size="icon-lg"
-            onClick={() => {
-              emblaThumbsApi?.scrollPrev();
-            }}
-          >
-            <ChevronUp />
-          </Button>
-          <Button
-            className="absolute bottom-0 left-1/2 -translate-x-1/2"
-            color="gray"
-            corner="pill"
-            size="icon-lg"
-            onClick={() => {
-              emblaThumbsApi?.scrollNext();
-            }}
-          >
-            <ChevronDown />
-          </Button>
+          {!thumbPrevDisabled && (
+            <Button
+              className="absolute left-1/2 top-0 -translate-x-1/2"
+              color="gray"
+              corner="pill"
+              size="icon-lg"
+              onClick={onThumbPrev}
+            >
+              <ChevronUp />
+            </Button>
+          )}
+          {!thumbNextDisabled && (
+            <Button
+              className="absolute bottom-0 left-1/2 -translate-x-1/2"
+              color="gray"
+              corner="pill"
+              size="icon-lg"
+              onClick={onThumbNext}
+            >
+              <ChevronDown />
+            </Button>
+          )}
         </div>
       </div>
       <div ref={emblaRef} className="relative flex-1 overflow-hidden">
@@ -100,9 +111,8 @@ export default function DetailProductCarousel({
             color="gray"
             corner="pill"
             size="icon-xl"
-            onClick={() => {
-              emblaApi?.scrollPrev();
-            }}
+            disabled={prevDisabled}
+            onClick={onPrev}
           >
             <ChevronLeft size={32} />
           </Button>
@@ -110,9 +120,8 @@ export default function DetailProductCarousel({
             color="gray"
             corner="pill"
             size="icon-xl"
-            onClick={() => {
-              emblaApi?.scrollNext();
-            }}
+            disabled={nextDisabled}
+            onClick={onNext}
           >
             <ChevronRight size={32} />
           </Button>

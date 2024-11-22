@@ -14,7 +14,7 @@ export default function SupplierCert({ data }: SupplierCertProps) {
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <div className="relative mx-auto size-20 overflow-hidden rounded bg-bg-brand-bright">
+          <div className="relative size-20 overflow-hidden rounded bg-white">
             {data.logoMedia && (
               <Image
                 src={data.logoMedia.url}
@@ -28,7 +28,7 @@ export default function SupplierCert({ data }: SupplierCertProps) {
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            className="bg-bg-main-strong rounded p-2 text-sm text-fg-text-on-main-hc"
+            className="rounded bg-bg-main-strong p-2 text-sm text-fg-text-on-main-hc"
             sideOffset={5}
           >
             {data.name}

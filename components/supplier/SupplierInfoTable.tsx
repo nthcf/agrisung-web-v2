@@ -116,7 +116,7 @@ export default function SupplierInfoTable({
               {t("page.supplierDetail.certificates")}
             </th>
             <td className="border border-fg-border-main p-3 text-fg-text-main">
-              <div className="grid grid-cols-5 gap-4">
+              <div className="jusify-start flex flex-wrap gap-4">
                 {data.certifications?.map((item) => (
                   <SupplierCert key={item.id} data={item} />
                 ))}

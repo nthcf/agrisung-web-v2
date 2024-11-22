@@ -51,7 +51,7 @@ export default function ProductCard({
               alt={data.name}
               sizes="100%"
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
             />
           )}
         </div>
@@ -63,7 +63,7 @@ export default function ProductCard({
         <div className="text-xs text-fg-text-main">
           <p className="line-clamp-2 whitespace-pre-wrap">{data.description}</p>
         </div>
-        <p className="h-4 truncate text-xs font-medium text-fg-text-main-hc underline">
+        <p className="line-clamp-2 h-8 text-xs font-medium text-fg-text-main-hc underline">
           <Link href={`/supplier/${sup?.slug}`}>{sup?.name}</Link>
         </p>
         <p className="font-bold text-fg-text-main-hc">

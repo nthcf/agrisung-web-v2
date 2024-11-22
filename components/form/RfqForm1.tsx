@@ -54,9 +54,6 @@ export default function RfqForm1({
       </div>
       <div className="flex items-center gap-1">
         <Button color="primary">{t("form.createRfq.submitButton")}</Button>
-        <Button color="ghost-gray" size="icon-lg">
-          <span className="icon-[ic--outline-help-outline] size-6" />
-        </Button>
       </div>
     </div>
   );

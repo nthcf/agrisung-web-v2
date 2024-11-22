@@ -1,7 +1,5 @@
-"use client";
-
+/* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 import { Media } from "@/libs/cms";
 
@@ -26,12 +24,10 @@ export default function DetailSupplierMedia({
           <div key={i}>
             <Lightbox data={media}>
               <div className="relative aspect-square cursor-pointer overflow-hidden rounded border border-fg-border-main">
-                <Image
+                <img
+                  className="h-full w-full object-cover"
                   src={media.url}
                   alt={media.name}
-                  sizes="100%"
-                  fill
-                  style={{ objectFit: "cover" }}
                 />
               </div>
             </Lightbox>
