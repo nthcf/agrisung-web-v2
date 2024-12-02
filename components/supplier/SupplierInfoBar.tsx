@@ -27,6 +27,7 @@ export default function SupplierInfoBar({
           <Image
             src={data.logoMedia.url}
             alt={data.name}
+            sizes="100%"
             fill
             style={{ objectFit: "contain" }}
           />

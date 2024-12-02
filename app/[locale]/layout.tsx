@@ -1,3 +1,4 @@
+import { GoogleTagManager } from "@next/third-parties/google";
 import { cx } from "class-variance-authority";
 import { NextIntlClientProvider } from "next-intl";
 import {
@@ -57,6 +58,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <GoogleTagManager gtmId="GTM-T9L5H9P4" />
       </body>
     </html>
   );

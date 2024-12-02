@@ -1,9 +1,8 @@
-import { Target } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
 
 import { type Product } from "@/libs/cms";
 
-import Button from "../common/Button";
+import DetailProductDescriptionCta from "./DetailProductDescriptionCta";
 
 type DetailProductDescriptionPriceProps = {
   data: Product;
@@ -49,13 +48,7 @@ export default function DetailProductDescriptionPrice({
           {data.description}
         </p>
       </div>
-      <div className="flex flex-col gap-2">
-        <Button color="primary">
-          <Target size={20} />
-          <span>{t("page.productDetail.cta1")}</span>
-        </Button>
-        <Button>{t("page.productDetail.cta2")}</Button>
-      </div>
+      <DetailProductDescriptionCta />
     </div>
   );
 }
