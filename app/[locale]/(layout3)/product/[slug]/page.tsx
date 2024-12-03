@@ -52,7 +52,7 @@ export default async function ProductDetail({
             <DetailProductSupplier data={sup} />
           </div>
           <aside className="sticky top-5 w-96 space-y-3">
-            <DetailProductDescriptionPrice data={pro} />
+            <DetailProductDescriptionPrice product={pro} supplier={sup} />
           </aside>
         </div>
         <DetailProductSupplierProducts

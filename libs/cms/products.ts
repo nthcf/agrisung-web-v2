@@ -39,6 +39,7 @@ export async function getProducts(page: number, locale = "en") {
 export async function getProduct(slug: string, locale = "en") {
   const search = qs.stringify({
     populate: {
+      cover_media: mediaFields,
       images: mediaFields,
       origin: allFields,
       suppliers: {

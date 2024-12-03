@@ -1,15 +1,17 @@
 import { useFormatter, useTranslations } from "next-intl";
 
-import { type Product } from "@/libs/cms";
+import { type Product, type Supplier } from "@/libs/cms";
 
 import DetailProductDescriptionCta from "./DetailProductDescriptionCta";
 
 type DetailProductDescriptionPriceProps = {
-  data: Product;
+  product: Product;
+  supplier: Supplier;
 };
 
 export default function DetailProductDescriptionPrice({
-  data,
+  product,
+  supplier,
 }: DetailProductDescriptionPriceProps) {
   const t = useTranslations();
   const format = useFormatter();
@@ -21,22 +23,22 @@ export default function DetailProductDescriptionPrice({
           {t("page.productDetail.referencePricePerKg")}
         </p>
         <p className="font-heading text-x4xl font-bold text-fg-text-brand-hover">
-          {data.priceMin
-            ? format.number(data.priceMin, {
+          {product.priceMin
+            ? format.number(product.priceMin, {
                 style: "currency",
-                currency: data.currency,
+                currency: product.currency,
               })
             : "N/A"}
           {" - "}
-          {data.priceMax
-            ? format.number(data.priceMax, {
+          {product.priceMax
+            ? format.number(product.priceMax, {
                 style: "currency",
-                currency: data.currency,
+                currency: product.currency,
               })
             : "N/A"}
         </p>
         <p className="text-sm font-medium text-fg-text-main">
-          {t("page.productDetail.moq")}: {data.moq}
+          {t("page.productDetail.moq")}: {product.moq}
         </p>
       </div>
       <hr />
@@ -45,10 +47,10 @@ export default function DetailProductDescriptionPrice({
           {t("page.productDetail.aboutThisProduct")}
         </h4>
         <p className="max-h-30 overflow-auto whitespace-pre-wrap text-sm text-fg-text-main">
-          {data.description}
+          {product.description}
         </p>
       </div>
-      <DetailProductDescriptionCta />
+      <DetailProductDescriptionCta product={product} supplier={supplier} />
     </div>
   );
 }

@@ -19,6 +19,29 @@
       "noResultText2": "Please try searching with different keywords",
       "placeholder": "Search products, suppliers, news...",
       "result": "{count} {count, plural, =1 {result} other {results}} for"
+    },
+    "mainRfq": {
+      "button": "Send request to supplier",
+      "companyLabel": "Company name:",
+      "companyPlaceholder": "e.g., ABC Trading Ltd.",
+      "contactDescription": "Your contact info enables our team to quickly discuss details, providing faster, tailored quotations for your convenience",
+      "contactInfomation": "Contact Infomation",
+      "contactNumberLabel": "Contact number:",
+      "contactNumberPlaceholder": "Phone / Whatsapp / WeChat",
+      "detailLabel": "Detail:",
+      "detailPlaceholder": "Enter product details (color, size, materials etc. and other specification requirements)",
+      "emailLabel": "Email address:",
+      "emailPlaceholder": "We will reply you via email within 24 hours",
+      "firstNamePlaceholder": "First name",
+      "fullNameLabel": "Full name:",
+      "lastNamePlaceholder": "Last name",
+      "productInfomation": "Product Infomation",
+      "productNameLabel": "Product name:",
+      "successButton": "Keep browsing products",
+      "successMessage": "We will contact you via email {email} within 24 hours.",
+      "successTitle": "Sent RFQ Successfully",
+      "title": "Tell supplier what you need",
+      "to": "To:"
     }
   },
   "nav": {
@@ -48,7 +71,7 @@
     "main": {
       "marketInsights": "Market Insights",
       "news": "News",
-      "priceTrends": "Price Trennds",
+      "priceTrends": "Price Trends",
       "products": "Products",
       "suppliers": "Suppliers",
       "tools": "Tools"
@@ -118,8 +141,10 @@
     "apply": "Apply",
     "clear": "Clear",
     "contact": "Contact",
+    "contactNow": "Contact Now",
     "createMyRfq": "Create My RFQ",
     "description": "Agri Sung - Vietnam Sourcing Company, with a diverse range of advantages, stands out with its access to premium farming regions, partnerships with top-tier suppliers, and a strong reputation for reliability. Our mission is to bring the finest Vietnamese agricultural products to the global market, ensuring quality and sustainability at every step.",
+    "edit": "Edit",
     "email": "info@agrisung.com",
     "home": "Home",
     "language": {

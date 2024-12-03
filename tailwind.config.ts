@@ -81,6 +81,9 @@ const config: Config = {
               hover: "#3E4143",
               lc: "#A1A5A8",
             },
+            success: {
+              deep: "#14B623",
+            },
           },
           text: {
             brand: {
@@ -185,6 +188,7 @@ const config: Config = {
         "95": "23.75rem",
         "98": "24.5rem",
         "100": "25rem",
+        "108": "27rem",
         "111": "27.75rem",
         "112": "28rem",
         "115": "28.75rem",
