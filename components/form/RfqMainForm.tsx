@@ -13,12 +13,14 @@ import { type Product, type Supplier } from "@/libs/cms";
 import Button from "../common/Button";
 
 type RfqMainFormProps = {
+  productName?: string;
   product?: Product;
   supplier?: Supplier;
   trigger?: React.ReactNode;
 };
 
 export default function RfqMainForm({
+  productName,
   product,
   supplier,
   trigger,
@@ -26,7 +28,9 @@ export default function RfqMainForm({
   const [open, setOpen] = useState(false);
   const [hasValue, setHasValue] = useState(false);
 
-  const [state, action] = useActionState(submitRfq, { success: false });
+  const [state, action, pending] = useActionState(submitRfq, {
+    success: false,
+  });
 
   const [femail, setFemail] = useLocalStorage("rfq_femail", "");
   const [ffname, setFfname] = useLocalStorage("rfq_ffname", "");
@@ -52,14 +56,14 @@ export default function RfqMainForm({
         {trigger ? trigger : <Dialog.Trigger />}
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in" />
-          <Dialog.Content className="w-108 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-none">
+          <Dialog.Content className="fixed left-1/2 top-1/2 w-108 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-none">
             <Dialog.Close className="absolute right-6 top-6">
               <span className="icon-[octicon--x-16] size-6 text-fg-text-main-hc">
                 x
               </span>
             </Dialog.Close>
             <div className="flex justify-center">
-              <div className="text-fg-icon-success-deep icon-[octicon--check-circle-fill-16] size-16" />
+              <div className="icon-[octicon--check-circle-fill-16] size-16 text-fg-icon-success-deep" />
             </div>
             <Dialog.Title className="mt-3 text-center text-2xl font-semibold text-fg-text-main-hc">
               {t("form.mainRfq.successTitle")}
@@ -93,12 +97,16 @@ export default function RfqMainForm({
               {t("form.mainRfq.title")}
             </Dialog.Title>
             <Dialog.Description className="text-sm text-fg-text-main">
-              {t("form.mainRfq.to")}{" "}
-              <span className="text-fg-text-main-hc">{supplier?.name}</span>
+              {supplier ? (
+                <>
+                  {t("form.mainRfq.to")}{" "}
+                  <span className="text-fg-text-main-hc">{supplier?.name}</span>
+                </>
+              ) : (
+                <span>{t("form.mainRfq.description")}</span>
+              )}
             </Dialog.Description>
-
             <input type="hidden" name="supplier" value={supplier?.name} />
-
             <div className="mt-6 rounded-lg border border-fg-border-main bg-white p-6">
               <h4 className="font-bold text-fg-text-main-hc">
                 {t("form.mainRfq.productInfomation")}
@@ -131,7 +139,17 @@ export default function RfqMainForm({
                       />
                     </div>
                   ) : (
-                    "TODO: input"
+                    <input
+                      type="text"
+                      className={cx(
+                        "w-full rounded border-fg-border-main p-2 text-sm placeholder:text-fg-text-main-lc focus:border-fg-border-main focus:ring-0",
+                        "read-only:border-fg-border-main read-only:bg-bg-main-pale read-only:text-fg-text-main-lc",
+                      )}
+                      placeholder={t("form.mainRfq.productNamePlaceholder")}
+                      name="product"
+                      required
+                      defaultValue={productName}
+                    />
                   )}
                 </div>
                 <div className="mt-4 flex gap-3">
@@ -282,8 +300,9 @@ export default function RfqMainForm({
             </div>
             <div className="absolute bottom-0 right-0 w-full bg-white p-6">
               <button
-                className="w-full rounded bg-bg-brand py-3 font-semibold text-white"
+                className="w-full rounded bg-bg-brand py-3 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
                 type="submit"
+                disabled={pending}
               >
                 {t("form.mainRfq.button")}
               </button>

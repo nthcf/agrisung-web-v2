@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "@/components/common/Button";
 import { Link } from "@/i18n/routing";
 
+import CreateRfq from "./CreateRfq";
 import Navbar from "./Navbar";
 
 export default function LogoAndMenu() {
@@ -29,10 +30,7 @@ export default function LogoAndMenu() {
           <Button color="gray" size="icon-lg">
             <span className="icon-[octicon--search-16] size-5" />
           </Button>
-          <Button>
-            <span className="icon-[octicon--goal-16] size-5" />
-            <span>{t("shared.createMyRfq")}</span>
-          </Button>
+          <CreateRfq />
         </div>
       </div>
     </div>
