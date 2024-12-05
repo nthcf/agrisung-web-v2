@@ -15,8 +15,6 @@ export async function createRfq(body: {
 
   const raw = JSON.stringify(body);
 
-  console.log(raw);
-
   const res = await fetch(url, {
     method: "POST",
     headers: {

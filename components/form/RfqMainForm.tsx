@@ -90,8 +90,8 @@ export default function RfqMainForm({
     <Dialog.Root open={open} onOpenChange={setOpen}>
       {trigger ? trigger : <Dialog.Trigger />}
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in" />
-        <Dialog.Content className="fixed bottom-0 right-0 top-0 w-145 bg-bg-main-pale p-6 focus:outline-none">
+        <Dialog.Overlay className="fixed inset-0 z-[999] bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in" />
+        <Dialog.Content className="fixed bottom-0 right-0 top-0 z-[1000] w-145 bg-bg-main-pale p-6 focus:outline-none">
           <form action={action}>
             <Dialog.Title className="text-x2xl font-bold text-fg-text-main-hc">
               {t("form.mainRfq.title")}

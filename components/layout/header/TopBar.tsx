@@ -1,6 +1,9 @@
 import { useTranslations } from "next-intl";
 
+import ContactUsForm from "@/components/form/ContactUsForm";
+import SignUpForm from "@/components/form/SignUpForm";
 import { Link } from "@/i18n/routing";
+
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export default function TopBar() {
@@ -17,8 +20,8 @@ export default function TopBar() {
           </div>
           <div className="flex items-center gap-10">
             <LocaleSwitcher />
-            <p className="text-xs">{t("nav.topBar.contactUs")}</p>
-            <p className="text-xs font-bold">{t("nav.topBar.signIn")}</p>
+            <ContactUsForm />
+            <SignUpForm />
           </div>
         </div>
       </div>
