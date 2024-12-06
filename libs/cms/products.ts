@@ -49,7 +49,7 @@ export async function getProduct(slug: string, locale = "en") {
         },
       },
       process_type: allFields,
-      raw_products: {
+      raw_product: {
         fields: ["name"],
       },
     },
@@ -91,7 +91,7 @@ export async function getProductsByRawProduct(name: string, locale = "en") {
       process_type: "*",
     },
     filters: {
-      raw_products: {
+      raw_product: {
         name: {
           $eq: name,
         },

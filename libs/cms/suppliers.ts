@@ -38,16 +38,11 @@ export async function getSupplier(slug: string, locale = "en") {
       logo_media: mediaFields,
       cover_media: mediaFields,
       country: allFields,
-      export_history: allFields,
+      export_histories: allFields,
       products: {
         populate: {
           cover_media: mediaFields,
           origin: allFields,
-        },
-      },
-      news: {
-        populate: {
-          cover_media: mediaFields,
         },
       },
       technologies: {

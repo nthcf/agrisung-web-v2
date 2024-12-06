@@ -68,7 +68,7 @@ export default function SupplierInfoTable({
               {t("page.supplierDetail.exportHistory")}
             </th>
             <td className="border border-fg-border-main p-3 text-fg-text-main">
-              {data.exportHistory?.map((item) => item.name).join(", ")}
+              {data.exportHistories?.map((item) => item.name).join(", ")}
             </td>
           </tr>
           <tr>

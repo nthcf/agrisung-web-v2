@@ -88,7 +88,7 @@ export type Supplier = {
   country: Country;
   coverMedia: Media;
   description: string;
-  exportHistory: Country[];
+  exportHistories: Country[];
   id: number;
   logoMedia: Media;
   medias: Media[];

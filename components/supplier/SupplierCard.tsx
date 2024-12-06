@@ -43,7 +43,7 @@ export default function SupplierCard({
           )}
         </div>
         <div className={cx("space-y-1", contentClassname)}>
-          <h4 className="max-h-10 text-ellipsis text-sm font-medium text-fg-text-main-hc">
+          <h4 className="line-clamp-1 max-h-10 text-sm font-medium text-fg-text-main-hc">
             {data.name}
           </h4>
           <p className="text-xs text-fg-text-main">
