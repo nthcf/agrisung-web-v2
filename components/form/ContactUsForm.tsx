@@ -54,7 +54,7 @@ export default function ContactUsForm() {
         <Dialog.Overlay className="fixed inset-0 z-[999] bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in" />
         <Dialog.Content className="fixed left-1/2 top-1/2 z-[1000] w-145 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-none">
           <Dialog.Title className="mt-3 text-2xl font-semibold text-fg-text-main-hc">
-            Sign Up
+            Contact Us
           </Dialog.Title>
           <Dialog.Description className="mt-3 text-fg-text-main">
             Leave a message, we will get back to you soon.
@@ -143,7 +143,7 @@ export default function ContactUsForm() {
             <div className="mt-4 flex items-center gap-3">
               <div className="w-30"></div>
               <Button type="submit" disabled={pending}>
-                Sign Up
+                Send Message
               </Button>
             </div>
           </form>
