@@ -26,14 +26,14 @@ export default function DetailProductDescriptionPrice({
           {product.priceMin
             ? format.number(product.priceMin, {
                 style: "currency",
-                currency: product.currency,
+                currency: product.currency?.alphabeticCode || "VND",
               })
             : "N/A"}
           {" - "}
           {product.priceMax
             ? format.number(product.priceMax, {
                 style: "currency",
-                currency: product.currency,
+                currency: product.currency?.alphabeticCode || "VND",
               })
             : "N/A"}
         </p>

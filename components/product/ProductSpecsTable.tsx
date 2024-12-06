@@ -25,7 +25,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.rawProduct")}
           </th>
           <td className="border border-fg-border-main p-3 text-fg-text-main">
-            {data.rawProducts[0]?.name}
+            {data.rawProduct?.name}
           </td>
         </tr>
         <tr>

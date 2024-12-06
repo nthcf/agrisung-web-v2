@@ -10,7 +10,7 @@ export async function getProducts(page: number, locale = "en") {
     populate: {
       cover_media: mediaFields,
       origin: allFields,
-      suppliers: {
+      supplier: {
         populate: {
           logo_media: mediaFields,
         },
@@ -42,7 +42,7 @@ export async function getProduct(slug: string, locale = "en") {
       cover_media: mediaFields,
       images: mediaFields,
       origin: allFields,
-      suppliers: {
+      supplier: {
         populate: {
           logo_media: mediaFields,
           country: allFields,
@@ -82,7 +82,7 @@ export async function getProductsByRawProduct(name: string, locale = "en") {
     populate: {
       cover_media: mediaFields,
       origin: "*",
-      suppliers: {
+      supplier: {
         populate: {
           logo_media: mediaFields,
           country: "*",

@@ -19,7 +19,7 @@ export default async function ProductDetail({
 
   const pro = ps[0];
 
-  const { data: ss } = await getSupplier(pro.suppliers[0].slug);
+  const { data: ss } = await getSupplier(pro.supplier.slug);
 
   const sup = ss[0];
 
@@ -32,8 +32,8 @@ export default async function ProductDetail({
             text: pro.processType.name,
           },
           {
-            link: `/search?q=${pro.rawProducts[0].name}`,
-            text: pro.rawProducts[0].name,
+            link: `/search?q=${pro.rawProduct.name}`,
+            text: pro.rawProduct.name,
             active: true,
           },
         ]}

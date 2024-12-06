@@ -1,7 +1,6 @@
 import { cx } from "class-variance-authority";
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
-import { draw } from "radash";
 
 import { Link } from "@/i18n/routing";
 import { type Product } from "@/libs/cms";
@@ -20,8 +19,6 @@ export default function ProductCard({
 }: ProductCardProps) {
   const t = useTranslations();
   const format = useFormatter();
-
-  const sup = draw(data.suppliers || []);
 
   return (
     <article
@@ -64,20 +61,22 @@ export default function ProductCard({
           <p className="line-clamp-2 whitespace-pre-wrap">{data.description}</p>
         </div>
         <p className="line-clamp-2 h-8 text-xs font-medium text-fg-text-main-hc underline">
-          <Link href={`/supplier/${sup?.slug}`}>{sup?.name}</Link>
+          <Link href={`/supplier/${data.supplier?.slug}`}>
+            {data.supplier?.name}
+          </Link>
         </p>
         <p className="font-bold text-fg-text-main-hc">
           {data.priceMin
             ? format.number(data.priceMin, {
                 style: "currency",
-                currency: data.currency,
+                currency: data.currency?.alphabeticCode || "VND",
               })
             : "N/A"}
           {" - "}
           {data.priceMax
             ? format.number(data.priceMax, {
                 style: "currency",
-                currency: data.currency,
+                currency: data.currency?.alphabeticCode || "VND",
               })
             : "N/A"}
           <span className="text-sm font-medium text-fg-text-main"> / kg</span>

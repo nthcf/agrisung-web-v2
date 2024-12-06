@@ -30,11 +30,16 @@ export type ProcessType = {
   slug: string;
 };
 
+export type Currency = {
+  currency: string;
+  alphabeticCode: string;
+};
+
 export type Product = {
   availablitiy: string;
   color: string;
   coverMedia: Media;
-  currency: string;
+  currency: Currency;
   description: string;
   formAndCut: string;
   id: number;
@@ -49,14 +54,14 @@ export type Product = {
   priceMax: number;
   processedStyle: string;
   processType: ProcessType;
-  rawProducts: RawProduct[];
+  rawProduct: RawProduct;
   samples: string;
   season: string;
   shelfLife: string;
   shipment: string;
   sizeOrWeight: string;
   slug: string;
-  suppliers: Supplier[];
+  supplier: Supplier;
   variety: string;
 };
 

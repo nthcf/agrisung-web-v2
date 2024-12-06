@@ -28,6 +28,7 @@ export default function MainSearchForm() {
     () => getSuggestion(),
   );
 
+  // @ts-expect-error resultRef
   useOnClickOutside(resultRef, () => {
     if (showResult) {
       setShowResult(false);
