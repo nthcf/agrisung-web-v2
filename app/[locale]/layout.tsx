@@ -7,6 +7,7 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 import { routing } from "@/i18n/routing";
 import { FontBody, FontHeading, type Locale } from "@/site.config";
@@ -59,6 +60,12 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
         <GoogleTagManager gtmId="GTM-T9L5H9P4" />
+        <Script
+          id="hs-script-loader"
+          async
+          defer
+          src="//js-na1.hs-scripts.com/47057829.js"
+        />
       </body>
     </html>
   );
