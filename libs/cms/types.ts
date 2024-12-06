@@ -49,13 +49,11 @@ export type Product = {
   name: string;
   origin: Country;
   packagingType: string;
-  paymentTerms: string;
   priceMin: number;
   priceMax: number;
   processedStyle: string;
   processType: ProcessType;
   rawProduct: RawProduct;
-  samples: string;
   season: string;
   shelfLife: string;
   shipment: string;
@@ -63,6 +61,11 @@ export type Product = {
   slug: string;
   supplier: Supplier;
   variety: string;
+
+  shipments: { shipment: string }[];
+  varieties: { variety: string }[];
+  samples: { sample: string }[];
+  paymentTerms: { paymentTerm: string }[];
 };
 
 export type RawProduct = {

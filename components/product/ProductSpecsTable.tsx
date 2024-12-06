@@ -49,7 +49,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.variety")}
           </th>
           <td className="border border-fg-border-main p-3 text-fg-text-main">
-            {data.variety}
+            {data.varieties.map((v) => v.variety).join(", ")}
           </td>
         </tr>
         <tr>
@@ -65,7 +65,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.samples")}
           </th>
           <td className="border border-fg-border-main p-3 text-fg-text-main">
-            {data.samples}
+            {data.samples.map((s) => s.sample).join(", ")}
           </td>
         </tr>
         <tr>
@@ -89,7 +89,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.paymentTerms")}
           </th>
           <td className="border border-fg-border-main p-3 text-fg-text-main">
-            {data.paymentTerms}
+            {data.paymentTerms.map((p) => p.paymentTerm).join(", ")}
           </td>
         </tr>
         <tr>
@@ -97,7 +97,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.shipment")}
           </th>
           <td className="border border-fg-border-main p-3 text-fg-text-main">
-            {data.shipment}
+            {data.shipments.map((s) => s.shipment).join(", ")}
           </td>
         </tr>
         <tr>

@@ -48,7 +48,12 @@ export async function getProduct(slug: string, locale = "en") {
           country: allFields,
         },
       },
+      currency: allFields,
       process_type: allFields,
+      shipments: allFields,
+      varieties: allFields,
+      samples: allFields,
+      payment_terms: allFields,
       raw_product: {
         fields: ["name"],
       },
