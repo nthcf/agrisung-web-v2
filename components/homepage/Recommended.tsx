@@ -1,5 +1,3 @@
-import { ChevronRight } from "lucide-react";
-
 import { Link } from "@/i18n/routing";
 import { type Recommended as TRecommended } from "@/libs/cms";
 
@@ -26,7 +24,7 @@ export default function Recommended({ data }: RecommendedProps) {
                 href={product.ctaLink}
               >
                 <span>{product.ctaTitle}</span>
-                <ChevronRight size={16} />
+                <span className="icon-[octicon--chevron-right-16] size-4" />
               </Link>
             )}
           </div>
@@ -53,7 +51,7 @@ export default function Recommended({ data }: RecommendedProps) {
                 href={supplier.ctaLink}
               >
                 <span>{supplier.ctaTitle}</span>
-                <ChevronRight size={16} />
+                <span className="icon-[octicon--chevron-right-16] size-4" />
               </Link>
             )}
           </div>

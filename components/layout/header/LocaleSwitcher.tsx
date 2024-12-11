@@ -1,7 +1,6 @@
 "use client";
 
 import * as Select from "@radix-ui/react-select";
-import { ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { useTransition } from "react";
@@ -38,9 +37,7 @@ export function LocaleSwitcher() {
     >
       <Select.Trigger className="inline-flex items-center text-xs outline-none">
         <Select.Value />
-        <Select.Icon>
-          <ChevronDown size={20} />
-        </Select.Icon>
+        <Select.Icon className="icon-[octicon--chevron-down-16] size-4" />
       </Select.Trigger>
       <Select.Portal>
         <Select.Content className="overflow-hidden rounded-md border border-fg-border-main bg-white shadow-md">

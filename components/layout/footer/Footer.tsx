@@ -1,4 +1,3 @@
-import { Mail, MapPin, PhoneCall } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import Button from "@/components/common/Button";
@@ -32,15 +31,15 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-4">
               <li className="flex gap-1 text-sm text-fg-text-main-hc">
-                <PhoneCall className="flex-shrink-0" size={20} />
+                <span className="icon-[carbon--phone-voice] size-5 shrink-0 text-fg-icon-main" />
                 <span>{t("shared.phone")}</span>
               </li>
               <li className="flex gap-1 text-sm text-fg-text-main-hc">
-                <MapPin className="flex-shrink-0" size={20} />
+                <span className="icon-[carbon--location] size-5 shrink-0 text-fg-icon-main" />
                 <span>{t("shared.address")}</span>
               </li>
               <li className="flex gap-1 text-sm text-fg-text-main-hc">
-                <Mail className="flex-shrink-0" size={20} />
+                <span className="icon-[carbon--email] size-5 shrink-0 text-fg-icon-main" />
                 <span>{t("shared.email")}</span>
               </li>
             </ul>

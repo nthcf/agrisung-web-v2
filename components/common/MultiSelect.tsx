@@ -1,6 +1,5 @@
 import * as Popover from "@radix-ui/react-popover";
 import { Command } from "cmdk";
-import { ChevronDown, Square, SquareCheckBig } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { type Dispatch } from "./types";
@@ -46,7 +45,7 @@ export default function MultiSelect<T>({
             ))}
           </div>
         )}
-        <ChevronDown className="text-fg-icon-main-lc" size={24} />
+        <span className="icon-[octicon--chevron-down-16] size-6 text-fg-icon-main-lc" />
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className="mt-2 w-[var(--radix-popover-trigger-width)] rounded-md bg-white p-2 shadow-md">
@@ -79,15 +78,9 @@ export default function MultiSelect<T>({
                   }}
                 >
                   {selected.includes(item.value) ? (
-                    <SquareCheckBig
-                      className="shrink-0 text-fg-icon-brand"
-                      size={20}
-                    />
+                    <div className="icon-[mdi--checkbox-marked] size-5 shrink-0 text-fg-icon-brand" />
                   ) : (
-                    <Square
-                      className="shrink-0 text-fg-icon-main-lc"
-                      size={20}
-                    />
+                    <div className="icon-[mdi--checkbox-blank-outline] size-5 shrink-0 text-fg-icon-main-lc" />
                   )}
                   <span className="text-xs text-fg-text-main">
                     {item.label}

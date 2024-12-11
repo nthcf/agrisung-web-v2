@@ -1,7 +1,6 @@
 import { cva, cx, type VariantProps } from "class-variance-authority";
-import { forwardRef } from "react";
 
-import type { PolyRef, PolyWithRefProps } from "./types";
+import type { PolyWithRefProps } from "./types";
 
 const buttonVariants = cva(
   [
@@ -65,26 +64,18 @@ type ButtonProps<T extends React.ElementType = "button"> = PolyWithRefProps<
   VariantProps<typeof buttonVariants>
 >;
 
-type ButtonComponent = <T extends React.ElementType = "button">(
-  props: ButtonProps<T>,
-) => React.ReactNode;
-
-const Button: ButtonComponent = forwardRef(function Button<
-  T extends React.ElementType,
->(
-  {
-    as,
-    children,
-    className,
-    corner,
-    color,
-    disabled,
-    hover,
-    size,
-    ...rest
-  }: ButtonProps<T>,
-  ref?: PolyRef<T>,
-) {
+export default function Button<T extends React.ElementType = "button">({
+  ref,
+  as,
+  children,
+  className,
+  corner,
+  color,
+  disabled,
+  hover,
+  size,
+  ...rest
+}: ButtonProps<T>) {
   const Comp = as || "button";
 
   return (
@@ -100,6 +91,4 @@ const Button: ButtonComponent = forwardRef(function Button<
       {children}
     </Comp>
   );
-});
-
-export default Button;
+}

@@ -1,7 +1,6 @@
 "use client";
 
 import { cx } from "class-variance-authority";
-import { Bookmark, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
@@ -58,12 +57,12 @@ export default function DetailSupplierHeader({
                 }}
               >
                 <span>{t("shared.viewAll")}</span>
-                <ChevronDown size={14} />
+                <span className="icon-[octicon--chevron-down-16] size-[14px]" />
               </Button>
             )}
           </div>
           <Button className="shrink-0" color="gray">
-            <Bookmark size={20} />
+            <span className="icon-[octicon--bookmark-16] size-5" />
             <span>{t("shared.save")}</span>
           </Button>
         </div>

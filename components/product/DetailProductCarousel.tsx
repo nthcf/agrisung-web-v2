@@ -2,12 +2,6 @@
 
 import { cx } from "class-variance-authority";
 import useEmblaCarousel from "embla-carousel-react";
-import {
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronUp,
-} from "lucide-react";
 import Image from "next/image";
 
 import { type Product } from "@/libs/cms";
@@ -74,7 +68,7 @@ export default function DetailProductCarousel({
               size="icon-lg"
               onClick={onThumbPrev}
             >
-              <ChevronUp />
+              <span className="icon-[octicon--chevron-up-16] size-6" />
             </Button>
           )}
           {!thumbNextDisabled && (
@@ -85,7 +79,7 @@ export default function DetailProductCarousel({
               size="icon-lg"
               onClick={onThumbNext}
             >
-              <ChevronDown />
+              <span className="icon-[octicon--chevron-down-16] size-6" />
             </Button>
           )}
         </div>
@@ -114,7 +108,7 @@ export default function DetailProductCarousel({
             disabled={prevDisabled}
             onClick={onPrev}
           >
-            <ChevronLeft size={32} />
+            <span className="icon-[octicon--chevron-left-16] size-8" />
           </Button>
           <Button
             color="gray"
@@ -123,7 +117,7 @@ export default function DetailProductCarousel({
             disabled={nextDisabled}
             onClick={onNext}
           >
-            <ChevronRight size={32} />
+            <span className="icon-[octicon--chevron-right-16] size-8" />
           </Button>
         </div>
       </div>

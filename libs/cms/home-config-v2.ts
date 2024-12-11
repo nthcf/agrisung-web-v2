@@ -99,6 +99,7 @@ export async function getHomeConfigV2(locale = "en") {
       featured_supplier: {
         populate: {
           logo_media: mediaFields,
+          cover_media: mediaFields,
         },
       },
       recommended: {
@@ -108,7 +109,6 @@ export async function getHomeConfigV2(locale = "en") {
               products: {
                 populate: {
                   currency: allFields,
-
                   cover_media: mediaFields,
                   supplier: { fields: ["name", "slug"] },
                 },
@@ -120,6 +120,7 @@ export async function getHomeConfigV2(locale = "en") {
               suppliers: {
                 populate: {
                   logo_media: mediaFields,
+                  cover_media: mediaFields,
                 },
               },
             },

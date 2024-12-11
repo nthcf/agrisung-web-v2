@@ -2,7 +2,6 @@
 
 import { cx } from "class-variance-authority";
 import { Command } from "cmdk";
-import { Search as ISearch } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import useSWR from "swr";
@@ -60,13 +59,13 @@ export default function MainSearchForm() {
             }}
           />
           <Button
-            className="!h-11 !w-15 !rounded-none !rounded-l"
+            className="!h-11 !w-15"
             color="primary"
             onClick={() => {
               router.push({ pathname: "/search", query: { q: search } });
             }}
           >
-            <ISearch />
+            <div className="icon-[octicon--search-16] size-6" />
           </Button>
           <Command.List
             ref={resultRef}

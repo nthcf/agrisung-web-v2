@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/routing";
@@ -31,7 +30,7 @@ export default function DetailSupplierProducts({
             href={`/supplier/${slug}/product`}
           >
             <span>{t("shared.viewAll")}</span>
-            <ChevronRight size={16} />
+            <span className="icon-[octicon--chevron-right-16] size-4" />
           </Link>
         )}
       </div>

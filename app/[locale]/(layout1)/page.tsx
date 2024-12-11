@@ -1,3 +1,5 @@
+import { connection } from "next/server";
+
 import Banner from "@/components/common/Banner";
 import RfqForm1 from "@/components/form/RfqForm1";
 import AsideCta from "@/components/homepage/AsideCta";
@@ -7,7 +9,6 @@ import Recommended from "@/components/homepage/Recommended";
 import ProductCard from "@/components/product/ProductCard";
 import SupplierCard from "@/components/supplier/SupplierCard";
 import { getHomeConfigV2, getProducts } from "@/libs/cms";
-import { connection } from "next/server";
 
 export default async function Home() {
   await connection();

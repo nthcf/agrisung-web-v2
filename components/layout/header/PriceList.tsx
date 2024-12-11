@@ -1,5 +1,4 @@
 import { cx } from "class-variance-authority";
-import { TrendingDown, TrendingUp } from "lucide-react";
 import { useFormatter } from "next-intl";
 import Marquee from "react-fast-marquee";
 
@@ -44,7 +43,11 @@ function Trend({ value }: TrendProps) {
           signDisplay: "never",
         })}
       </span>
-      {value >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
+      {value >= 0 ? (
+        <span className="icon-[octicon--arrow-up-right-16] size-3" />
+      ) : (
+        <span className="icon-[octicon--arrow-down-right-16] size-3" />
+      )}
     </p>
   );
 }

@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import { Link } from "@/i18n/routing";
@@ -34,7 +33,7 @@ function BannerHorizontal({ data }: BannerProps) {
           size="sm"
         >
           <span>{data.ctaTitle}</span>
-          <ChevronRight size={16} />
+          <span className="icon-[octicon--chevron-right-16] size-4" />
         </Button>
       </div>
     </div>
@@ -70,7 +69,7 @@ function BannerVertical({ data }: BannerProps) {
           size="sm"
         >
           <span>{data.ctaTitle}</span>
-          <ChevronRight size={16} />
+          <span className="icon-[octicon--chevron-right-16] size-4" />
         </Button>
       </div>
     </div>

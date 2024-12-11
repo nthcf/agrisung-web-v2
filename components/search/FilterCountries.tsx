@@ -1,7 +1,6 @@
 "use client";
 
 import * as Select from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import useSWR from "swr";
 
@@ -37,14 +36,12 @@ export default function FilterCountries({
         <Select.Value
           placeholder={t("form.headerSearch.filterCountriesPlaceholder")}
         />
-        <Select.Icon className="text-fg-icon-main-lc">
-          <ChevronDown size={24} />
-        </Select.Icon>
+        <Select.Icon className="icon-[octicon--chevron-down-16] size-6 text-fg-icon-main-lc" />
       </Select.Trigger>
       <Select.Portal>
         <Select.Content className="overflow-hidden rounded-md border border-fg-border-main bg-white shadow-md">
           <Select.ScrollUpButton className="text-fg-icon-main-lc">
-            <ChevronUp size={24} />
+            <span className="icon-[octicon--chevron-up-16] size-6" />
           </Select.ScrollUpButton>
           <Select.Viewport className="p-2">
             {data?.data.map((i) => (
@@ -54,14 +51,12 @@ export default function FilterCountries({
                 value={i.code}
               >
                 <Select.ItemText>{i.name}</Select.ItemText>
-                <Select.ItemIndicator className="absolute left-2 top-1/2 -translate-y-1/2">
-                  <Check size={16} />
-                </Select.ItemIndicator>
+                <Select.ItemIndicator className="icon-[octicon--check-16] absolute left-2 top-1/2 size-4 -translate-y-1/2" />
               </Select.Item>
             ))}
           </Select.Viewport>
           <Select.ScrollDownButton className="text-fg-icon-main-lc">
-            <ChevronDown size={24} />
+            <span className="icon-[octicon--chevron-down-16] size-6" />
           </Select.ScrollDownButton>
         </Select.Content>
       </Select.Portal>

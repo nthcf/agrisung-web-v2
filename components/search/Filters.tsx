@@ -1,7 +1,6 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
-import { Filter } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -30,7 +29,7 @@ export default function Filters({ q }: FilterProps) {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <Button color="gray">
-          <Filter size={20} />
+          <span className="icon-[octicon--filter-16] size-5" />
           <span>{t("form.headerSearch.advanced")}</span>
         </Button>
       </Dialog.Trigger>

@@ -32,13 +32,13 @@ export default function SupplierCard({
       )}
       <Link href={`/supplier/${data.slug}`}>
         <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-bg-brand-bright">
-          {data.logoMedia && (
+          {data.coverMedia && (
             <Image
-              src={data.logoMedia.url}
+              src={data.coverMedia.url}
               alt={data.name}
               sizes="100%"
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
             />
           )}
         </div>

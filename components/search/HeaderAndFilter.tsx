@@ -1,4 +1,3 @@
-import { LayoutGrid, LayoutList } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import Button from "../common/Button";
@@ -28,10 +27,10 @@ export default function HeaderAndFilter({
       <div className="flex gap-4">
         <div className="flex gap-1">
           <Button disabled size="icon-lg">
-            <LayoutList size={20} />
+            <span className="icon-[octicon--list-unordered-16] size-5" />
           </Button>
           <Button disabled size="icon-lg">
-            <LayoutGrid size={20} />
+            <span className="icon-[octicon--apps-16] size-5" />
           </Button>
         </div>
         <Filters q={q} origin={origin} certs={certs} />
