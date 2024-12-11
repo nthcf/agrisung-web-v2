@@ -40,7 +40,7 @@ export default function Filters({ q }: FilterProps) {
               {t("form.headerSearch.filter")}
             </Dialog.Title>
             <Dialog.Description className="text-sm text-fg-text-main-lc">
-              Filter your results
+              {t("form.headerSearch.filterDescription")}
             </Dialog.Description>
             <div className="mt-6">
               <p className="text-sm font-medium text-fg-text-main">

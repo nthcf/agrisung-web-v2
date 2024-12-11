@@ -29,14 +29,14 @@ export default function SignUpForm() {
               <div className="icon-[octicon--check-circle-fill-16] size-16 text-fg-icon-success-deep" />
             </div>
             <Dialog.Title className="mt-3 text-center text-2xl font-semibold text-fg-text-main-hc">
-              Thank you
+              {t("form.signUp.thankYouTitle")}
             </Dialog.Title>
             <Dialog.Description className="mt-3 text-center text-fg-text-main">
-              Thank you for contact us, we will get back to you soon.
+              {t("form.signUp.thankYouText")}
             </Dialog.Description>
             <Dialog.Close asChild>
               <Button className="mt-8 w-full" size="lg">
-                {t("form.mainRfq.successButton")}
+                {t("form.signUp.successButton")}
               </Button>
             </Dialog.Close>
           </Dialog.Content>
@@ -54,16 +54,16 @@ export default function SignUpForm() {
         <Dialog.Overlay className="fixed inset-0 z-[999] bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in" />
         <Dialog.Content className="fixed left-1/2 top-1/2 z-[1000] w-145 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-none">
           <Dialog.Title className="mt-3 text-2xl font-semibold text-fg-text-main-hc">
-            Sign Up
+            {t("form.signUp.title")}
           </Dialog.Title>
           <Dialog.Description className="mt-3 text-fg-text-main">
-            Leave a message, we will get back to you soon.
+            {t("form.signUp.description")}
           </Dialog.Description>
           <form action={action}>
             <div className="mt-4 flex items-center gap-3">
               <p className="w-30 shrink-0 text-right text-sm text-fg-text-main">
                 <span className="text-fg-text-danger">*</span>
-                Full name
+                {t("form.signUp.fullNameLabel")}
               </p>
               <input
                 type="text"
@@ -87,7 +87,7 @@ export default function SignUpForm() {
             <div className="mt-4 flex items-center gap-3">
               <p className="w-30 shrink-0 text-right text-sm text-fg-text-main">
                 <span className="text-fg-text-danger">*</span>
-                Email
+                {t("form.signUp.emailLabel")}
               </p>
               <input
                 type="email"
@@ -102,7 +102,7 @@ export default function SignUpForm() {
             <div className="mt-4 flex items-center gap-3">
               <p className="w-30 shrink-0 text-right text-sm text-fg-text-main">
                 <span className="text-fg-text-danger">*</span>
-                Company
+                {t("form.signUp.companyLabel")}
               </p>
               <input
                 type="text"
@@ -117,7 +117,7 @@ export default function SignUpForm() {
             <div className="mt-4 flex items-center gap-3">
               <p className="w-30 shrink-0 text-right text-sm text-fg-text-main">
                 <span className="text-fg-text-danger">*</span>
-                Contact number
+                {t("form.signUp.contactNumberLabel")}
               </p>
               <input
                 type="text"
@@ -132,7 +132,7 @@ export default function SignUpForm() {
             <div className="mt-4 flex items-center gap-3">
               <div className="w-30"></div>
               <Button type="submit" disabled={pending}>
-                Sign Up
+                {t("form.signUp.submitButton")}
               </Button>
             </div>
           </form>

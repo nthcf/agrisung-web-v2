@@ -1,19 +1,36 @@
 {
   "form": {
+    "contactUs": {
+      "companyLabel": "Company",
+      "contactNumberLabel": "Contact number",
+      "description": "Leave a message, we will get back to you soon.",
+      "emailLabel": "Email",
+      "fullNameLabel": "Full name",
+      "messageLabel": "Message",
+      "submitButton": "Submit",
+      "successButton": "Keep browsing products",
+      "thankYouText": "Thank you for contact us, we will get back to you soon.",
+      "thankYouTitle": "Thank You",
+      "title": "Contact Us"
+    },
     "createRfq": {
       "label": "Create an RFQ for",
       "placeholder": "Enter product",
       "submitButton": "Create RFQ",
       "subtitle": "Inform suppliers of your sourcing needs and discover the best deals.",
-      "title": "Tell us what you need and try the easy way to get quotes!"
+      "subtitle2": "Inform suppliers of your sourcing needs and discover the best deals.",
+      "title": "Tell us what you need and try the easy way to get quotes!",
+      "title2": "Can’t find the right product that you need?"
     },
     "headerSearch": {
       "advanced": "Advanced",
       "certifications": "Certifications",
       "countryOfOrigin": "Country of Origin",
       "filter": "Filter",
+      "filterCertsLabel": "Filter Certifications",
       "filterCertsPlaceholder": "Select certifications",
       "filterCountriesPlaceholder": "Select a country",
+      "filterDescription": "Filter your results",
       "noResult": "No Results",
       "noResultText1": "There are no results for your search",
       "noResultText2": "Please try searching with different keywords",
@@ -44,6 +61,19 @@
       "successTitle": "Sent RFQ Successfully",
       "title": "Tell supplier what you need",
       "to": "To:"
+    },
+    "signUp": {
+      "companyLabel": "Company",
+      "contactNumberLabel": "Contact number",
+      "description": "Leave a message, we will get back to you soon.",
+      "emailLabel": "Email",
+      "fullNameLabel": "Full name",
+      "messageLabel": "Message",
+      "submitButton": "Sign Up",
+      "successButton": "Keep browsing products",
+      "thankYouText": "Thank you for contact us, we will get back to you soon.",
+      "thankYouTitle": "Thank You",
+      "title": "Sign Up"
     }
   },
   "nav": {

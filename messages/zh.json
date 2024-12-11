@@ -1,19 +1,36 @@
 {
   "form": {
+    "contactUs": {
+      "companyLabel": "Company",
+      "contactNumberLabel": "Contact number",
+      "description": "Leave a message, we will get back to you soon.",
+      "emailLabel": "Email",
+      "fullNameLabel": "Full name",
+      "messageLabel": "Message",
+      "submitButton": "Submit",
+      "successButton": "Keep browsing products",
+      "thankYouText": "Thank you for contact us, we will get back to you soon.",
+      "thankYouTitle": "Thank You",
+      "title": "Contact Us"
+    },
     "createRfq": {
       "label": "创建询价单",
       "placeholder": "输入产品",
       "submitButton": "创建询价单",
       "subtitle": "告知供应商您的采购需求，发现最优惠的交易。",
-      "title": "告诉我们您的需求，尝试轻松获取报价！"
+      "subtitle2": "Inform suppliers of your sourcing needs and discover the best deals.",
+      "title": "告诉我们您的需求，尝试轻松获取报价！",
+      "title2": "Can’t find the right product that you need?"
     },
     "headerSearch": {
       "advanced": "高级",
       "certifications": "认证",
       "countryOfOrigin": "原产国",
       "filter": "筛选",
+      "filterCertsLabel": "Filter Certifications",
       "filterCertsPlaceholder": "选择认证",
       "filterCountriesPlaceholder": "选择国家",
+      "filterDescription": "Filter your results",
       "noResult": "无结果",
       "noResultText1": "您的搜索没有结果",
       "noResultText2": "请尝试使用其他关键词搜索",
@@ -44,6 +61,19 @@
       "successTitle": "询价单发送成功",
       "title": "告诉供应商您的需求",
       "to": "给："
+    },
+    "signUp": {
+      "companyLabel": "Company",
+      "contactNumberLabel": "Contact number",
+      "description": "Leave a message, we will get back to you soon.",
+      "emailLabel": "Email",
+      "fullNameLabel": "Full name",
+      "messageLabel": "Message",
+      "submitButton": "Sign Up",
+      "successButton": "Keep browsing products",
+      "thankYouText": "Thank you for contact us, we will get back to you soon.",
+      "thankYouTitle": "Thank You",
+      "title": "Sign Up"
     }
   },
   "nav": {

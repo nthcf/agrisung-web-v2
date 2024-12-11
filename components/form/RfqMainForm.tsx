@@ -58,9 +58,7 @@ export default function RfqMainForm({
           <Dialog.Overlay className="fixed inset-0 bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in" />
           <Dialog.Content className="fixed left-1/2 top-1/2 w-108 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-none">
             <Dialog.Close className="absolute right-6 top-6">
-              <span className="icon-[octicon--x-16] size-6 text-fg-text-main-hc">
-                x
-              </span>
+              <span className="icon-[octicon--x-16] size-6 text-fg-text-main-hc" />
             </Dialog.Close>
             <div className="flex justify-center">
               <div className="icon-[octicon--check-circle-fill-16] size-16 text-fg-icon-success-deep" />

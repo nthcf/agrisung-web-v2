@@ -33,7 +33,7 @@ export default function FilterCerts({ selected, onSelect }: FilterCertsProps) {
       }
       selected={selected}
       placeholder={t("form.headerSearch.filterCertsPlaceholder")}
-      cmdLabel="Filter Certs"
+      cmdLabel={t("form.headerSearch.filterCertsLabel")}
       cmdInputPlaceholder={t("shared.search")}
       onSelect={onSelect}
     />

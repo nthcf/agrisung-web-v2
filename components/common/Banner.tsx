@@ -15,7 +15,7 @@ function BannerHorizontal({ data }: BannerProps) {
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}
-          alt={data.title}
+          alt={data.title ?? "Agri Sung"}
           sizes="100%"
           fill
           style={{ objectFit: "cover" }}
@@ -46,7 +46,7 @@ function BannerVertical({ data }: BannerProps) {
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}
-          alt={data.title}
+          alt={data.title ?? "Agri Sung"}
           sizes="100%"
           fill
           style={{ objectFit: "cover" }}

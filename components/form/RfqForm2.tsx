@@ -16,10 +16,10 @@ export default function RfqForm2() {
     <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6">
       <div className="text-center">
         <p className="font-bold text-fg-text-main-hc">
-          Can’t find the right product that you need?
+          {t("form.createRfq.title2")}
         </p>
         <p className="text-sm text-fg-text-main-hc">
-          Inform supplier of your sourcing needs and discover the best deals.
+          {t("form.createRfq.subtitle2")}
         </p>
       </div>
       <div className="mt-2 flex items-center gap-2">
