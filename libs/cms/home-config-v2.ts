@@ -14,7 +14,7 @@ export async function getPublicPriceList(locale = "en") {
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
@@ -38,7 +38,7 @@ export async function getSearchBanner(locale = "en") {
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
@@ -70,7 +70,7 @@ export async function getRecommendedSuppliers(locale = "en") {
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
@@ -132,7 +132,7 @@ export async function getHomeConfigV2(locale = "en") {
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
