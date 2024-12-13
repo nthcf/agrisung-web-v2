@@ -8,7 +8,6 @@ import useSWR from "swr";
 import { useOnClickOutside } from "usehooks-ts";
 
 import { useRouter } from "@/i18n/routing";
-import { getSuggestion } from "@/libs/cms";
 
 import Button from "../common/Button";
 
@@ -24,10 +23,15 @@ export default function MainSearchForm() {
 
   const { data, error, isLoading } = useSWR(
     showResult ? "suggestion" : null,
-    () => getSuggestion(),
+    async () => {
+      const res = await fetch("/api/public/suggestion");
+      const json = (await res.json()) as string[];
+
+      return json;
+    },
   );
 
-  // @ts-expect-error resultRef
+  // @ts-expect-error TODO
   useOnClickOutside(resultRef, () => {
     if (showResult) {
       setShowResult(false);
@@ -84,7 +88,7 @@ export default function MainSearchForm() {
                 {t("shared.noResultsFound")}
               </Command.Empty>
             )}
-            {data?.data.map((item, i) => (
+            {data?.map((item, i) => (
               <Command.Item
                 key={item + i}
                 className="text-fg-text-main-hc data-[selected=true]:bg-bg-brand-bright cursor-pointer p-2 text-xs"

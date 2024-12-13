@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import useSWR from "swr";
 
-import { getCertifications } from "@/libs/cms";
+import { type Certification } from "@/libs/cms";
 
 import MultiSelect from "../common/MultiSelect";
 import { type Dispatch } from "../common/types";
@@ -16,7 +16,12 @@ type FilterCertsProps = {
 export default function FilterCerts({ selected, onSelect }: FilterCertsProps) {
   const t = useTranslations();
 
-  const { data, error, isLoading } = useSWR("certs", () => getCertifications());
+  const { data, error, isLoading } = useSWR("certs", async () => {
+    const res = await fetch("/api/public/certs");
+    const json = (await res.json()) as Certification[];
+
+    return json;
+  });
 
   if (error) {
     return <div>Error</div>;
@@ -26,7 +31,7 @@ export default function FilterCerts({ selected, onSelect }: FilterCertsProps) {
     <MultiSelect
       loading={isLoading}
       options={
-        data?.data.map((cert) => ({
+        data?.map((cert) => ({
           label: cert.name,
           value: cert.name,
         })) || []

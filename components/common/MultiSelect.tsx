@@ -48,7 +48,7 @@ export default function MultiSelect<T>({
         <span className="icon-[octicon--chevron-down-16] text-fg-icon-main-lc size-6" />
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content className="mt-2 w-[var(--radix-popover-trigger-width)] rounded-md bg-white p-2 shadow-md">
+        <Popover.Content className="z-1010 mt-2 w-[var(--radix-popover-trigger-width)] rounded-md bg-white p-2 shadow-md">
           <Command label={cmdLabel}>
             <Command.Input
               className="border-fg-border-main text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-main w-full rounded-sm p-2 text-sm focus:ring-0"
