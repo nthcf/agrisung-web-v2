@@ -1,7 +1,7 @@
 "use client";
 
-import { cx } from "class-variance-authority";
 import { Command } from "cmdk";
+import { cx } from "cva";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import useSWR from "swr";

@@ -1,6 +1,6 @@
 "use client";
 
-import { cx } from "class-variance-authority";
+import { cx } from "cva";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { cx } from "class-variance-authority";
+import { cx } from "cva";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";

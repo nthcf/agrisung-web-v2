@@ -1,7 +1,7 @@
 "use client";
 
 import { Trigger } from "@radix-ui/react-dialog";
-import { cx } from "class-variance-authority";
+import { cx } from "cva";
 import { useTranslations } from "next-intl";
 import { useId, useState } from "react";
 

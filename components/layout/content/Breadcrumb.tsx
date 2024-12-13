@@ -1,7 +1,7 @@
+import { cx } from "cva";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/routing";
-import { cx } from "class-variance-authority";
 
 type BreadcrumbItemProps = {
   link: string;

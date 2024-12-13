@@ -150,3 +150,7 @@ h5,
 h6 {
   @apply font-heading;
 }
+
+#hubspot-messages-iframe-container {
+  z-index: 10 !important;
+}

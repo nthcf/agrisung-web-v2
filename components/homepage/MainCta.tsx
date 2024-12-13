@@ -1,4 +1,4 @@
-import { cx } from "class-variance-authority";
+import { cx } from "cva";
 import { useTranslations } from "next-intl";
 
 import Button from "../common/Button";

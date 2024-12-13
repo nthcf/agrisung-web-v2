@@ -1,7 +1,7 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
-import { cx } from "class-variance-authority";
+import { cx } from "cva";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useActionState } from "react";

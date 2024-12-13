@@ -1,11 +1,12 @@
 "use client";
 
-import { cva } from "class-variance-authority";
+import { cva } from "cva";
 import { usePathname } from "next/navigation";
 
 import { Link } from "@/i18n/routing";
 
-const linkVariants = cva(["text-sm", "text-fg-text-main"], {
+const linkVariants = cva({
+  base: ["text-sm", "text-fg-text-main"],
   variants: {
     intent: {
       active: ["font-bold"],

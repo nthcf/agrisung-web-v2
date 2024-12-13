@@ -1,5 +1,5 @@
 import { GoogleTagManager } from "@next/third-parties/google";
-import { cx } from "class-variance-authority";
+import { cx } from "cva";
 import { SessionProvider } from "next-auth/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
