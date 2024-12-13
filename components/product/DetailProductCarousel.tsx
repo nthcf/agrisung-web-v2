@@ -44,7 +44,7 @@ export default function DetailProductCarousel({
                 style={{ transform: "translate3d(0, 0, 0)" }}
               >
                 <div
-                  className="relative aspect-square w-full shrink-0 cursor-pointer overflow-hidden rounded"
+                  className="relative aspect-square w-full shrink-0 cursor-pointer overflow-hidden rounded-sm"
                   onClick={() => {
                     emblaApi?.scrollTo(i);
                   }}
@@ -62,7 +62,7 @@ export default function DetailProductCarousel({
           </div>
           {!thumbPrevDisabled && (
             <Button
-              className="absolute left-1/2 top-0 -translate-x-1/2"
+              className="absolute top-0 left-1/2 -translate-x-1/2"
               color="gray"
               corner="pill"
               size="icon-lg"
@@ -88,7 +88,7 @@ export default function DetailProductCarousel({
         <div className="-ml-4 flex">
           {data.images?.map((image, i) => (
             <div key={i} className="min-w-0 flex-[0_0_100%] pl-4">
-              <div className="relative aspect-[4/3] overflow-hidden rounded bg-bg-brand-bright">
+              <div className="bg-bg-brand-bright relative aspect-4/3 overflow-hidden rounded-sm">
                 <Image
                   src={image.url}
                   alt={`${data.name} ${i}`}
@@ -100,7 +100,7 @@ export default function DetailProductCarousel({
             </div>
           ))}
         </div>
-        <div className="absolute left-4 right-4 top-1/2 flex -translate-y-1/2 items-center justify-between">
+        <div className="absolute top-1/2 right-4 left-4 flex -translate-y-1/2 items-center justify-between">
           <Button
             color="gray"
             corner="pill"

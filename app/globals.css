@@ -1,6 +1,140 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --animate-dialog-overlay-fade-in: dialog-overlay-fade-in 150ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-dialog-content-fade-in-zoom: dialog-content-fade-in-zoom 150ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --color-bg-brand: #0054dd;
+  --color-bg-brand-bright: #f1f7ff;
+  --color-bg-brand-deep: #004ac2;
+  --color-bg-brand-strong: #00286b;
+
+  --color-bg-danger-bright: #fff1ed;
+
+  --color-bg-info-bright: #edeffe;
+
+  --color-bg-main-bright: #fafafa;
+  --color-bg-main-pale: #e7e8e9;
+  --color-bg-main-strong: #3e4143;
+
+  --color-bg-secondary-bright: #f0f7fb;
+  --color-bg-secondary-pale: #e4f0f9;
+
+  --color-bg-success-bright: #f2fdf1;
+
+  --color-bg-warning-bright: #fcf8f0;
+
+  --color-fg-border-brand: #0054dd;
+  --color-fg-border-brand-lc: #5294ff;
+
+  --color-fg-border-danger-lc: #ee806a;
+
+  --color-fg-border-info-lc: #7575ec;
+
+  --color-fg-border-main: #ccced0;
+  --color-fg-border-main-disable: #e7e8e9;
+  --color-fg-border-main-lc: #a1a5a8;
+
+  --color-fg-border-success-lc: #81e87f;
+
+  --color-fg-border-warning-lc: #e7c377;
+
+  --color-fg-icon-brand: #004ac2;
+
+  --color-fg-icon-main: #3e4143;
+  --color-fg-icon-main-hover: #3e4143;
+  --color-fg-icon-main-lc: #a1a5a8;
+
+  --color-fg-icon-success-deep: #14b623;
+
+  --color-fg-text-brand: #0054dd;
+  --color-fg-text-brand-hc: #001536;
+  --color-fg-text-brand-hover: #003997;
+
+  --color-fg-text-danger: #dc3a1a;
+  --color-fg-text-danger-deep: #dc3a1a;
+
+  --color-fg-text-info: #2d0d8f;
+
+  --color-fg-text-main: #535659;
+  --color-fg-text-main-hc: #151617;
+  --color-fg-text-main-lc: #a1a5a8;
+  --color-fg-text-main-pressed: #2b2d2e;
+
+  --color-fg-text-secondary-hc: #274656;
+  --color-fg-text-secondary-pressed: #3e708a;
+
+  --color-fg-text-success: #0d8f19;
+
+  --color-fg-text-warning: #8f6b0d;
+
+  --color-fg-text-on-main: #e7e8e9;
+  --color-fg-text-on-main-hc: #ffffff;
+
+  --flex-f: 0 0 100%;
+
+  --font-body: var(--font-geist-sans);
+  --font-heading: var(--font-bricolage-grotesque);
+
+  --text-7: 1.75rem, 2.25rem;
+  --text-10: 2.5rem, 3.5rem;
+  --text-16: 4rem, 4.75rem;
+  --text-xxs: 0.625rem, 1rem;
+  --text-x2xl: 1.375rem, 2rem;
+  --text-x4xl: 1.75rem, 2.5rem;
+
+  --grid-template-columns-16: repeat(16, minmax(0, 1fr));
+
+  --padding-30: 7.5rem;
+
+  @keyframes dialog-overlay-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes dialog-content-fade-in-zoom {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+@utility container {
+  @media (width >= theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1440px) {
+    max-width: 1440px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 h1,
 h2,

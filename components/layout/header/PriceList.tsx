@@ -13,7 +13,7 @@ function FormattedPrice({ currency, value }: FormattedPriceProps) {
   const format = useFormatter();
 
   return (
-    <p className="text-xs text-fg-text-brand">
+    <p className="text-fg-text-brand text-xs">
       {format.number(value, {
         style: "currency",
         currency,

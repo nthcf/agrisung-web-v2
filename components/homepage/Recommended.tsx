@@ -11,16 +11,16 @@ type RecommendedProps = {
 export default function Recommended({ data }: RecommendedProps) {
   return (
     <section className="space-y-6">
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">{data.title}</h2>
+      <h2 className="text-x2xl text-fg-text-main-hc font-bold">{data.title}</h2>
       {data.products.map((product) => (
         <div key={product.id} className="space-y-4">
           <div className="flex justify-between">
-            <h3 className="text-sm font-semibold text-fg-text-main-hc">
+            <h3 className="text-fg-text-main-hc text-sm font-semibold">
               {product.title}
             </h3>
             {product.ctaTitle && (
               <Link
-                className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+                className="text-fg-text-brand inline-flex items-center text-sm font-medium"
                 href={product.ctaLink}
               >
                 <span>{product.ctaTitle}</span>
@@ -42,12 +42,12 @@ export default function Recommended({ data }: RecommendedProps) {
       {data.suppliers.map((supplier) => (
         <div key={supplier.id} className="space-y-4">
           <div className="flex justify-between">
-            <h3 className="text-sm font-semibold text-fg-text-main-hc">
+            <h3 className="text-fg-text-main-hc text-sm font-semibold">
               {supplier.title}
             </h3>
             {supplier.ctaTitle && (
               <Link
-                className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+                className="text-fg-text-brand inline-flex items-center text-sm font-medium"
                 href={supplier.ctaLink}
               >
                 <span>{supplier.ctaTitle}</span>

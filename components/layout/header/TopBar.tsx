@@ -17,7 +17,7 @@ export default function TopBar({ user }: TopBarProps) {
   return (
     <div className="bg-bg-brand-strong">
       <div className="container mx-auto px-4 lg:px-20 xl:px-34">
-        <div className="flex justify-between py-[6px] text-fg-text-on-main">
+        <div className="text-fg-text-on-main flex justify-between py-[6px]">
           <div className="flex items-center gap-10">
             <p className="text-xs">
               <Link href="/about-us">{t("nav.topBar.aboutAgriSung")}</Link>

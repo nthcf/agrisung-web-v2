@@ -17,7 +17,7 @@ export default function DetailProductSupplier({
 
   return (
     <div className="space-y-4 rounded-lg bg-white p-4">
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+      <h2 className="text-x2xl text-fg-text-main-hc font-bold">
         {t("page.productDetail.aboutTheSupplier")}
       </h2>
       <SupplierInfoTable data={data} />

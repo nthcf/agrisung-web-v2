@@ -1,6 +1,6 @@
 import { cva, cx, VariantProps } from "class-variance-authority";
 
-const tagVariants = cva(["px-2", "py-1", "text-xxs", "border", "rounded"], {
+const tagVariants = cva(["px-2", "py-1", "text-xxs", "border", "rounded-sm"], {
   variants: {
     color: {
       brand: [

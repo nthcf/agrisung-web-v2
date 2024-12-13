@@ -21,12 +21,12 @@ export default function DetailSupplierProducts({
   return (
     <div className="space-y-4 rounded-lg bg-white p-4">
       <div className="flex justify-between">
-        <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+        <h2 className="text-x2xl text-fg-text-main-hc font-bold">
           {t("shared.products")} ({data.length})
         </h2>
         {!hideViewAll && (
           <Link
-            className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+            className="text-fg-text-brand inline-flex items-center text-sm font-medium"
             href={`/supplier/${slug}/product`}
           >
             <span>{t("shared.viewAll")}</span>
@@ -38,7 +38,7 @@ export default function DetailSupplierProducts({
         {data.map((product) => (
           <ProductCard
             key={product.id}
-            className="!border-fg-border-main-disable"
+            className="border-fg-border-main-disable!"
             contentClassname="p-3"
             data={product}
           />

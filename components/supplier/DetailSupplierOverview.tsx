@@ -15,7 +15,7 @@ export default function DetailSupplierOverview({
 
   return (
     <div className="rounded-lg bg-white p-3">
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+      <h2 className="text-x2xl text-fg-text-main-hc font-bold">
         {t("page.supplierDetail.companyOverview")}
       </h2>
       <SupplierInfoTable data={data} hideLogo />

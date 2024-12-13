@@ -15,23 +15,23 @@ export default function RfqForm2() {
   return (
     <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6">
       <div className="text-center">
-        <p className="font-bold text-fg-text-main-hc">
+        <p className="text-fg-text-main-hc font-bold">
           {t("form.createRfq.title2")}
         </p>
-        <p className="text-sm text-fg-text-main-hc">
+        <p className="text-fg-text-main-hc text-sm">
           {t("form.createRfq.subtitle2")}
         </p>
       </div>
       <div className="mt-2 flex items-center gap-2">
         <label
           htmlFor={productFieldId}
-          className="cursor-pointer text-sm text-fg-text-main-hc"
+          className="text-fg-text-main-hc cursor-pointer text-sm"
         >
           {t("form.createRfq.label")}
         </label>
         <input
           id={productFieldId}
-          className="w-48 rounded border border-fg-border-main-lc px-3 py-2 text-sm text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-brand focus:ring-0"
+          className="border-fg-border-main-lc text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-brand w-48 rounded-sm border px-3 py-2 text-sm focus:ring-0"
           placeholder={t("form.createRfq.placeholder")}
           value={product}
           onChange={(e) => {

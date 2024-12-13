@@ -21,12 +21,12 @@ export default function DetailProductSupplierProducts({
   return (
     <div className="space-y-4 rounded-lg bg-white p-4">
       <div className="flex justify-between">
-        <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+        <h2 className="text-x2xl text-fg-text-main-hc font-bold">
           {t("page.productDetail.otherProductsFromTheSupplier")}
         </h2>
         {total > 8 && (
           <Link
-            className="inline-flex items-center text-sm font-medium text-fg-text-brand"
+            className="text-fg-text-brand inline-flex items-center text-sm font-medium"
             href={`/supplier/${slug}/product`}
           >
             <span>{t("shared.viewAll")}</span>
@@ -38,7 +38,7 @@ export default function DetailProductSupplierProducts({
         {data.map((product) => (
           <ProductCard
             key={product.id}
-            className="!border-fg-border-main-disable"
+            className="border-fg-border-main-disable!"
             contentClassname="p-3"
             data={product}
           />

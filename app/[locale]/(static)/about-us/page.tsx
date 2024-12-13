@@ -15,7 +15,7 @@ export default async function AboutUs({
   return (
     <main className="">
       <div className="container mx-auto">
-        <div className="relative aspect-[64/9] bg-bg-brand-bright">
+        <div className="bg-bg-brand-bright relative aspect-64/9">
           <Image
             src="/demo-1.jpg"
             alt="Agri Sung"

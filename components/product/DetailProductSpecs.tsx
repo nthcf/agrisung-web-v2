@@ -13,7 +13,7 @@ export default function DetailProductSpecs({ data }: DetailProductSpecsProps) {
 
   return (
     <div className="space-y-4 rounded-lg bg-white p-4">
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+      <h2 className="text-x2xl text-fg-text-main-hc font-bold">
         {t("page.productDetail.productDescription")}
       </h2>
       <ProductSpecsTable data={data} />

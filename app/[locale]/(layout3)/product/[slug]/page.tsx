@@ -42,7 +42,7 @@ export default async function ProductDetail({
         <div className="relative flex items-start gap-6">
           <div className="flex-1 space-y-4">
             <div className="space-y-3 rounded-lg bg-white p-4">
-              <h1 className="text-x2xl font-bold text-fg-text-main-hc">
+              <h1 className="text-x2xl text-fg-text-main-hc font-bold">
                 {pro.name}
               </h1>
               <SupplierInfoBar data={sup} />

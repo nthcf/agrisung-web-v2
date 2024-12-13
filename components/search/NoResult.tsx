@@ -8,7 +8,7 @@ export default function NoResult() {
   return (
     <div className="mt-20">
       <div className="text-center">
-        <p className="text-lg font-bold text-fg-text-main-hc">
+        <p className="text-fg-text-main-hc text-lg font-bold">
           {t("form.headerSearch.noResult")}
         </p>
         <p className="text-fg-text-main">

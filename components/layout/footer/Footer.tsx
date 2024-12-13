@@ -13,12 +13,12 @@ export default function Footer() {
         <div className="flex justify-between">
           {SITE_FOOTER_NAV.map((nav) => (
             <div key={nav.t}>
-              <h3 className="text-lg font-bold text-fg-text-main">
+              <h3 className="text-fg-text-main text-lg font-bold">
                 {t(`nav.footer.${nav.t}`)}
               </h3>
               <ul className="mt-4 space-y-4">
                 {nav.items.map((item) => (
-                  <li key={item.t} className="text-sm text-fg-text-main-hc">
+                  <li key={item.t} className="text-fg-text-main-hc text-sm">
                     <Link href={item.href}>{t(`nav.footer.${item.t}`)}</Link>
                   </li>
                 ))}
@@ -26,24 +26,24 @@ export default function Footer() {
             </div>
           ))}
           <div className="w-80">
-            <h3 className="text-lg font-bold text-fg-text-main">
+            <h3 className="text-fg-text-main text-lg font-bold">
               {t("shared.contact")}
             </h3>
             <ul className="mt-4 space-y-4">
-              <li className="flex gap-1 text-sm text-fg-text-main-hc">
-                <span className="icon-[carbon--phone-voice] size-5 shrink-0 text-fg-icon-main" />
+              <li className="text-fg-text-main-hc flex gap-1 text-sm">
+                <span className="icon-[carbon--phone-voice] text-fg-icon-main size-5 shrink-0" />
                 <span>{t("shared.phone")}</span>
               </li>
-              <li className="flex gap-1 text-sm text-fg-text-main-hc">
-                <span className="icon-[carbon--location] size-5 shrink-0 text-fg-icon-main" />
+              <li className="text-fg-text-main-hc flex gap-1 text-sm">
+                <span className="icon-[carbon--location] text-fg-icon-main size-5 shrink-0" />
                 <span>{t("shared.address")}</span>
               </li>
-              <li className="flex gap-1 text-sm text-fg-text-main-hc">
-                <span className="icon-[carbon--email] size-5 shrink-0 text-fg-icon-main" />
+              <li className="text-fg-text-main-hc flex gap-1 text-sm">
+                <span className="icon-[carbon--email] text-fg-icon-main size-5 shrink-0" />
                 <span>{t("shared.email")}</span>
               </li>
             </ul>
-            <h3 className="mt-10 text-lg font-bold text-fg-text-main">
+            <h3 className="text-fg-text-main mt-10 text-lg font-bold">
               {t("nav.footer.connectWithAgriSung")}
             </h3>
             <ul className="mt-4 flex gap-3">
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="h-4 w-full bg-bg-brand-strong"></div>
+      <div className="bg-bg-brand-strong h-4 w-full"></div>
     </footer>
   );
 }

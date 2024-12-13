@@ -16,14 +16,14 @@ export default function DetailSupplierMedia({
 
   return (
     <div className="rounded-lg bg-white p-3">
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+      <h2 className="text-x2xl text-fg-text-main-hc font-bold">
         {t("page.supplierDetail.photosAndVideos")} ({data.length})
       </h2>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {data.map((media, i) => (
           <div key={i}>
             <Lightbox data={media}>
-              <div className="relative aspect-square cursor-pointer overflow-hidden rounded border border-fg-border-main">
+              <div className="border-fg-border-main relative aspect-square cursor-pointer overflow-hidden rounded-sm border">
                 <img
                   className="h-full w-full object-cover"
                   src={media.url}
@@ -31,7 +31,7 @@ export default function DetailSupplierMedia({
                 />
               </div>
             </Lightbox>
-            <p className="mt-3 text-sm text-fg-text-main-hc">{media.name}</p>
+            <p className="text-fg-text-main-hc mt-3 text-sm">{media.name}</p>
           </div>
         ))}
       </div>

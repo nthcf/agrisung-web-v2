@@ -15,12 +15,12 @@ export default function SupplierInfoBar({
   return (
     <div
       className={cx(
-        "flex items-center gap-2 rounded bg-gradient-to-r from-bg-brand-bright/15 via-bg-brand/15 to-bg-brand-deep/15 p-2",
+        "from-bg-brand-bright/15 via-bg-brand/15 to-bg-brand-deep/15 flex items-center gap-2 rounded-sm bg-linear-to-r p-2",
         className,
       )}
     >
       <Link
-        className="relative size-8 overflow-hidden rounded border border-fg-border-main bg-bg-brand-bright"
+        className="border-fg-border-main bg-bg-brand-bright relative size-8 overflow-hidden rounded-sm border"
         href={`/supplier/${data.slug}`}
       >
         {data.logoMedia && (
@@ -33,7 +33,7 @@ export default function SupplierInfoBar({
           />
         )}
       </Link>
-      <p className="text-xs text-fg-text-main-hc">
+      <p className="text-fg-text-main-hc text-xs">
         <Link href={`/supplier/${data.slug}`}>
           <span className="underline">{data.name}</span>
         </Link>{" "}

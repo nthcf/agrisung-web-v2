@@ -9,7 +9,7 @@ export default function AsideCta() {
 
   return (
     <div className="rounded-lg bg-white p-3">
-      <p className="text-sm font-medium text-fg-text-main-hc">
+      <p className="text-fg-text-main-hc text-sm font-medium">
         {t("page.homepage.aside.rfqTitle")}
       </p>
       <div className="mt-3 flex items-center gap-1">

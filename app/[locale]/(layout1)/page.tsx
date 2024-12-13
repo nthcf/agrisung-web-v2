@@ -22,7 +22,7 @@ export default async function Home() {
 
   return (
     <main className="bg-bg-main-pale">
-      <div className="container mx-auto px-4 pb-10 pt-5 lg:px-20 xl:px-34">
+      <div className="container mx-auto px-4 pt-5 pb-10 lg:px-20 xl:px-34">
         <div className="relative flex items-start gap-6">
           <div className="flex-1 space-y-4">
             <div className="space-y-6 rounded-lg bg-white p-4">
@@ -33,8 +33,8 @@ export default async function Home() {
             <RfqForm1 hideDescription />
             {banner3 && <Banner data={banner3} />}
             <ProductList data={prd} />
-            <RfqForm1 className="!mt-6" hideDescription />
-            <MainCta className="!mt-6" />
+            <RfqForm1 className="mt-6!" hideDescription />
+            <MainCta className="mt-6!" />
           </div>
           <aside className="sticky top-5 w-64 space-y-3">
             <ProductCard

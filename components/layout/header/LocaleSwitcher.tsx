@@ -35,18 +35,18 @@ export function LocaleSwitcher() {
         })
       }
     >
-      <Select.Trigger className="inline-flex items-center text-xs outline-none">
+      <Select.Trigger className="inline-flex items-center text-xs outline-hidden">
         <Select.Value />
         <Select.Icon className="icon-[octicon--chevron-down-16] size-4" />
       </Select.Trigger>
       <Select.Portal>
-        <Select.Content className="overflow-hidden rounded-md border border-fg-border-main bg-white shadow-md">
+        <Select.Content className="border-fg-border-main overflow-hidden rounded-md border bg-white shadow-md">
           <Select.Viewport className="min-w-40 p-2">
             {routing.locales.map((l) => (
               <Select.Item
                 key={l}
                 value={l}
-                className="cursor-pointer p-2 text-xs outline-0 data-[highlighted]:bg-bg-brand-bright data-[highlighted]:font-semibold data-[highlighted]:text-fg-text-brand"
+                className="data-highlighted:bg-bg-brand-bright data-highlighted:text-fg-text-brand cursor-pointer p-2 text-xs outline-0 data-highlighted:font-semibold"
               >
                 <Select.ItemText>{t(`shared.language.${l}`)}</Select.ItemText>
               </Select.Item>

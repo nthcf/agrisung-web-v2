@@ -23,7 +23,7 @@ export default function DetailSupplierHeader({
   return (
     <div className="container mx-auto px-4 lg:px-20 xl:px-34">
       <div className="flex gap-6">
-        <div className="relative -mt-10 size-45 shrink-0 rounded border border-fg-border-main bg-bg-brand-bright">
+        <div className="border-fg-border-main bg-bg-brand-bright relative -mt-10 size-45 shrink-0 rounded-sm border">
           {data.logoMedia && (
             <Image
               src={data.logoMedia.url}
@@ -36,12 +36,12 @@ export default function DetailSupplierHeader({
         </div>
         <div className="flex flex-1 justify-between gap-3 pt-6">
           <div className="relative">
-            <h1 className="text-2xl font-bold text-fg-text-main-hc">
+            <h1 className="text-fg-text-main-hc text-2xl font-bold">
               {data.name}
             </h1>
             <p
               className={cx(
-                "whitespace-pre-wrap text-sm text-fg-text-main",
+                "text-fg-text-main text-sm whitespace-pre-wrap",
                 !expandDesc && "line-clamp-4",
               )}
             >
@@ -49,7 +49,7 @@ export default function DetailSupplierHeader({
             </p>
             {!expandDesc && (
               <Button
-                className="absolute -bottom-2 right-0"
+                className="absolute right-0 -bottom-2"
                 color="ghost-primary"
                 size="sm"
                 onClick={() => {

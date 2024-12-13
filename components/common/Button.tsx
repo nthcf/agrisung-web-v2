@@ -15,7 +15,7 @@ const buttonVariants = cva(
     variants: {
       corner: {
         pill: ["rounded-full"],
-        round: ["rounded"],
+        round: ["rounded-sm"],
       },
       color: {
         "ghost-primary": [

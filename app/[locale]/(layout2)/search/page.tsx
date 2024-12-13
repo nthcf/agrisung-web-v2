@@ -51,7 +51,7 @@ export default async function Search({
   if (!q) {
     return (
       <main className="bg-bg-main-pale">
-        <div className="container mx-auto px-4 pb-20 pt-5 lg:px-20 xl:px-34">
+        <div className="container mx-auto px-4 pt-5 pb-20 lg:px-20 xl:px-34">
           <NoResult />
         </div>
       </main>

@@ -39,7 +39,7 @@ export default function MainSearchForm() {
       <div className="py-4">
         <Command
           label="Main Search With Suggestion"
-          className="relative mx-auto flex w-2/3 items-center rounded border border-fg-border-main pl-4"
+          className="border-fg-border-main relative mx-auto flex w-2/3 items-center rounded-sm border pl-4"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
@@ -48,7 +48,7 @@ export default function MainSearchForm() {
           }}
         >
           <Command.Input
-            className="mr-4 h-11 flex-1 border-0 p-0 text-sm text-fg-text-main-hc ring-0 placeholder:text-fg-text-main-lc focus:ring-0"
+            className="text-fg-text-main-hc placeholder:text-fg-text-main-lc mr-4 h-11 flex-1 border-0 p-0 text-sm ring-0 focus:ring-0"
             placeholder={t("form.headerSearch.placeholder")}
             value={search}
             onValueChange={setSearch}
@@ -59,7 +59,7 @@ export default function MainSearchForm() {
             }}
           />
           <Button
-            className="!h-11 !w-15"
+            className="h-11! w-15!"
             color="primary"
             onClick={() => {
               router.push({ pathname: "/search", query: { q: search } });
@@ -70,24 +70,24 @@ export default function MainSearchForm() {
           <Command.List
             ref={resultRef}
             className={cx(
-              "absolute left-0 right-0 top-full z-[89] mt-2 h-90 overflow-auto rounded-lg bg-white p-2 shadow-md",
+              "absolute top-full right-0 left-0 z-89 mt-2 h-90 overflow-auto rounded-lg bg-white p-2 shadow-md",
               showResult ? "block" : "hidden",
             )}
           >
             {isLoading && (
-              <Command.Loading className="p-2 text-sm text-fg-text-main">
+              <Command.Loading className="text-fg-text-main p-2 text-sm">
                 {t("shared.loading")}
               </Command.Loading>
             )}
             {(!isLoading || error) && (
-              <Command.Empty className="p-2 text-sm text-fg-text-main">
+              <Command.Empty className="text-fg-text-main p-2 text-sm">
                 {t("shared.noResultsFound")}
               </Command.Empty>
             )}
             {data?.data.map((item, i) => (
               <Command.Item
                 key={item + i}
-                className="cursor-pointer p-2 text-xs text-fg-text-main-hc data-[selected=true]:bg-bg-brand-bright"
+                className="text-fg-text-main-hc data-[selected=true]:bg-bg-brand-bright cursor-pointer p-2 text-xs"
                 onSelect={() => {
                   router.push({ pathname: "/search", query: { q: item } });
                 }}

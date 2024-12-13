@@ -13,14 +13,14 @@ export default function ProductList({ data }: ProductListProps) {
 
   return (
     <section>
-      <h2 className="text-x2xl font-bold text-fg-text-main-hc">
+      <h2 className="text-x2xl text-fg-text-main-hc font-bold">
         {t("page.homepage.productListSection.title")}
       </h2>
       <div className="mt-3 grid grid-cols-4 gap-3">
         {data.map((product) => (
           <ProductCard
             key={product.id}
-            className="!border-0"
+            className="border-0!"
             contentClassname="p-3 "
             data={product}
           />

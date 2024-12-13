@@ -11,7 +11,7 @@ export default function DetailSupplierCover({
 }: DetailSupplierCoverProps) {
   return (
     <div className="mx-auto">
-      <div className="relative aspect-[64/9] bg-bg-brand-bright">
+      <div className="bg-bg-brand-bright relative aspect-64/9">
         {data.coverMedia && (
           <Image
             src={data.coverMedia.url}

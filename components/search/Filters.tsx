@@ -34,16 +34,16 @@ export default function Filters({ q }: FilterProps) {
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/60 data-[state=open]:animate-dialog-overlay-fade-in">
-          <Dialog.Content className="fixed left-1/2 top-1/2 w-145 -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6 focus:outline-none data-[state=open]:animate-dialog-content-fade-in-zoom">
-            <Dialog.Title className="text-x2xl font-bold text-fg-text-main-hc">
+        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 bg-black/60">
+          <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 w-145 -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6 focus:outline-hidden">
+            <Dialog.Title className="text-x2xl text-fg-text-main-hc font-bold">
               {t("form.headerSearch.filter")}
             </Dialog.Title>
-            <Dialog.Description className="text-sm text-fg-text-main-lc">
+            <Dialog.Description className="text-fg-text-main-lc text-sm">
               {t("form.headerSearch.filterDescription")}
             </Dialog.Description>
             <div className="mt-6">
-              <p className="text-sm font-medium text-fg-text-main">
+              <p className="text-fg-text-main text-sm font-medium">
                 {t("form.headerSearch.countryOfOrigin")}
               </p>
               <FilterCountries
@@ -52,7 +52,7 @@ export default function Filters({ q }: FilterProps) {
               />
             </div>
             <div className="mt-2">
-              <p className="text-sm font-medium text-fg-text-main">
+              <p className="text-fg-text-main text-sm font-medium">
                 {t("form.headerSearch.certifications")}
               </p>
               <FilterCerts

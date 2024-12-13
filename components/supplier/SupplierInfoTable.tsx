@@ -21,7 +21,7 @@ export default function SupplierInfoTable({
       {!hideLogo && (
         <div className="flex items-center gap-3">
           <Link
-            className="ovherflow-hidden relative size-25 rounded border border-fg-border-main bg-bg-brand-bright"
+            className="border-fg-border-main bg-bg-brand-bright relative size-25 overflow-hidden rounded-sm border"
             href={`/supplier/${data.slug}`}
           >
             {data.logoMedia && (
@@ -34,10 +34,10 @@ export default function SupplierInfoTable({
             )}
           </Link>
           <div>
-            <p className="text-lg font-medium text-fg-text-main-hc">
+            <p className="text-fg-text-main-hc text-lg font-medium">
               <Link href={`/supplier/${data.slug}`}>{data.name}</Link>
             </p>
-            <p className="text-sm font-medium text-fg-text-brand underline">
+            <p className="text-fg-text-brand text-sm font-medium underline">
               {t("shared.productWithCount2", {
                 count: data.products?.length ?? 0,
               })}
@@ -48,74 +48,74 @@ export default function SupplierInfoTable({
       <table className="mt-4 w-full text-sm">
         <tbody>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.companyName")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.name}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.businessType")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.businessType}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.exportHistory")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.exportHistories?.map((item) => item.name).join(", ")}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.numberOfEmployees")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.numberOfEmployees}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.annualSalesRevenue")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.annualSalesRevenue}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.yearEstablished")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.yearEstablished}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.country")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.country?.name}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.companyAddress")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               {data.address}
             </td>
           </tr>
           <tr>
-            <th className="w-48 border border-fg-border-main bg-bg-main-bright p-3 text-left font-normal text-fg-text-main-hc">
+            <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-48 border p-3 text-left font-normal">
               {t("page.supplierDetail.certificates")}
             </th>
-            <td className="border border-fg-border-main p-3 text-fg-text-main">
+            <td className="border-fg-border-main text-fg-text-main border p-3">
               <div className="jusify-start flex flex-wrap gap-4">
                 {data.certifications?.map((item) => (
                   <SupplierCert key={item.id} data={item} />

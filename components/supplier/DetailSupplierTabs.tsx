@@ -17,8 +17,8 @@ function TabItem({ children, href, active }: TabItemProps) {
       className={cx(
         "mr-6 inline-block min-w-45 border-b-[3px] px-2 py-2 pb-[5px] text-center text-lg",
         active
-          ? "border-fg-border-brand font-bold text-fg-text-brand"
-          : "border-transparent text-fg-text-main-hc",
+          ? "border-fg-border-brand text-fg-text-brand font-bold"
+          : "text-fg-text-main-hc border-transparent",
       )}
     >
       {children}

@@ -11,7 +11,7 @@ type BannerProps = {
 
 function BannerHorizontal({ data }: BannerProps) {
   return (
-    <div className="relative overflow-hidden rounded bg-bg-brand-bright px-6 py-13">
+    <div className="bg-bg-brand-bright relative overflow-hidden rounded-sm px-6 py-13">
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}
@@ -23,7 +23,7 @@ function BannerHorizontal({ data }: BannerProps) {
       )}
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative flex items-center justify-between">
-        <h3 className="text-x2xl font-semibold text-fg-text-on-main-hc">
+        <h3 className="text-x2xl text-fg-text-on-main-hc font-semibold">
           {data.title}
         </h3>
         <Button
@@ -42,7 +42,7 @@ function BannerHorizontal({ data }: BannerProps) {
 
 function BannerVertical({ data }: BannerProps) {
   return (
-    <div className="relative overflow-hidden rounded bg-bg-brand-bright px-34 py-13">
+    <div className="bg-bg-brand-bright relative overflow-hidden rounded-sm px-34 py-13">
       {data.imgMedia && (
         <Image
           src={data.imgMedia.url}
@@ -54,13 +54,13 @@ function BannerVertical({ data }: BannerProps) {
       )}
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative flex flex-col items-center justify-between gap-1">
-        <h3 className="text-2xl font-bold text-fg-text-on-main-hc">
+        <h3 className="text-fg-text-on-main-hc text-2xl font-bold">
           {data.title}
         </h3>
-        <h4 className="text-lg font-bold text-fg-text-on-main">
+        <h4 className="text-fg-text-on-main text-lg font-bold">
           {data.subtitle}
         </h4>
-        <p className="text-sm text-fg-text-on-main"> {data.description}</p>
+        <p className="text-fg-text-on-main text-sm"> {data.description}</p>
         <Button
           as={Link}
           href={data.ctaLink}

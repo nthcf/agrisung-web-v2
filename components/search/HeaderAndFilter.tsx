@@ -20,7 +20,7 @@ export default function HeaderAndFilter({
 
   return (
     <section className="flex items-center justify-between rounded-lg bg-white p-3">
-      <p className="text-sm text-fg-text-main-hc">
+      <p className="text-fg-text-main-hc text-sm">
         {t("form.headerSearch.result", { count: total })}{" "}
         <strong>&quot;{q}&quot;</strong>
       </p>

@@ -29,13 +29,13 @@ export default function RfqForm1({
         className,
       )}
     >
-      <span className="icon-[mdi--text-box-edit-outline] size-14 shrink-0 text-fg-icon-main-lc" />
+      <span className="icon-[mdi--text-box-edit-outline] text-fg-icon-main-lc size-14 shrink-0" />
       <div className="flex-1">
-        <h4 className="font-bold text-fg-text-main-hc">
+        <h4 className="text-fg-text-main-hc font-bold">
           {t("form.createRfq.title")}
         </h4>
         {!hideDescription && (
-          <p className="text-sm text-fg-text-main">
+          <p className="text-fg-text-main text-sm">
             {t("form.createRfq.subtitle")}
           </p>
         )}
@@ -43,13 +43,13 @@ export default function RfqForm1({
           <div className="mt-2 flex items-center gap-2">
             <label
               htmlFor={productFieldId}
-              className="cursor-pointer text-sm text-fg-text-main-hc"
+              className="text-fg-text-main-hc cursor-pointer text-sm"
             >
               {t("form.createRfq.label")}
             </label>
             <input
               id={productFieldId}
-              className="w-48 rounded border border-fg-border-main-lc px-3 py-2 text-sm text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-brand focus:ring-0"
+              className="border-fg-border-main-lc text-fg-text-main-hc placeholder:text-fg-text-main-lc focus:border-fg-border-brand w-48 rounded-sm border px-3 py-2 text-sm focus:ring-0"
               placeholder={t("form.createRfq.placeholder")}
               value={product}
               onChange={(e) => {
