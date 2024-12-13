@@ -1,4 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+@plugin "../tw/iconify.ts";
 
 @theme {
   --animate-dialog-overlay-fade-in: dialog-overlay-fade-in 150ms
