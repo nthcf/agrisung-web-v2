@@ -1,10 +1,12 @@
 import createMiddleware from "next-intl/middleware";
 
+import { auth } from "./auth";
 import { routing } from "./i18n/routing";
 
-export default createMiddleware(routing);
-
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ["/", "/(en|zh)/:path*"],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
+
+const intlMiddleware = createMiddleware(routing);
+
+export default auth(intlMiddleware);

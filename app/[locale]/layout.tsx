@@ -1,5 +1,6 @@
 import { GoogleTagManager } from "@next/third-parties/google";
 import { cx } from "class-variance-authority";
+import { SessionProvider } from "next-auth/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import Script from "next/script";
@@ -39,9 +40,11 @@ export default async function RootLayout({
       <body
         className={cx(FontBody.variable, FontHeading.variable, "font-body")}
       >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <SessionProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </SessionProvider>
         <GoogleTagManager gtmId={SITE_GTM_ID} />
         <Script
           id="hs-script-loader"

@@ -12,7 +12,8 @@ export const FontHeading = Bricolage_Grotesque({
 
 export const SITE_BASE_URL = "https://www.agrisung.com";
 
-export const SITE_GTM_ID = "GTM-T9L5H9P4";
+export const SITE_GTM_ID = "GTM-5TP56MX4";
+// export const SITE_GTM_ID = "GTM-T9L5H9P4"; // staging
 
 export const SITE_MAIN_NAV = [
   { t: "products", href: "/products" },

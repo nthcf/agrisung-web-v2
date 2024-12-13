@@ -2,6 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { cx } from "class-variance-authority";
+import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useActionState } from "react";
 
@@ -133,6 +134,15 @@ export default function SignUpForm() {
               <div className="w-30"></div>
               <Button type="submit" disabled={pending}>
                 {t("form.signUp.submitButton")}
+              </Button>
+              <Button
+                color="primary"
+                type="button"
+                onClick={() => {
+                  signIn("keycloak");
+                }}
+              >
+                sign in
               </Button>
             </div>
           </form>
