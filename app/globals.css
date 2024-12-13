@@ -7,10 +7,10 @@
 @plugin "../tw/iconify.ts";
 
 @theme {
-  --animate-dialog-overlay-fade-in: dialog-overlay-fade-in 150ms
+  --animate-dialog-overlay-fade-in: dialog-overlay-fade-in 150ms forwards
     cubic-bezier(0.16, 1, 0.3, 1);
   --animate-dialog-content-fade-in-zoom: dialog-content-fade-in-zoom 150ms
-    cubic-bezier(0.16, 1, 0.3, 1);
+    forwards cubic-bezier(0.16, 1, 0.3, 1);
 
   --color-bg-brand: #0054dd;
   --color-bg-brand-bright: #f1f7ff;

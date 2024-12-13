@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 
-import Button from "../common/Button";
 import Filters from "./Filters";
 
 type HeaderAndFilterProps = {
@@ -25,14 +24,7 @@ export default function HeaderAndFilter({
         <strong>&quot;{q}&quot;</strong>
       </p>
       <div className="flex gap-4">
-        <div className="flex gap-1">
-          <Button disabled size="icon-lg">
-            <span className="icon-[octicon--list-unordered-16] size-5" />
-          </Button>
-          <Button disabled size="icon-lg">
-            <span className="icon-[octicon--apps-16] size-5" />
-          </Button>
-        </div>
+        <div className="flex gap-1"></div>
         <Filters q={q} origin={origin} certs={certs} />
       </div>
     </section>

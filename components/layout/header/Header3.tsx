@@ -1,10 +1,16 @@
+import { Session } from "next-auth";
+
 import LogoAndMenu from "./LogoAndMenu";
 import TopBar from "./TopBar";
 
-export default function Header3() {
+type Header3Props = {
+  session: Session | null;
+};
+
+export default function Header3({ session }: Header3Props) {
   return (
     <header className="border-brand-gray-3 border-b">
-      <TopBar />
+      <TopBar user={session?.user} />
       <LogoAndMenu />
     </header>
   );

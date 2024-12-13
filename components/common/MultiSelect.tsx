@@ -34,7 +34,7 @@ export default function MultiSelect<T>({
         {selected.length === 0 ? (
           <div className="text-fg-text-main-lc">{placeholder}</div>
         ) : (
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {selected.map((item, i) => (
               <div
                 key={i}

@@ -24,8 +24,8 @@ export default function SignUpForm() {
           {t("nav.topBar.signIn")}
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 bg-black/60" />
-          <Dialog.Content className="fixed top-1/2 left-1/2 w-108 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-hidden">
+          <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
+          <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-108 rounded-lg bg-white p-6 focus:outline-hidden">
             <div className="flex justify-center">
               <div className="icon-[octicon--check-circle-fill-16] text-fg-icon-success-deep size-16" />
             </div>
@@ -52,8 +52,8 @@ export default function SignUpForm() {
         {t("nav.topBar.signIn")}
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-999 bg-black/60" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 z-1000 w-145 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-hidden">
+        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
+        <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-145 rounded-lg bg-white p-6 focus:outline-hidden">
           <Dialog.Title className="text-fg-text-main-hc mt-3 text-2xl font-semibold">
             {t("form.signUp.title")}
           </Dialog.Title>

@@ -1,4 +1,4 @@
-import { cx } from "cva";
+import { cx } from "class-variance-authority";
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
 

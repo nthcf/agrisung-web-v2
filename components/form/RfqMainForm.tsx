@@ -55,8 +55,8 @@ export default function RfqMainForm({
       <Dialog.Root open={open} onOpenChange={setOpen}>
         {trigger ? trigger : <Dialog.Trigger />}
         <Dialog.Portal>
-          <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 bg-black/60" />
-          <Dialog.Content className="fixed top-1/2 left-1/2 w-108 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 focus:outline-hidden">
+          <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
+          <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-108 rounded-lg bg-white p-6 focus:outline-hidden">
             <Dialog.Close className="absolute top-6 right-6">
               <span className="icon-[octicon--x-16] text-fg-text-main-hc size-6" />
             </Dialog.Close>
@@ -88,7 +88,7 @@ export default function RfqMainForm({
     <Dialog.Root open={open} onOpenChange={setOpen}>
       {trigger ? trigger : <Dialog.Trigger />}
       <Dialog.Portal>
-        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-999 bg-black/60">
+        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60">
           <Dialog.Content className="bg-bg-main-pale fixed top-0 right-0 bottom-0 z-1000 w-145 p-6 focus:outline-hidden">
             <form className="h-full overflow-auto pb-24" action={action}>
               <Dialog.Title className="text-x2xl text-fg-text-main-hc font-bold">

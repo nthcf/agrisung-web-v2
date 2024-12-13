@@ -106,6 +106,7 @@ export type Supplier = {
   website: string;
   whyUs: string;
   yearEstablished: string;
+  youtubeId?: string;
 };
 
 export type Technology = {

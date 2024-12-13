@@ -30,12 +30,12 @@ export default function Filters({ q }: FilterProps) {
       <Dialog.Trigger asChild>
         <Button color="gray">
           <span className="icon-[octicon--filter-16] size-5" />
-          <span>{t("form.headerSearch.advanced")}</span>
+          <span>{t("form.headerSearch.filter")}</span>
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 bg-black/60">
-          <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 w-145 -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-6 focus:outline-hidden">
+        <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60">
+          <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-145 rounded-md bg-white p-6 focus:outline-hidden">
             <Dialog.Title className="text-x2xl text-fg-text-main-hc font-bold">
               {t("form.headerSearch.filter")}
             </Dialog.Title>
