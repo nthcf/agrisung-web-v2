@@ -5,7 +5,7 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { Media } from "@/libs/cms";
 
 type LightboxProps = React.PropsWithChildren<{
-  data: Media;
+  data: Media | string;
 }>;
 
 export default function Lightbox({ children, data }: LightboxProps) {
@@ -19,7 +19,19 @@ export default function Lightbox({ children, data }: LightboxProps) {
             <Dialog.Title>Lightbox</Dialog.Title>
             <Dialog.Description>Lightbox</Dialog.Description>
           </VisuallyHidden.Root>
-          <img src={data.url} alt={data.name} />
+          {typeof data === "string" ? (
+            <iframe
+              width="832"
+              height="468"
+              src={`https://www.youtube.com/embed/${data}`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <img src={data.url} alt={data.name} />
+          )}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

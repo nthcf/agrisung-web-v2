@@ -33,7 +33,7 @@ export default async function SupplierDetail({
             data={sup.products.slice(0, 8)}
             slug={sup.slug}
           />
-          {sup.medias && <DetailSupplierMedia data={sup.medias} />}
+          {sup.medias && <DetailSupplierMedia data={sup} />}
           <RfqForm1 hideProductField />
           <DetailSupplierRecommended data={data.recommended.suppliers} />
         </div>
