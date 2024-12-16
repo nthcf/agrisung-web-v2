@@ -36,14 +36,14 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {data.processType?.name}
           </td>
         </tr>
-        <tr>
+        {/* <tr>
           <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-36 border p-3 text-left font-normal">
             {t("page.productDetail.processStyle")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
             {data.processedStyle}
           </td>
-        </tr>
+        </tr> */}
         <tr>
           <th className="border-fg-border-main bg-bg-main-bright text-fg-text-main-hc w-36 border p-3 text-left font-normal">
             {t("page.productDetail.variety")}

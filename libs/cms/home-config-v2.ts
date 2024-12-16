@@ -59,6 +59,7 @@ export async function getRecommendedSuppliers(locale = "en") {
               suppliers: {
                 populate: {
                   logo_media: mediaFields,
+                  cover_media: mediaFields,
                 },
               },
             },
