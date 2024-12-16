@@ -1,11 +1,11 @@
 import { type User } from "next-auth";
 import { useTranslations } from "next-intl";
 
-import ContactUsForm from "@/components/form/ContactUsForm";
-import SignUpForm from "@/components/form/SignUpForm";
 import { Link } from "@/i18n/routing";
 
+import ContactUs from "./ContactUs";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import SignUp from "./SignUp";
 
 type TopBarProps = {
   user?: User;
@@ -25,13 +25,13 @@ export default function TopBar({ user }: TopBarProps) {
           </div>
           <div className="flex items-center gap-10">
             <LocaleSwitcher />
-            <ContactUsForm />
+            <ContactUs />
             {user ? (
               <p className="text-xs">
                 {t("shared.hello")} <strong>{user.name}</strong>
               </p>
             ) : (
-              <SignUpForm />
+              <SignUp />
             )}
           </div>
         </div>

@@ -1,10 +1,15 @@
+"use client";
+
 import { Trigger } from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 import Button from "../common/Button";
 import RfqMainForm from "../form/RfqMainForm";
 
 export default function AsideCta() {
+  const [fk, setFk] = useState(0);
+
   const t = useTranslations();
 
   return (
@@ -14,6 +19,7 @@ export default function AsideCta() {
       </p>
       <div className="mt-3 flex items-center gap-1">
         <RfqMainForm
+          key={fk}
           trigger={
             <Trigger asChild>
               <Button className="flex-1">
@@ -21,6 +27,9 @@ export default function AsideCta() {
               </Button>
             </Trigger>
           }
+          onReset={() => {
+            setFk(fk + 1);
+          }}
         />
       </div>
     </div>

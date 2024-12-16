@@ -2,6 +2,7 @@
 
 import { Trigger } from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 import { type Product, type Supplier } from "@/libs/cms";
 
@@ -17,11 +18,15 @@ export default function DetailProductDescriptionCta({
   product,
   supplier,
 }: DetailProductDescriptionCtaProps) {
+  const [fk1, setFk1] = useState(0);
+  const [fk2, setFk2] = useState(0);
+
   const t = useTranslations();
 
   return (
     <div className="flex flex-col gap-2">
       <RfqMainForm
+        key={fk1}
         product={product}
         supplier={supplier}
         trigger={
@@ -32,8 +37,22 @@ export default function DetailProductDescriptionCta({
             </Button>
           </Trigger>
         }
+        onReset={() => {
+          setFk1(fk1 + 1);
+        }}
       />
-      <Button>{t("page.productDetail.cta2")}</Button>
+      <RfqMainForm
+        key={fk2}
+        supplier={supplier}
+        trigger={
+          <Trigger asChild>
+            <Button>{t("page.productDetail.cta2")}</Button>
+          </Trigger>
+        }
+        onReset={() => {
+          setFk2(fk2 + 1);
+        }}
+      />
     </div>
   );
 }

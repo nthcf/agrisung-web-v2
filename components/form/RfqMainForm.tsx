@@ -17,6 +17,7 @@ type RfqMainFormProps = {
   product?: Product;
   supplier?: Supplier;
   trigger?: React.ReactNode;
+  onReset?: () => void;
 };
 
 export default function RfqMainForm({
@@ -24,8 +25,8 @@ export default function RfqMainForm({
   product,
   supplier,
   trigger,
+  onReset,
 }: RfqMainFormProps) {
-  const [open, setOpen] = useState(false);
   const [hasValue, setHasValue] = useState(false);
 
   const [state, action, pending] = useActionState(submitRfq, {
@@ -52,7 +53,13 @@ export default function RfqMainForm({
 
   if (state.success) {
     return (
-      <Dialog.Root open={open} onOpenChange={setOpen}>
+      <Dialog.Root
+        onOpenChange={(open) => {
+          if (onReset && open === false) {
+            onReset();
+          }
+        }}
+      >
         {trigger ? trigger : <Dialog.Trigger />}
         <Dialog.Portal>
           <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
@@ -69,15 +76,11 @@ export default function RfqMainForm({
             <Dialog.Description className="text-fg-text-main mt-3 text-center">
               {t("form.mainRfq.successMessage", { email: femail })}
             </Dialog.Description>
-            <Button
-              className="mt-8 w-full"
-              size="lg"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              {t("form.mainRfq.successButton")}
-            </Button>
+            <Dialog.Close asChild>
+              <Button className="mt-8 w-full" size="lg">
+                {t("form.mainRfq.successButton")}
+              </Button>
+            </Dialog.Close>
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
@@ -85,7 +88,7 @@ export default function RfqMainForm({
   }
 
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
+    <Dialog.Root>
       {trigger ? trigger : <Dialog.Trigger />}
       <Dialog.Portal>
         <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60">

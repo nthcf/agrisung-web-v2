@@ -9,7 +9,11 @@ import { submitContactForm } from "@/actions/form";
 
 import Button from "../common/Button";
 
-export default function ContactUsForm() {
+type ContactUsFormProps = {
+  onReset?: () => void;
+};
+
+export default function ContactUsForm({ onReset }: ContactUsFormProps) {
   const [state, action, pending] = useActionState(submitContactForm, {
     success: false,
   });
@@ -18,7 +22,13 @@ export default function ContactUsForm() {
 
   if (state.success) {
     return (
-      <Dialog.Root>
+      <Dialog.Root
+        onOpenChange={(open) => {
+          if (onReset && open === false) {
+            onReset();
+          }
+        }}
+      >
         <Dialog.Trigger className="text-xs">
           {t("nav.topBar.contactUs")}
         </Dialog.Trigger>

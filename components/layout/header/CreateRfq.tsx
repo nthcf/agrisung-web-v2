@@ -1,14 +1,20 @@
+"use client";
+
 import { Trigger } from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 import Button from "@/components/common/Button";
 import RfqMainForm from "@/components/form/RfqMainForm";
 
 export default function CreateRfq() {
+  const [fk, setFk] = useState(0);
+
   const t = useTranslations();
 
   return (
     <RfqMainForm
+      key={fk}
       trigger={
         <Trigger asChild>
           <Button>
@@ -17,6 +23,9 @@ export default function CreateRfq() {
           </Button>
         </Trigger>
       }
+      onReset={() => {
+        setFk(fk + 1);
+      }}
     />
   );
 }

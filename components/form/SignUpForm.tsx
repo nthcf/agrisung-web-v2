@@ -10,7 +10,11 @@ import { submitSignupForm } from "@/actions/form";
 
 import Button from "../common/Button";
 
-export default function SignUpForm() {
+type SignUpFormProps = {
+  onReset?: () => void;
+};
+
+export default function SignUpForm({ onReset }: SignUpFormProps) {
   const [state, action, pending] = useActionState(submitSignupForm, {
     success: false,
   });
@@ -19,7 +23,13 @@ export default function SignUpForm() {
 
   if (state.success) {
     return (
-      <Dialog.Root>
+      <Dialog.Root
+        onOpenChange={(open) => {
+          if (onReset && open === false) {
+            onReset();
+          }
+        }}
+      >
         <Dialog.Trigger className="text-xs font-bold">
           {t("nav.topBar.signIn")}
         </Dialog.Trigger>

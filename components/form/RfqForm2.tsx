@@ -9,7 +9,9 @@ import RfqMainForm from "./RfqMainForm";
 
 export default function RfqForm2() {
   const [product, setProduct] = useState("");
+  const [fk, setFk] = useState(0);
   const productFieldId = useId();
+
   const t = useTranslations();
 
   return (
@@ -41,6 +43,7 @@ export default function RfqForm2() {
       </div>
       <div className="flex items-center gap-1">
         <RfqMainForm
+          key={fk}
           trigger={
             <Trigger asChild>
               <Button color="primary">
@@ -49,6 +52,9 @@ export default function RfqForm2() {
             </Trigger>
           }
           productName={product}
+          onReset={() => {
+            setFk(fk + 1);
+          }}
         />
       </div>
     </div>
