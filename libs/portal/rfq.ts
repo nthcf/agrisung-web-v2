@@ -4,7 +4,9 @@ import { BASE_URL } from "./config";
 
 export async function createRfq(
   body: {
+    supplier_name: string;
     product_name: string;
+    product_id: string;
     detail: string;
     company_name: string;
     contact_number: string;

@@ -18,6 +18,7 @@ export async function submitRfq(
   const data = {
     supplier: getString(formData.get("supplier")),
     product: getString(formData.get("product")),
+    productId: getString(formData.get("productId")),
     detail: getString(formData.get("detail")),
     email: getString(formData.get("email")),
     firstName: getString(formData.get("firstName")),
@@ -28,7 +29,9 @@ export async function submitRfq(
 
   await createRfq(
     {
+      supplier_name: data.supplier,
       product_name: data.product,
+      product_id: data.productId,
       detail: data.detail,
       email: data.email,
       first_name: data.firstName,
