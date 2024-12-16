@@ -19,7 +19,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
 
   return {
-    title: t("shared.title"),
+    title: `${t("shared.title")} | ${t("shared.description")}`,
     description: t("shared.description"),
   };
 }

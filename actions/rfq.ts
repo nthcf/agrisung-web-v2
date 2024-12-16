@@ -1,5 +1,6 @@
 "use server";
 
+import { auth } from "@/auth";
 import { createRfq } from "@/libs/portal";
 
 function getString(value: unknown) {
@@ -12,6 +13,8 @@ export async function submitRfq(
   },
   formData: FormData,
 ) {
+  const session = await auth();
+
   const data = {
     supplier: getString(formData.get("supplier")),
     product: getString(formData.get("product")),
@@ -23,15 +26,18 @@ export async function submitRfq(
     contactNumber: getString(formData.get("contactNumber")),
   };
 
-  await createRfq({
-    product_name: data.product,
-    detail: data.detail,
-    email: data.email,
-    first_name: data.firstName,
-    last_name: data.lastName,
-    company_name: data.company,
-    contact_number: data.contactNumber,
-  });
+  await createRfq(
+    {
+      product_name: data.product,
+      detail: data.detail,
+      email: data.email,
+      first_name: data.firstName,
+      last_name: data.lastName,
+      company_name: data.company,
+      contact_number: data.contactNumber,
+    },
+    session?.user.accessToken,
+  );
 
   return {
     success: true,
