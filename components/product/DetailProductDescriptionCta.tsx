@@ -19,7 +19,7 @@ export default function DetailProductDescriptionCta({
   supplier,
 }: DetailProductDescriptionCtaProps) {
   const [fk1, setFk1] = useState(0);
-  const [fk2, setFk2] = useState(0);
+  const [fk2, setFk2] = useState(-1);
 
   const t = useTranslations();
 
@@ -50,7 +50,7 @@ export default function DetailProductDescriptionCta({
           </Trigger>
         }
         onReset={() => {
-          setFk2(fk2 + 1);
+          setFk2(fk2 - 1);
         }}
       />
     </div>

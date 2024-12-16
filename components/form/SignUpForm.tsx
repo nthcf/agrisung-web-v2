@@ -11,10 +11,11 @@ import { submitSignupForm } from "@/actions/form";
 import Button from "../common/Button";
 
 type SignUpFormProps = {
+  trigger: React.ReactNode;
   onReset?: () => void;
 };
 
-export default function SignUpForm({ onReset }: SignUpFormProps) {
+export default function SignUpForm({ trigger, onReset }: SignUpFormProps) {
   const [state, action, pending] = useActionState(submitSignupForm, {
     success: false,
   });
@@ -30,9 +31,7 @@ export default function SignUpForm({ onReset }: SignUpFormProps) {
           }
         }}
       >
-        <Dialog.Trigger className="text-xs font-bold">
-          {t("nav.topBar.signIn")}
-        </Dialog.Trigger>
+        {trigger}
         <Dialog.Portal>
           <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
           <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-108 rounded-lg bg-white p-6 focus:outline-hidden">
@@ -58,9 +57,7 @@ export default function SignUpForm({ onReset }: SignUpFormProps) {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="text-xs font-bold">
-        {t("nav.topBar.signIn")}
-      </Dialog.Trigger>
+      {trigger}
       <Dialog.Portal>
         <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
         <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-145 rounded-lg bg-white p-6 focus:outline-hidden">
@@ -142,18 +139,26 @@ export default function SignUpForm({ onReset }: SignUpFormProps) {
             </div>
             <div className="mt-4 flex items-center gap-3">
               <div className="w-30"></div>
-              <Button type="submit" disabled={pending}>
+              <Button color="primary" type="submit" disabled={pending}>
                 {t("form.signUp.submitButton")}
               </Button>
-              <Button
-                color="primary"
-                type="button"
-                onClick={() => {
-                  signIn("keycloak");
-                }}
-              >
-                sign in
-              </Button>
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="w-30"></div>
+              <div className="flex items-center">
+                <p className="text-fg-text-main-lc text-sm">
+                  Already have an account?
+                </p>
+                <Button
+                  color="ghost-primary"
+                  type="button"
+                  onClick={() => {
+                    signIn("keycloak");
+                  }}
+                >
+                  Sign In
+                </Button>
+              </div>
             </div>
           </form>
         </Dialog.Content>

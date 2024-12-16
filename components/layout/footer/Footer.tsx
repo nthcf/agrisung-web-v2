@@ -4,6 +4,10 @@ import Button from "@/components/common/Button";
 import { Link } from "@/i18n/routing";
 import { SITE_FOOTER_NAV } from "@/site.config";
 
+import ContactUs from "./ContactUs";
+import LiveChatWithStaff from "./LiveChatWithStaff";
+import Rfq from "./Rfq";
+
 export default function Footer() {
   const t = useTranslations();
 
@@ -17,6 +21,20 @@ export default function Footer() {
                 {t(`nav.footer.${nav.t}`)}
               </h3>
               <ul className="mt-4 space-y-4">
+                {nav.t === "getSupport" && <LiveChatWithStaff />}
+                {nav.t === "sourceOnAgriSung" && (
+                  <Rfq text={t("nav.footer.requestForQuotation")} />
+                )}
+                {nav.t === "sellOnAgriSung" && (
+                  <>
+                    <li className="text-fg-text-main-hc text-sm">
+                      <ContactUs text={t("nav.footer.startSelling")} />
+                    </li>
+                    <li className="text-fg-text-main-hc text-sm">
+                      <ContactUs text={t("nav.footer.partnershipWithAgs")} />
+                    </li>
+                  </>
+                )}
                 {nav.items.map((item) => (
                   <li key={item.t} className="text-fg-text-main-hc text-sm">
                     <Link href={item.href}>{t(`nav.footer.${item.t}`)}</Link>

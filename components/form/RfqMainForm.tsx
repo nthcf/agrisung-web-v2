@@ -13,10 +13,10 @@ import { type Product, type Supplier } from "@/libs/cms";
 import Button from "../common/Button";
 
 type RfqMainFormProps = {
+  trigger: React.ReactNode;
   productName?: string;
   product?: Product;
   supplier?: Supplier;
-  trigger?: React.ReactNode;
   onReset?: () => void;
 };
 
@@ -60,7 +60,7 @@ export default function RfqMainForm({
           }
         }}
       >
-        {trigger ? trigger : <Dialog.Trigger />}
+        {trigger}
         <Dialog.Portal>
           <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
           <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-108 rounded-lg bg-white p-6 focus:outline-hidden">
@@ -89,7 +89,7 @@ export default function RfqMainForm({
 
   return (
     <Dialog.Root>
-      {trigger ? trigger : <Dialog.Trigger />}
+      {trigger}
       <Dialog.Portal>
         <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60">
           <Dialog.Content className="bg-bg-main-pale fixed top-0 right-0 bottom-0 z-1000 w-145 p-6 focus:outline-hidden">

@@ -10,10 +10,14 @@ import { submitContactForm } from "@/actions/form";
 import Button from "../common/Button";
 
 type ContactUsFormProps = {
+  trigger: React.ReactNode;
   onReset?: () => void;
 };
 
-export default function ContactUsForm({ onReset }: ContactUsFormProps) {
+export default function ContactUsForm({
+  trigger,
+  onReset,
+}: ContactUsFormProps) {
   const [state, action, pending] = useActionState(submitContactForm, {
     success: false,
   });
@@ -29,9 +33,7 @@ export default function ContactUsForm({ onReset }: ContactUsFormProps) {
           }
         }}
       >
-        <Dialog.Trigger className="text-xs">
-          {t("nav.topBar.contactUs")}
-        </Dialog.Trigger>
+        {trigger}
         <Dialog.Portal>
           <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
           <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-108 rounded-lg bg-white p-6 focus:outline-hidden">
@@ -57,9 +59,7 @@ export default function ContactUsForm({ onReset }: ContactUsFormProps) {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="text-xs">
-        {t("nav.topBar.contactUs")}
-      </Dialog.Trigger>
+      {trigger}
       <Dialog.Portal>
         <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60" />
         <Dialog.Content className="data-[state=open]:animate-dialog-content-fade-in-zoom fixed top-1/2 left-1/2 z-1000 w-145 rounded-lg bg-white p-6 focus:outline-hidden">
@@ -152,7 +152,7 @@ export default function ContactUsForm({ onReset }: ContactUsFormProps) {
             </div>
             <div className="mt-4 flex items-center gap-3">
               <div className="w-30"></div>
-              <Button type="submit" disabled={pending}>
+              <Button color="primary" type="submit" disabled={pending}>
                 {t("form.contactUs.submitButton")}
               </Button>
             </div>

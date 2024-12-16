@@ -18,9 +18,6 @@ export const SITE_MAIN_NAV = [
   { t: "products", href: "/products" },
   { t: "suppliers", href: "/suppliers" },
   { t: "news", href: "/news" },
-  { t: "marketInsights", href: "/market-insights" },
-  { t: "priceTrends", href: "/price-trends" },
-  { t: "tools", href: "/tools" },
 ] as const;
 
 export const SITE_FOOTER_NAV = [
@@ -28,7 +25,7 @@ export const SITE_FOOTER_NAV = [
     t: "getSupport",
     items: [
       // { t: "helpCenter", href: "/" },
-      { t: "liveChatWithStaff", href: "/" },
+      // { t: "liveChatWithStaff", href: "/" },
       // { t: "checkOrderStatus", href: "/" },
       // { t: "faq", href: "/" },
     ],
@@ -36,7 +33,7 @@ export const SITE_FOOTER_NAV = [
   {
     t: "sourceOnAgriSung",
     items: [
-      { t: "requestForQuotation", href: "/" },
+      // { t: "requestForQuotation", href: "/" },
       // { t: "subscribeForValueInsight", href: "/" },
       // { t: "membershipProgram", href: "/" },
       // { t: "logisticSolution", href: "/" },
@@ -45,8 +42,8 @@ export const SITE_FOOTER_NAV = [
   {
     t: "sellOnAgriSung",
     items: [
-      { t: "startSelling", href: "/" },
-      { t: "partnershipWithAgs", href: "/" },
+      // { t: "startSelling", href: "/" },
+      // { t: "partnershipWithAgs", href: "/" },
       // { t: "sellingCenter", href: "/" },
       // { t: "becomeAVerifiedSupplier", href: "/" },
     ],

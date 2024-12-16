@@ -10,6 +10,7 @@ const buttonVariants = cva({
     "border",
     "whitespace-nowrap",
     "transition-all",
+    "cursor-pointer",
   ],
   variants: {
     corner: {
@@ -81,7 +82,7 @@ export default function Button<T extends React.ElementType = "button">({
       className={cx(
         buttonVariants({ corner, color, hover, size }),
         className,
-        disabled && "cursor-not-allowed opacity-50",
+        disabled && "cursor-not-allowed! opacity-50",
       )}
       {...rest}
       ref={ref}
