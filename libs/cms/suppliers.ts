@@ -75,7 +75,7 @@ export async function getSupplier(slug: string, locale = "en") {
   const json = await res.json();
 
   if (json.data.length === 0) {
-    throw new Error("Not found supplier!");
+    return undefined;
   }
 
   return camelcaseKeys<ApiResp<Supplier[]>>(json, { deep: true });

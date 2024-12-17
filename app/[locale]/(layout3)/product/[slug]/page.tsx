@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import RfqForm1 from "@/components/form/RfqForm1";
 import Breadcrumb from "@/components/layout/content/Breadcrumb";
 import DetailProductCarousel from "@/components/product/DetailProductCarousel";
@@ -15,13 +17,21 @@ export default async function ProductDetail({
 }) {
   const { slug } = await params;
 
-  const { data: ps } = await getProduct(slug);
+  const res = await getProduct(slug);
 
-  const pro = ps[0];
+  if (!res) {
+    notFound();
+  }
 
-  const { data: ss } = await getSupplier(pro.supplier.slug);
+  const pro = res.data[0];
 
-  const sup = ss[0];
+  const res1 = await getSupplier(pro.supplier.slug);
+
+  if (!res1) {
+    notFound();
+  }
+
+  const sup = res1.data[0];
 
   return (
     <main className="bg-bg-main-pale">

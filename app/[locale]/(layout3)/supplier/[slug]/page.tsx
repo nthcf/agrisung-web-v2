@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import RfqForm1 from "@/components/form/RfqForm1";
 import DetailSupplierCover from "@/components/supplier/DetailSupplierCover";
 import DetailSupplierHeader from "@/components/supplier/DetailSupplierHeader";
@@ -15,9 +17,13 @@ export default async function SupplierDetail({
 }) {
   const { slug } = await params;
 
-  const { data: ss } = await getSupplier(slug);
+  const res = await getSupplier(slug);
 
-  const sup = ss[0];
+  if (!res) {
+    notFound();
+  }
+
+  const sup = res.data[0];
 
   const { data } = await getRecommendedSuppliers();
 
