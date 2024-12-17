@@ -3,8 +3,10 @@ import { cx } from "cva";
 import { SessionProvider } from "next-auth/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 import Script from "next/script";
 
+import { routing } from "@/i18n/routing";
 import { FontBody, FontHeading, SITE_GTM_ID, type Locale } from "@/site.config";
 
 import "../globals.css";
@@ -24,7 +26,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function RootLayout({
+export default async function AppLayout({
   children,
   params,
 }: {
@@ -32,6 +34,11 @@ export default async function RootLayout({
   children?: React.ReactNode;
 }) {
   const { locale } = await params;
+
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale)) {
+    notFound();
+  }
 
   const messages = await getMessages();
 

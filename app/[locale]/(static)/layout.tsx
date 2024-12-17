@@ -1,5 +1,4 @@
 import { setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
 
 import { auth } from "@/auth";
 import Footer from "@/components/layout/footer/Footer";
@@ -19,11 +18,6 @@ export default async function StaticLayout({
   children?: React.ReactNode;
 }) {
   const { locale } = await params;
-
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale)) {
-    notFound();
-  }
 
   // Enable static rendering
   setRequestLocale(locale);
