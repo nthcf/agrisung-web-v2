@@ -178,6 +178,7 @@
     "description": "Agri Sung - 越南采购公司，凭借进入优质农业区的能力，与顶级供应商的合作，以及可靠性的良好声誉而脱颖而出。我们的使命是将最优质的越南农产品带到全球市场，确保每一步的质量和可持续性。",
     "edit": "编辑",
     "email": "info@agrisung.com",
+    "filter": "Filter",
     "hello": "您好，",
     "home": "首页",
     "language": {
@@ -185,6 +186,7 @@
       "zh": "中文"
     },
     "loading": "加载中...",
+    "na": "N/A",
     "noResultsFound": "未找到结果。",
     "overview": "概览",
     "phone": "(+84) 906 750 776",
@@ -195,7 +197,11 @@
     "save": "保存",
     "search": "搜索",
     "signIn": "登录",
+    "supplier": "Supplier",
+    "suppliers": "Suppliers",
     "title": "Agri Sung",
-    "viewAll": "查看全部"
+    "viewAll": "查看全部",
+    "viewProfile": "View Profile",
+    "xResults": "{count} {count, plural, =1 {result} other {results}}"
   }
 }

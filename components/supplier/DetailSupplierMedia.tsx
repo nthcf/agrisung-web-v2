@@ -36,7 +36,6 @@ export default function DetailSupplierMedia({
                 />
               </div>
             </Lightbox>
-            <p className="text-fg-text-main-hc mt-3 text-sm">{data.name}</p>
           </div>
         )}
         {data.medias.map((media, i) => (
@@ -50,7 +49,6 @@ export default function DetailSupplierMedia({
                 />
               </div>
             </Lightbox>
-            <p className="text-fg-text-main-hc mt-3 text-sm">{media.name}</p>
           </div>
         ))}
       </div>

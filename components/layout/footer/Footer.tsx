@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import Button from "@/components/common/Button";
 import { Link } from "@/i18n/routing";
@@ -61,6 +62,33 @@ export default function Footer() {
                 <span>{t("shared.email")}</span>
               </li>
             </ul>
+            <div className="mt-4 flex gap-4">
+              <div className="flex flex-col items-center justify-center gap-1">
+                <div className="relative aspect-square w-30">
+                  <Image
+                    src="/wechat.jpg"
+                    alt="Agri Sung"
+                    fill
+                    sizes="100%"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <p className="text-fg-text-main text-xs">WeChat</p>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-1">
+                <div className="relative aspect-square w-30">
+                  <Image
+                    src="/whatsapp.jpg"
+                    alt="Agri Sung"
+                    fill
+                    sizes="100%"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <p className="text-fg-text-main text-xs">Whatsapp</p>
+              </div>
+            </div>
+
             <h3 className="text-fg-text-main mt-10 text-lg font-bold">
               {t("nav.footer.connectWithAgriSung")}
             </h3>

@@ -58,6 +58,13 @@ export async function getRecommendedSuppliers(locale = "en") {
             populate: {
               suppliers: {
                 populate: {
+                  products: {
+                    populate: {
+                      raw_product: {
+                        fields: ["name"],
+                      },
+                    },
+                  },
                   logo_media: mediaFields,
                   cover_media: mediaFields,
                 },
@@ -99,6 +106,13 @@ export async function getHomeConfigV2(locale = "en") {
       },
       featured_supplier: {
         populate: {
+          products: {
+            populate: {
+              raw_product: {
+                fields: ["name"],
+              },
+            },
+          },
           logo_media: mediaFields,
           cover_media: mediaFields,
         },
@@ -120,6 +134,13 @@ export async function getHomeConfigV2(locale = "en") {
             populate: {
               suppliers: {
                 populate: {
+                  products: {
+                    populate: {
+                      raw_product: {
+                        fields: ["name"],
+                      },
+                    },
+                  },
                   logo_media: mediaFields,
                   cover_media: mediaFields,
                 },

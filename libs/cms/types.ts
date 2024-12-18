@@ -41,6 +41,7 @@ export type Product = {
   coverMedia: Media;
   currency: Currency;
   description: string;
+  documentId: string;
   formAndCut: string;
   id: number;
   images: Media[];
@@ -49,23 +50,22 @@ export type Product = {
   name: string;
   origin: Country;
   packagingType: string;
-  priceMin: number;
+  paymentTerms: { paymentTerm: string }[];
   priceMax: number;
+  priceMin: number;
   processedStyle: string;
   processType: ProcessType;
   rawProduct: RawProduct;
+  samples: { sample: string }[];
   season: string;
   shelfLife: string;
   shipment: string;
+  shipments: { shipment: string }[];
   sizeOrWeight: string;
   slug: string;
   supplier: Supplier;
-  variety: string;
-
-  shipments: { shipment: string }[];
   varieties: { variety: string }[];
-  samples: { sample: string }[];
-  paymentTerms: { paymentTerm: string }[];
+  variety: string;
 };
 
 export type RawProduct = {
@@ -91,6 +91,7 @@ export type Supplier = {
   country: Country;
   coverMedia: Media;
   description: string;
+  documentId: string;
   exportHistories: Country[];
   id: number;
   logoMedia: Media;
@@ -134,7 +135,6 @@ export type News = {
 export type Lead = {
   additionalInfo: string;
   company: string;
-  documentId: string;
   email: string;
   id: number;
   message: string;

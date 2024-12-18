@@ -143,7 +143,7 @@ export default function RfqMainForm({
                         <input
                           type="hidden"
                           name="productId"
-                          value={product.id}
+                          value={product.documentId}
                         />
                       </div>
                     ) : (

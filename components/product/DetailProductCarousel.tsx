@@ -23,7 +23,7 @@ export default function DetailProductCarousel({
     slidesToScroll: "auto",
   });
 
-  const { nextDisabled, prevDisabled, onNext, onPrev } =
+  const { nextDisabled, prevDisabled, selectedIndex, onNext, onPrev } =
     useEmblaPrevNext(emblaApi);
   const {
     nextDisabled: thumbNextDisabled,
@@ -44,7 +44,12 @@ export default function DetailProductCarousel({
                 style={{ transform: "translate3d(0, 0, 0)" }}
               >
                 <div
-                  className="relative aspect-square w-full shrink-0 cursor-pointer overflow-hidden rounded-sm"
+                  className={cx(
+                    "relative aspect-square w-full shrink-0 cursor-pointer overflow-hidden rounded-sm",
+                    selectedIndex === i
+                      ? "border-fg-border-brand border-2"
+                      : "border-fg-border-main border",
+                  )}
                   onClick={() => {
                     emblaApi?.scrollTo(i);
                   }}
@@ -94,7 +99,7 @@ export default function DetailProductCarousel({
                   alt={`${data.name} ${i}`}
                   sizes="100%"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </div>

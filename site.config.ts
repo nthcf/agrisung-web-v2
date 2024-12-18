@@ -15,8 +15,8 @@ export const SITE_BASE_URL = "https://www.agrisung.com";
 export const SITE_GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "";
 
 export const SITE_MAIN_NAV = [
-  { t: "products", href: "/products" },
-  { t: "suppliers", href: "/suppliers" },
+  { t: "products", href: "/product" },
+  { t: "suppliers", href: "/supplier" },
   { t: "news", href: "/news" },
 ] as const;
 

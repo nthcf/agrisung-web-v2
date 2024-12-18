@@ -2,6 +2,7 @@ import { UseEmblaCarouselType } from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
 export function useEmblaPrevNext(api: UseEmblaCarouselType[1]) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [prevDisabled, setPrevDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(true);
 
@@ -14,8 +15,10 @@ export function useEmblaPrevNext(api: UseEmblaCarouselType[1]) {
   }, [api]);
 
   const onSelect = useCallback((api: NonNullable<UseEmblaCarouselType[1]>) => {
+    setSelectedIndex(api.selectedScrollSnap());
     setPrevDisabled(!api.canScrollPrev());
     setNextDisabled(!api.canScrollNext());
+    api.scrollTo(api.selectedScrollSnap());
   }, []);
 
   useEffect(() => {
@@ -26,9 +29,11 @@ export function useEmblaPrevNext(api: UseEmblaCarouselType[1]) {
   }, [api, onSelect]);
 
   return {
-    prevDisabled,
     nextDisabled,
-    onPrev,
+    prevDisabled,
+    selectedIndex,
     onNext,
+    onPrev,
+    onSelect,
   };
 }

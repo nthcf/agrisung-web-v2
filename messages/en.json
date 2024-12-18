@@ -178,6 +178,7 @@
     "description": "Agri Sung - Vietnam Sourcing Company, with a diverse range of advantages, stands out with its access to premium farming regions, partnerships with top-tier suppliers, and a strong reputation for reliability. Our mission is to bring the finest Vietnamese agricultural products to the global market, ensuring quality and sustainability at every step.",
     "edit": "Edit",
     "email": "info@agrisung.com",
+    "filter": "Filter",
     "hello": "Hello,",
     "home": "Home",
     "language": {
@@ -185,6 +186,7 @@
       "zh": "中文"
     },
     "loading": "Loading...",
+    "na": "N/A",
     "noResultsFound": "No results found.",
     "overview": "Overview",
     "phone": "(+84) 906 750 776",
@@ -195,7 +197,11 @@
     "save": "Save",
     "search": "Search",
     "signIn": "Sign In",
+    "supplier": "Supplier",
+    "suppliers": "Suppliers",
     "title": "Agri Sung",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "viewProfile": "View Profile",
+    "xResults": "{count} {count, plural, =1 {result} other {results}}"
   }
 }

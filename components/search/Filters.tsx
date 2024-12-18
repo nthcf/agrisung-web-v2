@@ -30,7 +30,7 @@ export default function Filters({ q }: FilterProps) {
       <Dialog.Trigger asChild>
         <Button color="gray">
           <span className="icon-[octicon--filter-16] size-5" />
-          <span>{t("form.headerSearch.filter")}</span>
+          <span className="icon-[mdi--filter-outline] size-5" />
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>

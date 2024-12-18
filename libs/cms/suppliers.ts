@@ -9,9 +9,13 @@ export async function getSuppliers(locale = "en") {
   const search = qs.stringify({
     populate: {
       logo_media: mediaFields,
+      cover_media: mediaFields,
       country: allFields,
       products: {
         populate: {
+          raw_product: {
+            fields: ["name"],
+          },
           cover_media: mediaFields,
           origin: allFields,
         },
