@@ -15,7 +15,7 @@ export default function SignUp() {
     <SignUpForm
       key={fk}
       trigger={
-        <Trigger className="text-xs font-bold">
+        <Trigger className="cursor-pointer text-xs font-bold">
           {t("nav.topBar.signIn")}
         </Trigger>
       }

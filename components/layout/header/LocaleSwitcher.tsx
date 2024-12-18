@@ -35,7 +35,7 @@ export function LocaleSwitcher() {
         })
       }
     >
-      <Select.Trigger className="inline-flex items-center text-xs outline-hidden">
+      <Select.Trigger className="inline-flex cursor-pointer items-center text-xs outline-hidden">
         <Select.Value />
         <Select.Icon className="icon-[octicon--chevron-down-16] size-4" />
       </Select.Trigger>
@@ -46,7 +46,7 @@ export function LocaleSwitcher() {
               <Select.Item
                 key={l}
                 value={l}
-                className="data-highlighted:bg-bg-brand-bright data-highlighted:text-fg-text-brand cursor-pointer p-2 text-xs outline-0 data-highlighted:font-semibold"
+                className="data-highlighted:bg-bg-brand-bright data-highlighted:text-fg-text-brand-hover cursor-pointer p-2 text-xs outline-0"
               >
                 <Select.ItemText>{t(`shared.language.${l}`)}</Select.ItemText>
               </Select.Item>

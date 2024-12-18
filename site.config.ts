@@ -10,7 +10,7 @@ export const FontHeading = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
 });
 
-export const SITE_BASE_URL = "https://www.agrisung.com";
+export const SITE_BASE_URL = process.env.NEXT_PUBLIC_SITE_BASE_URL ?? "";
 
 export const SITE_GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "";
 
@@ -61,3 +61,5 @@ export const SITE_FOOTER_NAV = [
     ],
   },
 ] as const;
+
+export const OMS_BASE_URL = process.env.NEXT_PUBLIC_OMS_BASE_URL ?? "";

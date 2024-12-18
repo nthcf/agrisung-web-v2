@@ -15,7 +15,9 @@ export default function ContactUs() {
     <ContactUsForm
       key={fk}
       trigger={
-        <Trigger className="text-xs">{t("nav.topBar.contactUs")}</Trigger>
+        <Trigger className="cursor-pointer text-xs">
+          {t("nav.topBar.contactUs")}
+        </Trigger>
       }
       onReset={() => {
         setFk(fk + 1);
