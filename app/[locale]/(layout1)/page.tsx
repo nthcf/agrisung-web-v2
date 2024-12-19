@@ -37,18 +37,22 @@ export default async function Home() {
             <MainCta className="mt-6!" />
           </div>
           <aside className="sticky top-5 w-64 space-y-3">
-            <ProductCard
-              className="p-3"
-              contentClassname="pt-3"
-              data={hcf.featuredProduct}
-              featured
-            />
-            <SupplierCard
-              className="p-3"
-              contentClassname="pt-3"
-              data={hcf.featuredSupplier}
-              featured
-            />
+            {hcf.featuredProduct && (
+              <ProductCard
+                className="p-3"
+                contentClassname="pt-3"
+                data={hcf.featuredProduct}
+                featured
+              />
+            )}
+            {hcf.featuredSupplier && (
+              <SupplierCard
+                className="p-3"
+                contentClassname="pt-3"
+                data={hcf.featuredSupplier}
+                featured
+              />
+            )}
             <AsideCta />
           </aside>
         </div>

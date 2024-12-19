@@ -20,10 +20,6 @@ export default function ProductCard({
   const t = useTranslations();
   const format = useFormatter();
 
-  if (!data) {
-    console.log(data);
-  }
-
   return (
     <article
       className={cx(

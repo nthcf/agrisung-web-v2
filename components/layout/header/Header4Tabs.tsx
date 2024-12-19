@@ -35,7 +35,7 @@ export default function Header4Tabs() {
 
   return (
     <div className="container mx-auto px-4 pt-3 lg:px-20 xl:px-34">
-      <TabItem active={isActive("/product/")} href="/product">
+      <TabItem active={isActive("/product")} href="/product">
         {t("shared.products")}
       </TabItem>
       <TabItem active={isActive("/supplier")} href="/supplier">

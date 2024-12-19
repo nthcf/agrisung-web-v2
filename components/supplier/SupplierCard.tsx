@@ -9,17 +9,21 @@ import Button from "../common/Button";
 
 type SupplierCardProps = {
   data: Supplier;
-  featured?: boolean;
   contentClassname?: string;
+  featured?: boolean;
+  noRoundedBottom?: boolean;
 } & React.ComponentPropsWithoutRef<"article">;
 
 export default function SupplierCard({
   className,
   data,
-  featured,
   contentClassname,
+  featured,
+  noRoundedBottom,
 }: SupplierCardProps) {
   const t = useTranslations();
+
+  const products = data.products?.filter((p) => !!p.rawProduct);
 
   return (
     <article
@@ -31,7 +35,12 @@ export default function SupplierCard({
         </h3>
       )}
       <Link href={`/supplier/${data.slug}`}>
-        <div className="bg-bg-brand-bright relative aspect-video w-full overflow-hidden rounded-lg">
+        <div
+          className={cx(
+            "bg-bg-brand-bright relative aspect-video w-full overflow-hidden rounded-t-lg",
+            noRoundedBottom ? "" : "rounded-b-lg",
+          )}
+        >
           {data.coverMedia && (
             <Image
               src={data.coverMedia.url}
@@ -68,11 +77,8 @@ export default function SupplierCard({
             <p className="line-clamp-1">
               {t("shared.products")}
               {": "}
-              {data.products
-                ? data.products
-                    .filter((product) => !!product.rawProduct)
-                    .map((product) => product.rawProduct.name)
-                    .join(", ")
+              {products && products.length > 0
+                ? products.map((product) => product.rawProduct.name).join(", ")
                 : t("shared.na")}
             </p>
           </div>
