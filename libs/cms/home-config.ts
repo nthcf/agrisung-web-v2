@@ -7,10 +7,10 @@ import { ApiResp, HomeConfig } from "./types";
 
 export async function getHeaderPriceTable(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       header_price_table: allFields,
     },
-    locale,
   });
   const url = new URL("/api/homeconfig?" + search, BASE_URL);
 
@@ -29,6 +29,7 @@ export async function getHeaderPriceTable(locale = "en") {
 
 export async function getHomeConfig(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       harvest_maps: {
         populate: {
@@ -45,7 +46,6 @@ export async function getHomeConfig(locale = "en") {
         },
       },
     },
-    locale,
   });
   const url = new URL("/api/homeconfig?" + search, BASE_URL);
 

@@ -7,10 +7,10 @@ import { ApiResp, ProcessType } from "./types";
 
 export async function getProcessTypes(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       cover_media: mediaFields,
     },
-    locale,
   });
   const url = new URL("/api/process-types?" + search, BASE_URL);
 

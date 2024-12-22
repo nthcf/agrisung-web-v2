@@ -7,13 +7,13 @@ import { Product, Supplier } from "./types";
 
 export async function search(q: string) {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-    },
     filters: {
       name: {
         $containsi: q,
       },
+    },
+    populate: {
+      cover_media: mediaFields,
     },
   });
   const url = new URL("/api/products?" + search, BASE_URL);

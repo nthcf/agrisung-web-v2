@@ -7,13 +7,13 @@ import { ApiResp, News } from "./types";
 
 export async function getListNews() {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-    },
     filters: {
       suppliers: {
         $null: true,
       },
+    },
+    populate: {
+      cover_media: mediaFields,
     },
     sort: ["createdAt:desc"],
   });
@@ -32,15 +32,15 @@ export async function getListNews() {
 
 export async function getListNewsOfSupplier(slug: string) {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-    },
     filters: {
       suppliers: {
         slug: {
           $eq: slug,
         },
       },
+    },
+    populate: {
+      cover_media: mediaFields,
     },
   });
   const url = new URL("/api/list-news?" + search, BASE_URL);
@@ -58,13 +58,13 @@ export async function getListNewsOfSupplier(slug: string) {
 
 export async function getNews(slug: string) {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-    },
     filters: {
       slug: {
         $eq: slug,
       },
+    },
+    populate: {
+      cover_media: mediaFields,
     },
   });
   const url = new URL("/api/list-news?" + search, BASE_URL);

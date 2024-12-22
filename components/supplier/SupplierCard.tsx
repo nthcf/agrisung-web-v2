@@ -87,7 +87,7 @@ export default function SupplierCard({
               {t("page.supplierDetail.exportHistory")}
               {": "}
               {data.exportHistories
-                ? data.exportHistories.join(", ")
+                ? data.exportHistories.map((h) => h.name).join(", ")
                 : t("shared.na")}
             </p>
           </div>

@@ -7,6 +7,7 @@ import { ApiResp, RawProduct } from "./types";
 
 export async function getRawProducts(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       cover_media: mediaFields,
       products: {
@@ -15,7 +16,6 @@ export async function getRawProducts(locale = "en") {
         },
       },
     },
-    locale,
   });
   const url = new URL("/api/raw-products?" + search, BASE_URL);
 

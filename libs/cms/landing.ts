@@ -7,13 +7,13 @@ import { ApiResp, News } from "./types";
 
 export async function getLanding(slug: string) {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-    },
     filters: {
       slug: {
         $eq: slug,
       },
+    },
+    populate: {
+      cover_media: mediaFields,
     },
   });
   const url = new URL("/api/landings?" + search, BASE_URL);

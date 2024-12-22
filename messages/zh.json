@@ -57,7 +57,7 @@
       "productNameLabel": "产品名称：",
       "productNamePlaceholder": "例如：榴莲、芒果、百香果、腰果、椰子等",
       "successButton": "继续浏览产品",
-      "successMessage": "我们将在24小时内通过邮箱 {email} 联系您。",
+      "successMessage": "我们将在24小时内通过邮箱 <strong>{email}</strong> 联系您。",
       "successTitle": "询价单发送成功",
       "title": "告诉供应商您的需求",
       "to": "给："

@@ -4,13 +4,13 @@ import { BASE_URL } from "./config";
 import { ApiResp, Lead } from "./types";
 
 export async function createLead(body: {
-  type?: string;
-  name?: string;
+  additional_info?: string;
   company?: string;
   email?: string;
-  phone?: string;
   message?: string;
-  additional_info?: string;
+  name?: string;
+  phone?: string;
+  type?: string;
 }) {
   const url = new URL("/api/leads", BASE_URL);
 

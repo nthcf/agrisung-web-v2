@@ -7,10 +7,10 @@ import { ApiResp, HomeConfigV2 } from "./types";
 
 export async function getPublicPriceList(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       public_price_list: allFields,
     },
-    locale,
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
@@ -27,6 +27,7 @@ export async function getPublicPriceList(locale = "en") {
 
 export async function getSearchBanner(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       search_result_banners: {
         populate: {
@@ -34,7 +35,6 @@ export async function getSearchBanner(locale = "en") {
         },
       },
     },
-    locale,
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
@@ -51,6 +51,7 @@ export async function getSearchBanner(locale = "en") {
 
 export async function getRecommendedSuppliers(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       recommended: {
         populate: {
@@ -58,6 +59,11 @@ export async function getRecommendedSuppliers(locale = "en") {
             populate: {
               suppliers: {
                 populate: {
+                  cover_media: mediaFields,
+                  export_histories: {
+                    fields: ["name"],
+                  },
+                  logo_media: mediaFields,
                   products: {
                     populate: {
                       raw_product: {
@@ -65,8 +71,6 @@ export async function getRecommendedSuppliers(locale = "en") {
                       },
                     },
                   },
-                  logo_media: mediaFields,
-                  cover_media: mediaFields,
                 },
               },
             },
@@ -74,7 +78,6 @@ export async function getRecommendedSuppliers(locale = "en") {
         },
       },
     },
-    locale,
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 
@@ -91,21 +94,24 @@ export async function getRecommendedSuppliers(locale = "en") {
 
 export async function getHomeConfigV2(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
-      homepage_banners: {
-        populate: {
-          img_media: mediaFields,
-        },
-      },
       featured_product: {
         populate: {
           cover_media: mediaFields,
-          supplier: { fields: ["name", "slug"] },
           currency: allFields,
+          supplier: {
+            fields: ["name", "slug"],
+          },
         },
       },
       featured_supplier: {
         populate: {
+          cover_media: mediaFields,
+          export_histories: {
+            fields: ["name"],
+          },
+          logo_media: mediaFields,
           products: {
             populate: {
               raw_product: {
@@ -113,8 +119,11 @@ export async function getHomeConfigV2(locale = "en") {
               },
             },
           },
-          logo_media: mediaFields,
-          cover_media: mediaFields,
+        },
+      },
+      homepage_banners: {
+        populate: {
+          img_media: mediaFields,
         },
       },
       recommended: {
@@ -123,9 +132,11 @@ export async function getHomeConfigV2(locale = "en") {
             populate: {
               products: {
                 populate: {
-                  currency: allFields,
                   cover_media: mediaFields,
-                  supplier: { fields: ["name", "slug"] },
+                  currency: allFields,
+                  supplier: {
+                    fields: ["name", "slug"],
+                  },
                 },
               },
             },
@@ -134,6 +145,11 @@ export async function getHomeConfigV2(locale = "en") {
             populate: {
               suppliers: {
                 populate: {
+                  cover_media: mediaFields,
+                  export_histories: {
+                    fields: ["name"],
+                  },
+                  logo_media: mediaFields,
                   products: {
                     populate: {
                       raw_product: {
@@ -141,8 +157,6 @@ export async function getHomeConfigV2(locale = "en") {
                       },
                     },
                   },
-                  logo_media: mediaFields,
-                  cover_media: mediaFields,
                 },
               },
             },
@@ -150,7 +164,6 @@ export async function getHomeConfigV2(locale = "en") {
         },
       },
     },
-    locale,
   });
   const url = new URL("/api/homeconfigv2?" + search, BASE_URL);
 

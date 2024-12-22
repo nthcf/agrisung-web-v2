@@ -38,11 +38,23 @@ export async function getSuppliers(locale = "en") {
 
 export async function getSupplier(slug: string, locale = "en") {
   const search = qs.stringify({
+    filters: {
+      slug: {
+        $eq: slug,
+      },
+    },
+    locale,
     populate: {
-      logo_media: mediaFields,
-      cover_media: mediaFields,
+      certifications: {
+        populate: {
+          logo_media: mediaFields,
+        },
+      },
       country: allFields,
+      cover_media: mediaFields,
       export_histories: allFields,
+      logo_media: mediaFields,
+      medias: mediaFields,
       products: {
         populate: {
           cover_media: mediaFields,
@@ -54,19 +66,7 @@ export async function getSupplier(slug: string, locale = "en") {
           cover_media: mediaFields,
         },
       },
-      certifications: {
-        populate: {
-          logo_media: mediaFields,
-        },
-      },
-      medias: mediaFields,
     },
-    filters: {
-      slug: {
-        $eq: slug,
-      },
-    },
-    locale,
   });
   const url = new URL("/api/suppliers?" + search, BASE_URL);
 

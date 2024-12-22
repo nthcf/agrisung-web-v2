@@ -7,21 +7,21 @@ import { ApiResp, Product } from "./types";
 
 export async function getProducts(page: number, locale = "en") {
   const search = qs.stringify({
+    locale,
+    pagination: {
+      page,
+      pageSize: 20,
+    },
     populate: {
       cover_media: mediaFields,
       origin: allFields,
+      process_type: allFields,
       supplier: {
         populate: {
           logo_media: mediaFields,
         },
       },
-      process_type: allFields,
     },
-    pagination: {
-      page,
-      pageSize: 20,
-    },
-    locale,
   });
   const url = new URL("/api/products?" + search, BASE_URL);
 
@@ -38,32 +38,32 @@ export async function getProducts(page: number, locale = "en") {
 
 export async function getProduct(slug: string, locale = "en") {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-      images: mediaFields,
-      origin: allFields,
-      supplier: {
-        populate: {
-          logo_media: mediaFields,
-          country: allFields,
-        },
-      },
-      currency: allFields,
-      process_type: allFields,
-      shipments: allFields,
-      varieties: allFields,
-      samples: allFields,
-      payment_terms: allFields,
-      raw_product: {
-        fields: ["name"],
-      },
-    },
     filters: {
       slug: {
         $eq: slug,
       },
     },
     locale,
+    populate: {
+      cover_media: mediaFields,
+      currency: allFields,
+      images: mediaFields,
+      origin: allFields,
+      payment_terms: allFields,
+      process_type: allFields,
+      raw_product: {
+        fields: ["name"],
+      },
+      samples: allFields,
+      shipments: allFields,
+      supplier: {
+        populate: {
+          country: allFields,
+          logo_media: mediaFields,
+        },
+      },
+      varieties: allFields,
+    },
   });
   const url = new URL("/api/products?" + search, BASE_URL);
 
@@ -84,17 +84,6 @@ export async function getProduct(slug: string, locale = "en") {
 
 export async function getProductsByRawProduct(name: string, locale = "en") {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-      origin: "*",
-      supplier: {
-        populate: {
-          logo_media: mediaFields,
-          country: "*",
-        },
-      },
-      process_type: "*",
-    },
     filters: {
       raw_product: {
         name: {
@@ -103,6 +92,17 @@ export async function getProductsByRawProduct(name: string, locale = "en") {
       },
     },
     locale,
+    populate: {
+      cover_media: mediaFields,
+      origin: "*",
+      process_type: "*",
+      supplier: {
+        populate: {
+          country: "*",
+          logo_media: mediaFields,
+        },
+      },
+    },
   });
   const url = new URL("/api/products?" + search, BASE_URL);
 
@@ -128,10 +128,10 @@ export async function searchProducts(
   locale = "en",
 ) {
   const search = qs.stringify({
-    keyword: q,
-    originCode: origin,
     certs,
+    keyword: q,
     locale,
+    originCode: origin,
   });
   const url = new URL("/api/products/search?" + search, BASE_URL);
 

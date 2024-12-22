@@ -7,10 +7,10 @@ import { ApiResp, Technology } from "./types";
 
 export async function getTechnologies(locale = "en") {
   const search = qs.stringify({
+    locale,
     populate: {
       cover_media: mediaFields,
     },
-    locale,
   });
   const url = new URL("/api/technologies?" + search, BASE_URL);
 
@@ -27,23 +27,27 @@ export async function getTechnologies(locale = "en") {
 
 export async function getTechnology(slug: string, locale = "en") {
   const search = qs.stringify({
-    populate: {
-      cover_media: mediaFields,
-      suppliers: {
-        populate: {
-          country: "*",
-          logo_media: mediaFields,
-          products: { fields: ["name"] },
-          technologies: { fields: ["name"] },
-        },
-      },
-    },
     filters: {
       slug: {
         $eq: slug,
       },
     },
     locale,
+    populate: {
+      cover_media: mediaFields,
+      suppliers: {
+        populate: {
+          country: "*",
+          logo_media: mediaFields,
+          products: {
+            fields: ["name"],
+          },
+          technologies: {
+            fields: ["name"],
+          },
+        },
+      },
+    },
   });
   const url = new URL("/api/technologies?" + search, BASE_URL);
 

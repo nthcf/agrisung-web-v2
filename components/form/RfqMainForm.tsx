@@ -27,7 +27,9 @@ export default function RfqMainForm({
   trigger,
   onReset,
 }: RfqMainFormProps) {
-  const [hasValue, setHasValue] = useState(false);
+  const [productName2, setProductName2] = useState("");
+  const [detail, setDetail] = useState("");
+  const [hasContact, setHasContact] = useState(false);
 
   const [state, action, pending] = useActionState(submitRfq, {
     success: false,
@@ -41,10 +43,16 @@ export default function RfqMainForm({
 
   const t = useTranslations();
 
+  useEffect(() => {
+    if (productName) {
+      setProductName2(productName);
+    }
+  }, [productName]);
+
   useEffect(
     () => {
       if (femail && ffname && flname && fcompany && fcontact) {
-        setHasValue(true);
+        setHasContact(true);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,7 +82,10 @@ export default function RfqMainForm({
               {t("form.mainRfq.successTitle")}
             </Dialog.Title>
             <Dialog.Description className="text-fg-text-main mt-3 text-center">
-              {t("form.mainRfq.successMessage", { email: femail })}
+              {t.rich("form.mainRfq.successMessage", {
+                email: femail,
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
             </Dialog.Description>
             <Dialog.Close asChild>
               <Button className="mt-8 w-full" size="lg">
@@ -93,6 +104,9 @@ export default function RfqMainForm({
       <Dialog.Portal>
         <Dialog.Overlay className="data-[state=open]:animate-dialog-overlay-fade-in fixed inset-0 z-900 bg-black/60">
           <Dialog.Content className="bg-bg-main-pale fixed top-0 right-0 bottom-0 z-1000 w-145 p-6 focus:outline-hidden">
+            <Dialog.Close className="absolute top-6 right-6">
+              <span className="icon-[octicon--x-16] text-fg-text-main-hc size-6" />
+            </Dialog.Close>
             <form className="h-full overflow-auto pb-24" action={action}>
               <Dialog.Title className="text-x2xl text-fg-text-main-hc font-bold">
                 {t("form.mainRfq.title")}
@@ -117,6 +131,9 @@ export default function RfqMainForm({
                 <div className="mt-6">
                   <div className="flex items-center gap-3">
                     <p className="text-fg-text-main w-30 shrink-0 text-right text-sm">
+                      {!product && (
+                        <span className="text-fg-text-danger">*</span>
+                      )}
                       {t("form.mainRfq.productNameLabel")}
                     </p>
                     {product ? (
@@ -156,7 +173,10 @@ export default function RfqMainForm({
                         placeholder={t("form.mainRfq.productNamePlaceholder")}
                         name="product"
                         required
-                        defaultValue={productName}
+                        value={productName2}
+                        onChange={(e) => {
+                          setProductName2(e.target.value);
+                        }}
                       />
                     )}
                   </div>
@@ -169,19 +189,23 @@ export default function RfqMainForm({
                       rows={6}
                       placeholder={t("form.mainRfq.detailPlaceholder")}
                       name="detail"
+                      value={detail}
+                      onChange={(e) => {
+                        setDetail(e.target.value);
+                      }}
                     ></textarea>
                   </div>
                 </div>
               </div>
               <div className="border-fg-border-main relative mt-6 rounded-lg border bg-white p-6">
-                {hasValue && (
+                {hasContact && (
                   <Button
                     className="absolute top-6 right-6"
                     color="gray"
                     size="sm"
                     type="button"
                     onClick={() => {
-                      setHasValue(false);
+                      setHasContact(false);
                     }}
                   >
                     <span className="icon-[octicon--pencil-16] text-fg-icon-main size-4" />
@@ -191,7 +215,7 @@ export default function RfqMainForm({
                 <h4 className="text-fg-text-main-hc font-bold">
                   {t("form.mainRfq.contactInfomation")}
                 </h4>
-                {!hasValue && (
+                {!hasContact && (
                   <p className="text-fg-text-main-lc mt-1 text-sm font-medium">
                     {t("form.mainRfq.contactDescription")}
                   </p>
@@ -199,7 +223,7 @@ export default function RfqMainForm({
                 <div className="mt-6">
                   <div className="flex items-center gap-3">
                     <p className="text-fg-text-main w-30 shrink-0 text-right text-sm">
-                      {!hasValue && (
+                      {!hasContact && (
                         <span className="text-fg-text-danger">*</span>
                       )}
                       {t("form.mainRfq.emailLabel")}
@@ -214,7 +238,7 @@ export default function RfqMainForm({
                       name="email"
                       required
                       defaultValue={femail}
-                      readOnly={hasValue}
+                      readOnly={hasContact}
                       onChange={(e) => {
                         setFemail(e.target.value);
                       }}
@@ -222,7 +246,7 @@ export default function RfqMainForm({
                   </div>
                   <div className="mt-4 flex items-center gap-3">
                     <p className="text-fg-text-main w-30 shrink-0 text-right text-sm">
-                      {!hasValue && (
+                      {!hasContact && (
                         <span className="text-fg-text-danger">*</span>
                       )}
                       {t("form.mainRfq.fullNameLabel")}
@@ -237,7 +261,7 @@ export default function RfqMainForm({
                       name="firstName"
                       required
                       defaultValue={ffname}
-                      readOnly={hasValue}
+                      readOnly={hasContact}
                       onChange={(e) => {
                         setFfname(e.target.value);
                       }}
@@ -252,7 +276,7 @@ export default function RfqMainForm({
                       name="lastName"
                       required
                       defaultValue={flname}
-                      readOnly={hasValue}
+                      readOnly={hasContact}
                       onChange={(e) => {
                         setFlname(e.target.value);
                       }}
@@ -260,7 +284,7 @@ export default function RfqMainForm({
                   </div>
                   <div className="mt-4 flex items-center gap-3">
                     <p className="text-fg-text-main w-30 shrink-0 text-right text-sm">
-                      {!hasValue && (
+                      {!hasContact && (
                         <span className="text-fg-text-danger">*</span>
                       )}
                       {t("form.mainRfq.companyLabel")}
@@ -275,7 +299,7 @@ export default function RfqMainForm({
                       name="company"
                       required
                       defaultValue={fcompany}
-                      readOnly={hasValue}
+                      readOnly={hasContact}
                       onChange={(e) => {
                         setFcompany(e.target.value);
                       }}
@@ -283,7 +307,7 @@ export default function RfqMainForm({
                   </div>
                   <div className="mt-4 flex items-center gap-3">
                     <p className="text-fg-text-main w-30 shrink-0 text-right text-sm">
-                      {!hasValue && (
+                      {!hasContact && (
                         <span className="text-fg-text-danger">*</span>
                       )}
                       {t("form.mainRfq.contactNumberLabel")}
@@ -298,7 +322,7 @@ export default function RfqMainForm({
                       name="contactNumber"
                       required
                       defaultValue={fcontact}
-                      readOnly={hasValue}
+                      readOnly={hasContact}
                       onChange={(e) => {
                         setFcontact(e.target.value);
                       }}
@@ -310,7 +334,16 @@ export default function RfqMainForm({
                 <button
                   className="bg-bg-brand w-full rounded-sm py-3 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
                   type="submit"
-                  disabled={pending}
+                  disabled={
+                    pending ||
+                    !femail ||
+                    !ffname ||
+                    !flname ||
+                    !fcompany ||
+                    !fcontact ||
+                    !detail ||
+                    (!product && !productName2)
+                  }
                 >
                   {t("form.mainRfq.button")}
                 </button>
