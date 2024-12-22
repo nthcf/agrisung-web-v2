@@ -7,11 +7,6 @@ import { ApiResp, News } from "./types";
 
 export async function getListNews() {
   const search = qs.stringify({
-    filters: {
-      suppliers: {
-        $null: true,
-      },
-    },
     populate: {
       cover_media: mediaFields,
     },

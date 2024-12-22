@@ -131,6 +131,11 @@
         "title": "Products you may be interested in"
       }
     },
+    "news": {
+      "allNews": "All News",
+      "featured": "Featured",
+      "otherNews": "Other News"
+    },
     "productDetail": {
       "aboutTheSupplier": "About The Supplier",
       "aboutThisProduct": "About This Product",

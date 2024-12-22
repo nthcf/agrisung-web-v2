@@ -131,6 +131,11 @@
         "title": "您可能感兴趣的产品"
       }
     },
+    "news": {
+      "allNews": "All News",
+      "featured": "Featured",
+      "otherNews": "Other News"
+    },
     "productDetail": {
       "aboutTheSupplier": "关于供应商",
       "aboutThisProduct": "关于此产品",
