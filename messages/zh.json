@@ -117,45 +117,45 @@
   "page": {
     "aboutUs": {
       "coreValuesSection": {
-        "core1": "Integrity",
-        "core2": "Supportive",
-        "core3": "Innovation",
-        "core4": "Data-Driven",
-        "desc1": "We believe in doing business the right way, with transparency and trust.",
-        "desc2": "We empower our partners—from farmers to suppliers and customers.",
-        "desc3": "Embracing new ideas, we leverage technology to simplify the supply chain.",
-        "desc4": "Our decisions are guided by data to ensure efficiency and continuous improvement.",
-        "title": "Our Core Values"
+        "core1": "诚信",
+        "core2": "支持",
+        "core3": "创新",
+        "core4": "数据驱动",
+        "desc1": "我们相信以正确的方式开展业务，秉承透明与信任。",
+        "desc2": "我们赋能合作伙伴——从农民到供应商再到客户。",
+        "desc3": "我们拥抱新想法，通过技术简化供应链。",
+        "desc4": "我们的决策以数据为导向，确保效率与持续改进。",
+        "title": "我们的核心价值"
       },
       "differenceSection": {
-        "desc": "Through our innovative approach, we create systems that connect key stakeholders across the agricultural value chain, enabling seamless collaboration. Our transparent, data-driven processes,combined with deep local expertise, global expansion capabilities, and end-to-end international supplychain service, enable us to:",
-        "diff1": "Empower global customers to source high-quality agricultural products from Vietnam with ease.",
-        "diff2": "Assist Vietnamese suppliers in expanding their reach, making their products accessible to markets worldwide.",
-        "diff3": "Provide end-to-end international supply chain solutions - from sourcing and certification to delivery - ensuring smooth, reliable, and efficient operations across borders.",
-        "title": "How We Make a Difference"
+        "desc": "通过创新方法，我们创建了连接农业价值链关键利益相关者的系统，实现无缝协作。结合透明、数据驱动的流程，深厚的本地专业知识，全球扩展能力，以及端到端国际供应链服务，我们能够：",
+        "diff1": "帮助全球客户轻松采购来自越南的优质农产品。",
+        "diff2": "协助越南供应商扩大影响力，让他们的产品走向世界市场。",
+        "diff3": "提供端到端国际供应链解决方案——从采购、认证到交付——确保跨境操作的顺畅、可靠和高效。",
+        "title": "我们的与众不同之处"
       },
       "heroSection": {
-        "button": "Contact Sales",
-        "desc": "To elevate Vietnamese agricultural products to the global stage through our digital B2B marketplace, ensuring excellence, convenience, and innovation at every step of the process",
-        "title": "Reliable Sourcing of Vietnam's Finest Products"
+        "button": "联系销售团队",
+        "desc": "通过我们的数字B2B平台，将越南农业产品推向全球舞台，确保每一步都体现卓越、便利和创新。",
+        "title": "可靠的越南优质产品采购"
       },
       "marketplaceSection": {
-        "desc1": "Agri Sung is a leading B2B marketplace dedicated to connecting Vietnamese suppliers with global markets. We empower Vietnamese producers to showcase and export their high-quality products, creating valuable opportunities for international customers to access high quality agricultural products from Vietnam.",
-        "desc2": "Through our end-to-end international supply chain management service, we ensure exceptional, tailored support to meet the unique needs of both suppliers and customers. With seamless, data-driven processes, we deliver a reliable and efficient experience for every partner in the global value chain.",
-        "title": "Marketplace at Our Core (for customers)"
+        "desc1": "Agri Sung是一个领先的B2B平台，致力于将越南供应商与全球市场连接起来。我们帮助越南生产商展示和出口他们的优质产品，为国际客户提供获取越南高质量农产品的宝贵机会。",
+        "desc2": "通过我们的端到端国际供应链管理服务，我们为供应商和客户提供量身定制的支持，确保满足其独特需求。借助无缝、数据驱动的流程，我们为全球价值链中的每一位合作伙伴提供可靠且高效的体验。",
+        "title": "市场平台是我们的核心（面向客户）"
       },
       "missionSection": {
-        "desc": "To elevate Vietnamese agricultural products to the global stage through our digital B2B marketplace, ensuring excellence, convenience, and innovation at every step of the process.",
-        "title": "Our Mission"
+        "desc": "通过我们的数字B2B平台，将越南农业产品推向全球舞台，确保每一步都体现卓越、便利和创新。",
+        "title": "我们的使命"
       },
       "whoAreWeSection": {
-        "desc1": "We are a dedicated B2B marketplace, connecting the finest agricultural products from Vietnam with customers around the globe. Focusing on the export of both fresh and processed goods, we are committed to maintaining high standards of quality and innovation.",
-        "desc2": "Our comprehensive, end-to-end international supply chain service enhances our offerings by ensuring seamless processes and timely deliveries from suppliers in Vietnam to customers worldwide.",
-        "title": "Reliable Sourcing of Vietnam's Finest Products"
+        "desc1": "我们是一个专注于连接越南优质农产品与全球客户的B2B平台。专注于新鲜和加工农产品的出口，我们致力于保持高质量和创新标准。",
+        "desc2": "通过我们全面的端到端国际供应链服务，我们提升了产品交付能力，确保从越南供应商到全球客户的无缝流程和及时交付。",
+        "title": "可靠的越南优质产品采购"
       },
       "whySection": {
-        "desc": "“Agri” signifies our strong foundation in agriculture, while “Sung” embodies prosperity and happiness. Agri Sung represents our vision to cultivate growth and success for everyone we work with, from thefields of Vietnam to dining tables around the globe.",
-        "title": "Why “Agri Sung”?"
+        "desc": "“Agri”代表我们在农业领域的坚实基础，而“Sung”象征繁荣与幸福。Agri Sung体现了我们为每一位合作伙伴培养成长与成功的愿景，从越南的田野到全球的餐桌。",
+        "title": "为何选择“Agri Sung”？"
       }
     },
     "homepage": {
