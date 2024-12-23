@@ -10,14 +10,12 @@ export async function getSuppliers(locale = "en") {
     populate: {
       logo_media: mediaFields,
       cover_media: mediaFields,
-      country: allFields,
+      export_histories: allFields,
       products: {
         populate: {
           raw_product: {
             fields: ["name"],
           },
-          cover_media: mediaFields,
-          origin: allFields,
         },
       },
     },

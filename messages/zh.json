@@ -3,76 +3,76 @@
     "contactUs": {
       "companyLabel": "公司",
       "contactNumberLabel": "联系电话",
-      "description": "留下信息，我们会尽快回复您。",
+      "description": "留言，我们将尽快回复您。",
       "emailLabel": "电子邮件",
       "fullNameLabel": "全名",
-      "messageLabel": "留言",
+      "messageLabel": "留言内容",
       "submitButton": "提交",
       "successButton": "继续浏览产品",
-      "thankYouText": "感谢您联系我们，我们会尽快回复您。",
-      "thankYouTitle": "感谢",
+      "thankYouText": "感谢您联系我们，我们将尽快回复您。",
+      "thankYouTitle": "谢谢",
       "title": "联系我们"
     },
     "createRfq": {
-      "label": "创建询价单",
-      "placeholder": "请输入产品",
+      "label": "为以下内容创建询价单",
+      "placeholder": "输入产品名称",
       "submitButton": "创建询价单",
-      "subtitle": "告知供应商您的采购需求，发现最优惠的交易。",
-      "subtitle2": "Inform suppliers of your sourcing needs and discover the best deals.",
-      "title": "告诉我们您的需求，尝试轻松获取报价！",
+      "subtitle": "告诉供应商您的采购需求，发现最佳交易。",
+      "subtitle2": "告诉供应商您的采购需求，发现最佳交易。",
+      "title": "告诉我们您的需求，试试轻松获取报价的方式！",
       "title2": "找不到您需要的产品？"
     },
     "headerSearch": {
       "advanced": "高级",
       "certifications": "认证",
-      "countryOfOrigin": "原产国",
+      "countryOfOrigin": "原产地",
       "filter": "筛选",
       "filterCertsLabel": "筛选认证",
       "filterCertsPlaceholder": "选择认证",
       "filterCountriesPlaceholder": "选择国家",
-      "filterDescription": "筛选您的结果",
+      "filterDescription": "筛选结果",
       "noResult": "无结果",
-      "noResultText1": "您的搜索没有结果",
+      "noResultText1": "没有符合您搜索的结果",
       "noResultText2": "请尝试使用其他关键词搜索",
-      "placeholder": "搜索产品、供应商、新闻...",
-      "result": "{count} {count, plural, =1 {条结果} other {条结果}} 来自"
+      "placeholder": "搜索产品、供应商、新闻……",
+      "result": "{count} 个结果"
     },
     "mainRfq": {
       "button": "发送请求给供应商",
       "companyLabel": "公司名称：",
-      "companyPlaceholder": "例如，ABC贸易有限公司",
-      "contactDescription": "您的联系信息使我们能够快速讨论细节，为您提供更快、更量身定制的报价。",
+      "companyPlaceholder": "例如：ABC贸易有限公司",
+      "contactDescription": "您的联系方式可以帮助我们的团队快速讨论细节，提供更快捷、更量身定制的报价。",
       "contactInfomation": "联系信息",
       "contactNumberLabel": "联系电话：",
-      "contactNumberPlaceholder": "电话 / 微信 / WhatsApp",
-      "description": "Agri Sung帮助您找到合适的农业供应商，并为您的采购需求协商最优惠的价格。",
-      "detailLabel": "详情：",
+      "contactNumberPlaceholder": "电话/WhatsApp/微信",
+      "description": "Agri Sung 帮助您找到合适的农业供应商，并为您的采购需求谈判最佳价格。",
+      "detailLabel": "详细信息：",
       "detailPlaceholder": "输入产品详细信息（颜色、尺寸、材料等及其他规格要求）",
       "emailLabel": "电子邮件地址：",
-      "emailPlaceholder": "我们将在24小时内通过邮件回复您",
+      "emailPlaceholder": "我们将在24小时内通过电子邮件回复您",
       "firstNamePlaceholder": "名字",
       "fullNameLabel": "全名：",
       "lastNamePlaceholder": "姓氏",
       "productInfomation": "产品信息",
       "productNameLabel": "产品名称：",
-      "productNamePlaceholder": "例如：榴莲、芒果、百香果、腰果、椰子等",
+      "productNamePlaceholder": "例如：榴莲、芒果、百香果、腰果、椰子……",
       "successButton": "继续浏览产品",
-      "successMessage": "我们将在24小时内通过邮箱 <strong>{email}</strong> 联系您。",
+      "successMessage": "我们将在24小时内通过电子邮件 <strong>{email}</strong> 联系您。",
       "successTitle": "询价单发送成功",
       "title": "告诉供应商您的需求",
-      "to": "给："
+      "to": "至："
     },
     "signUp": {
       "companyLabel": "公司",
       "contactNumberLabel": "联系电话",
-      "description": "留下信息，我们会尽快回复您。",
+      "description": "留言，我们将尽快回复您。",
       "emailLabel": "电子邮件",
       "fullNameLabel": "全名",
-      "messageLabel": "留言",
+      "messageLabel": "留言内容",
       "submitButton": "注册",
       "successButton": "继续浏览产品",
-      "thankYouText": "感谢您联系我们，我们会尽快回复您。",
-      "thankYouTitle": "感谢",
+      "thankYouText": "感谢您联系我们，我们将尽快回复您。",
+      "thankYouTitle": "谢谢",
       "title": "注册"
     }
   },
@@ -80,22 +80,22 @@
     "footer": {
       "aboutAgriSung": "关于Agri Sung",
       "becomeAVerifiedSupplier": "成为认证供应商",
-      "career": "招聘",
+      "career": "职业机会",
       "checkOrderStatus": "查看订单状态",
-      "connectWithAgriSung": "与Agri Sung联系",
+      "connectWithAgriSung": "与Agri Sung连接",
       "faq": "常见问题",
       "getSupport": "获取支持",
       "getToKnowUs": "了解我们",
       "helpCenter": "帮助中心",
-      "lifeAtSung": "Agri Sung生活",
-      "liveChatWithStaff": "与工作人员在线聊天",
+      "lifeAtSung": "Sung的生活",
+      "liveChatWithStaff": "与工作人员实时聊天",
       "logisticSolution": "物流解决方案",
       "membershipProgram": "会员计划",
       "partnershipWithAgs": "与AGS合作",
-      "requestForQuotation": "提交询价单",
+      "requestForQuotation": "询价单",
       "sellingCenter": "销售中心",
       "sellOnAgriSung": "在Agri Sung上销售",
-      "sourceOnAgriSung": "在Agri Sung采购",
+      "sourceOnAgriSung": "在Agri Sung上采购",
       "startSelling": "开始销售",
       "subscribeForValueInsight": "订阅有价值的见解",
       "whyChooseUs": "为什么选择我们？"
@@ -115,14 +115,57 @@
     }
   },
   "page": {
+    "aboutUs": {
+      "coreValuesSection": {
+        "core1": "Integrity",
+        "core2": "Supportive",
+        "core3": "Innovation",
+        "core4": "Data-Driven",
+        "desc1": "We believe in doing business the right way, with transparency and trust.",
+        "desc2": "We empower our partners—from farmers to suppliers and customers.",
+        "desc3": "Embracing new ideas, we leverage technology to simplify the supply chain.",
+        "desc4": "Our decisions are guided by data to ensure efficiency and continuous improvement.",
+        "title": "Our Core Values"
+      },
+      "differenceSection": {
+        "desc": "Through our innovative approach, we create systems that connect key stakeholders across the agricultural value chain, enabling seamless collaboration. Our transparent, data-driven processes,combined with deep local expertise, global expansion capabilities, and end-to-end international supplychain service, enable us to:",
+        "diff1": "Empower global customers to source high-quality agricultural products from Vietnam with ease.",
+        "diff2": "Assist Vietnamese suppliers in expanding their reach, making their products accessible to markets worldwide.",
+        "diff3": "Provide end-to-end international supply chain solutions - from sourcing and certification to delivery - ensuring smooth, reliable, and efficient operations across borders.",
+        "title": "How We Make a Difference"
+      },
+      "heroSection": {
+        "button": "Contact Sales",
+        "desc": "To elevate Vietnamese agricultural products to the global stage through our digital B2B marketplace, ensuring excellence, convenience, and innovation at every step of the process",
+        "title": "Reliable Sourcing of Vietnam's Finest Products"
+      },
+      "marketplaceSection": {
+        "desc1": "Agri Sung is a leading B2B marketplace dedicated to connecting Vietnamese suppliers with global markets. We empower Vietnamese producers to showcase and export their high-quality products, creating valuable opportunities for international customers to access high quality agricultural products from Vietnam.",
+        "desc2": "Through our end-to-end international supply chain management service, we ensure exceptional, tailored support to meet the unique needs of both suppliers and customers. With seamless, data-driven processes, we deliver a reliable and efficient experience for every partner in the global value chain.",
+        "title": "Marketplace at Our Core (for customers)"
+      },
+      "missionSection": {
+        "desc": "To elevate Vietnamese agricultural products to the global stage through our digital B2B marketplace, ensuring excellence, convenience, and innovation at every step of the process.",
+        "title": "Our Mission"
+      },
+      "whoAreWeSection": {
+        "desc1": "We are a dedicated B2B marketplace, connecting the finest agricultural products from Vietnam with customers around the globe. Focusing on the export of both fresh and processed goods, we are committed to maintaining high standards of quality and innovation.",
+        "desc2": "Our comprehensive, end-to-end international supply chain service enhances our offerings by ensuring seamless processes and timely deliveries from suppliers in Vietnam to customers worldwide.",
+        "title": "Reliable Sourcing of Vietnam's Finest Products"
+      },
+      "whySection": {
+        "desc": "“Agri” signifies our strong foundation in agriculture, while “Sung” embodies prosperity and happiness. Agri Sung represents our vision to cultivate growth and success for everyone we work with, from thefields of Vietnam to dining tables around the globe.",
+        "title": "Why “Agri Sung”?"
+      }
+    },
     "homepage": {
       "aside": {
-        "rfqButton": "立即提交请求",
-        "rfqTitle": "找不到您想要的产品？发布定制请求以获得精准报价。"
+        "rfqButton": "立即发布您的请求",
+        "rfqTitle": "找不到您想要的产品？发布定制请求以获得准确报价。"
       },
       "featuredSection": {
-        "product": "精选产品",
-        "supplier": "精选供应商"
+        "product": "特色产品",
+        "supplier": "特色供应商"
       },
       "mainCtaSection": {
         "button": "登录查看更多"
@@ -132,30 +175,30 @@
       }
     },
     "news": {
-      "allNews": "All News",
-      "featured": "Featured",
-      "otherNews": "Other News"
+      "allNews": "所有新闻",
+      "featured": "特色",
+      "otherNews": "其他新闻"
     },
     "productDetail": {
       "aboutTheSupplier": "关于供应商",
       "aboutThisProduct": "关于此产品",
-      "countryOfOrigin": "原产国",
+      "countryOfOrigin": "原产地",
       "cta1": "获取此产品的报价",
       "cta2": "我想定制此产品",
       "ingredients": "成分",
       "moq": "最小订购量",
-      "otherProductsFromTheSupplier": "该供应商的其他产品",
+      "otherProductsFromTheSupplier": "供应商的其他产品",
       "packagingType": "包装类型",
-      "paymentTerms": "付款条款",
-      "processStyle": "工艺风格",
+      "paymentTerms": "付款条件",
+      "processStyle": "加工方式",
       "productDescription": "产品描述",
       "productName": "产品名称",
       "productType": "产品类型",
-      "rawProduct": "原料产品",
+      "rawProduct": "原材料",
       "referencePricePerKg": "每公斤参考价格：",
       "samples": "样品",
       "shelfLife": "保质期",
-      "shipment": "运输",
+      "shipment": "货运",
       "supplierCta": "访问供应商页面",
       "variety": "种类"
     },
@@ -174,43 +217,43 @@
     }
   },
   "shared": {
-    "address": "越南胡志明市富润区第二坊范石龙街462号, 700000",
+    "address": "越南胡志明市富润区第二坊范溪龙街462号，邮编：700000",
     "apply": "应用",
     "clear": "清除",
     "contact": "联系",
     "contactNow": "立即联系",
     "createMyRfq": "创建我的询价单",
-    "description": "Agri Sung - 越南采购公司，凭借进入优质农业区的能力，与顶级供应商的合作，以及可靠性的良好声誉而脱颖而出。我们的使命是将最优质的越南农产品带到全球市场，确保每一步的质量和可持续性。",
+    "description": "Agri Sung - 越南采购公司，凭借对优质农场区域的访问、与顶级供应商的合作伙伴关系，以及可靠的声誉脱颖而出。我们的使命是将最优质的越南农产品带到全球市场，确保每一步的质量和可持续性。",
     "edit": "编辑",
     "email": "info@agrisung.com",
-    "filter": "Filter",
-    "hello": "您好，",
+    "filter": "筛选",
+    "hello": "您好,",
     "home": "首页",
     "language": {
       "en": "EN",
       "zh": "中文"
     },
     "loading": "加载中...",
-    "loadMoreResult": "Load more result",
-    "myAccount": "My Account",
-    "na": "N/A",
+    "loadMoreResult": "加载更多结果",
+    "myAccount": "我的账户",
+    "na": "无",
     "noResultsFound": "未找到结果。",
     "overview": "概览",
     "phone": "(+84) 906 750 776",
     "product": "产品",
     "products": "产品",
-    "productWithCount1": " {count, plural, =1 {产品} other {产品}} ({count})",
+    "productWithCount1": "{count, plural, =1 {产品} other {产品}} ({count})",
     "productWithCount2": "{count} {count, plural, =1 {产品} other {产品}}",
-    "rfqs": "RFQs",
+    "rfqs": "询价单",
     "save": "保存",
     "search": "搜索",
     "signIn": "登录",
-    "signOut": "Sign Out",
-    "supplier": "Supplier",
-    "suppliers": "Suppliers",
+    "signOut": "登出",
+    "supplier": "供应商",
+    "suppliers": "供应商",
     "title": "Agri Sung",
     "viewAll": "查看全部",
-    "viewProfile": "View Profile",
-    "xResults": "{count} {count, plural, =1 {result} other {results}}"
+    "viewProfile": "查看资料",
+    "xResults": "{count} 个结果"
   }
 }

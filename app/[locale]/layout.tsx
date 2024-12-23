@@ -45,10 +45,8 @@ export default async function AppLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body
-        className={cx(FontBody.variable, FontHeading.variable, "font-body")}
-      >
+    <html lang={locale} className={cx(FontBody.variable, FontHeading.variable)}>
+      <body className="font-body">
         <SessionProvider>
           <NextIntlClientProvider messages={messages}>
             {children}

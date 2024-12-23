@@ -115,6 +115,49 @@
     }
   },
   "page": {
+    "aboutUs": {
+      "coreValuesSection": {
+        "core1": "Integrity",
+        "core2": "Supportive",
+        "core3": "Innovation",
+        "core4": "Data-Driven",
+        "desc1": "We believe in doing business the right way, with transparency and trust.",
+        "desc2": "We empower our partners—from farmers to suppliers and customers.",
+        "desc3": "Embracing new ideas, we leverage technology to simplify the supply chain.",
+        "desc4": "Our decisions are guided by data to ensure efficiency and continuous improvement.",
+        "title": "Our Core Values"
+      },
+      "differenceSection": {
+        "desc": "Through our innovative approach, we create systems that connect key stakeholders across the agricultural value chain, enabling seamless collaboration. Our transparent, data-driven processes,combined with deep local expertise, global expansion capabilities, and end-to-end international supplychain service, enable us to:",
+        "diff1": "Empower global customers to source high-quality agricultural products from Vietnam with ease.",
+        "diff2": "Assist Vietnamese suppliers in expanding their reach, making their products accessible to markets worldwide.",
+        "diff3": "Provide end-to-end international supply chain solutions - from sourcing and certification to delivery - ensuring smooth, reliable, and efficient operations across borders.",
+        "title": "How We Make a Difference"
+      },
+      "heroSection": {
+        "button": "Contact Sales",
+        "desc": "To elevate Vietnamese agricultural products to the global stage through our digital B2B marketplace, ensuring excellence, convenience, and innovation at every step of the process",
+        "title": "Reliable Sourcing of Vietnam's Finest Products"
+      },
+      "marketplaceSection": {
+        "desc1": "Agri Sung is a leading B2B marketplace dedicated to connecting Vietnamese suppliers with global markets. We empower Vietnamese producers to showcase and export their high-quality products, creating valuable opportunities for international customers to access high quality agricultural products from Vietnam.",
+        "desc2": "Through our end-to-end international supply chain management service, we ensure exceptional, tailored support to meet the unique needs of both suppliers and customers. With seamless, data-driven processes, we deliver a reliable and efficient experience for every partner in the global value chain.",
+        "title": "Marketplace at Our Core (for customers)"
+      },
+      "missionSection": {
+        "desc": "To elevate Vietnamese agricultural products to the global stage through our digital B2B marketplace, ensuring excellence, convenience, and innovation at every step of the process.",
+        "title": "Our Mission"
+      },
+      "whoAreWeSection": {
+        "desc1": "We are a dedicated B2B marketplace, connecting the finest agricultural products from Vietnam with customers around the globe. Focusing on the export of both fresh and processed goods, we are committed to maintaining high standards of quality and innovation.",
+        "desc2": "Our comprehensive, end-to-end international supply chain service enhances our offerings by ensuring seamless processes and timely deliveries from suppliers in Vietnam to customers worldwide.",
+        "title": "Reliable Sourcing of Vietnam's Finest Products"
+      },
+      "whySection": {
+        "desc": "“Agri” signifies our strong foundation in agriculture, while “Sung” embodies prosperity and happiness. Agri Sung represents our vision to cultivate growth and success for everyone we work with, from thefields of Vietnam to dining tables around the globe.",
+        "title": "Why “Agri Sung”?"
+      }
+    },
     "homepage": {
       "aside": {
         "rfqButton": "Post your request now",
