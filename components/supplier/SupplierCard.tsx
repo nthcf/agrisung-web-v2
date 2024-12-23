@@ -1,6 +1,7 @@
 import { cx } from "cva";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { unique } from "radash";
 
 import { Link } from "@/i18n/routing";
 import { type Supplier } from "@/libs/cms";
@@ -23,7 +24,11 @@ export default function SupplierCard({
 }: SupplierCardProps) {
   const t = useTranslations();
 
-  const products = data.products?.filter((p) => !!p.rawProduct);
+  const rawProducts = unique(
+    (data.products || [])
+      .filter((p) => !!p.rawProduct)
+      .map((p) => p.rawProduct.name),
+  );
 
   return (
     <article
@@ -77,9 +82,7 @@ export default function SupplierCard({
             <p className="line-clamp-1">
               {t("shared.products")}
               {": "}
-              {products && products.length > 0
-                ? products.map((product) => product.rawProduct.name).join(", ")
-                : t("shared.na")}
+              {rawProducts.length > 0 ? rawProducts.join(", ") : t("shared.na")}
             </p>
           </div>
           <div className="text-fg-text-main-hc text-xs">

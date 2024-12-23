@@ -18,7 +18,12 @@ export default function DetailSupplierRecommended({
       <h2 className="text-x2xl text-fg-text-main-hc font-bold">{r.title}</h2>
       <div className="mt-4 grid grid-cols-3 gap-3">
         {r.suppliers.map((s) => (
-          <SupplierCard key={s.id} className="pb-1" data={s} />
+          <SupplierCard
+            key={s.id}
+            className="pb-1"
+            contentClassname="pt-3"
+            data={s}
+          />
         ))}
       </div>
     </div>
