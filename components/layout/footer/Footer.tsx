@@ -22,9 +22,15 @@ export default function Footer() {
                 {t(`nav.footer.${nav.t}`)}
               </h3>
               <ul className="mt-4 space-y-4">
-                {nav.t === "getSupport" && <LiveChatWithStaff />}
+                {nav.t === "getSupport" && (
+                  <li className="text-fg-text-main-hc text-sm">
+                    <LiveChatWithStaff />
+                  </li>
+                )}
                 {nav.t === "sourceOnAgriSung" && (
-                  <Rfq text={t("nav.footer.requestForQuotation")} />
+                  <li className="text-fg-text-main-hc text-sm">
+                    <Rfq text={t("nav.footer.requestForQuotation")} />
+                  </li>
                 )}
                 {nav.t === "sellOnAgriSung" && (
                   <>

@@ -7,7 +7,7 @@ export default function LiveChatWithStaff() {
 
   return (
     <button
-      className="text-fg-text-main-hc cursor-pointer text-sm"
+      className="cursor-pointer"
       onClick={() => {
         window.HubSpotConversations.widget.open();
       }}
