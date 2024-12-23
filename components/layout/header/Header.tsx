@@ -17,7 +17,7 @@ export default function Header({ priceList, session }: HeaderProps) {
     <header className="border-brand-gray-3 border-b">
       <TopBar user={session?.user} />
       <LogoAndMenu />
-      <PriceList priceList={priceList} />
+      {priceList.length > 0 && <PriceList priceList={priceList} />}
       <MainSearchForm />
     </header>
   );

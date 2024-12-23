@@ -170,13 +170,21 @@ export type HomeConfig = {
   marketFollowProducts: RawProduct[];
 };
 
+type BannerRatio = "32_9" | "64_9";
+
+type BannerMobileRatio = "21_9" | "32_9";
+
+type BannerVariant = "image_only" | "with_text";
+
 export type Banner = {
   ctaLink: string;
   ctaTitle: string;
   description: string;
+  dimImage: boolean;
   imgMedia: Media;
+  mobileAspectRatio: `ar-${BannerMobileRatio}`;
   position: "pos1" | "pos2" | "pos3";
-  style: "horizontal" | "vertical";
+  style: `${BannerVariant}-${BannerRatio}`;
   subtitle: string;
   title: string;
 };
@@ -204,6 +212,7 @@ export type HomeConfigV2 = {
   featuredProduct: Product;
   featuredSupplier: Supplier;
   homepageBanners: Banner[];
+  listingBanners: Banner[];
   publicPriceList: Price[];
   recommended: Recommended;
   searchResultBanners: Banner[];
