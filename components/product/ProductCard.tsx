@@ -58,7 +58,9 @@ export default function ProductCard({
           <Link href={`/product/${data.slug}`}>{data.name}</Link>
         </h4>
         <div className="text-fg-text-main text-xs">
-          <p className="line-clamp-2 whitespace-pre-wrap">{data.description}</p>
+          <p className="line-clamp-2 h-8 whitespace-pre-wrap">
+            {data.description}
+          </p>
         </div>
         <p className="text-fg-text-main-hc line-clamp-2 h-8 text-xs font-medium underline">
           <Link href={`/supplier/${data.supplier?.slug}`}>

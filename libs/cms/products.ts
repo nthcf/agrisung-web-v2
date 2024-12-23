@@ -14,12 +14,11 @@ export async function getProducts(page: number, locale = "en") {
     },
     populate: {
       cover_media: mediaFields,
+      currency: allFields,
       origin: allFields,
       process_type: allFields,
       supplier: {
-        populate: {
-          logo_media: mediaFields,
-        },
+        fields: ["name", "slug"],
       },
     },
   });
