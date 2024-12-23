@@ -1,10 +1,10 @@
 import { type Session } from "next-auth";
 
-import MainSearchForm from "@/components/form/MainSearchForm";
 import { type Price } from "@/libs/cms";
 
 import LogoAndMenu from "./LogoAndMenu";
 import PriceList from "./PriceList";
+import SearchMain from "./SearchMain";
 import TopBar from "./TopBar";
 
 type HeaderProps = {
@@ -18,7 +18,7 @@ export default function Header({ priceList, session }: HeaderProps) {
       <TopBar user={session?.user} />
       <LogoAndMenu />
       {priceList.length > 0 && <PriceList priceList={priceList} />}
-      <MainSearchForm />
+      <SearchMain />
     </header>
   );
 }

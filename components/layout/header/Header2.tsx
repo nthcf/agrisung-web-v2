@@ -1,10 +1,10 @@
 import { type Session } from "next-auth";
 
 import Banner from "@/components/common/Banner";
-import MainSearchForm from "@/components/form/MainSearchForm";
 import { type Banner as TBanner } from "@/libs/cms";
 
 import LogoAndMenu from "./LogoAndMenu";
+import SearchMain from "./SearchMain";
 import TopBar from "./TopBar";
 
 type Header2Props = {
@@ -22,7 +22,7 @@ export default function Header2({ banner, session }: Header2Props) {
           <Banner data={banner} />
         </div>
       )}
-      <MainSearchForm />
+      <SearchMain />
     </header>
   );
 }

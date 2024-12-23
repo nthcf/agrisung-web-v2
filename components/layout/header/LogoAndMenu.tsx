@@ -1,11 +1,11 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import Button from "@/components/common/Button";
 import { Link } from "@/i18n/routing";
 
 import CreateRfq from "./CreateRfq";
 import Navbar from "./Navbar";
+import SearchPopup from "./SearchPopup";
 
 export default function LogoAndMenu() {
   const t = useTranslations();
@@ -27,9 +27,7 @@ export default function LogoAndMenu() {
           <Navbar />
         </div>
         <div className="flex gap-3">
-          <Button color="gray" size="icon-lg">
-            <span className="icon-[octicon--search-16] size-5" />
-          </Button>
+          <SearchPopup />
           <CreateRfq />
         </div>
       </div>
