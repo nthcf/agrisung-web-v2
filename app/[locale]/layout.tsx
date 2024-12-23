@@ -9,6 +9,8 @@ import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import { FontBody, FontHeading, SITE_GTM_ID, type Locale } from "@/site.config";
 
+import "overlayscrollbars/overlayscrollbars.css";
+
 import "../globals.css";
 
 export async function generateMetadata({
