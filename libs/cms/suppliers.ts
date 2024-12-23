@@ -56,7 +56,11 @@ export async function getSupplier(slug: string, locale = "en") {
       products: {
         populate: {
           cover_media: mediaFields,
+          currency: allFields,
           origin: allFields,
+          supplier: {
+            fields: ["name", "slug"],
+          },
         },
       },
       technologies: {
