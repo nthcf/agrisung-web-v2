@@ -104,7 +104,7 @@ export default function SearchMainForm({
         {data?.map((item, i) => (
           <Command.Item
             key={item + i}
-            className="text-fg-text-main-hc data-[selected=true]:bg-bg-brand-bright cursor-pointer p-2 text-xs"
+            className="text-fg-text-main-hc hover:bg-bg-brand-bright cursor-pointer p-2 text-xs"
             onSelect={() => {
               router.push({ pathname: "/search", query: { q: item } });
 
