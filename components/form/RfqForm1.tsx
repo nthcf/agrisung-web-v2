@@ -2,8 +2,11 @@
 
 import { Trigger } from "@radix-ui/react-dialog";
 import { cx } from "cva";
+import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useId, useState } from "react";
+
+import { trackRfqFormInteraction } from "@/analytics";
 
 import Button from "../common/Button";
 import RfqMainForm from "./RfqMainForm";
@@ -22,6 +25,7 @@ export default function RfqForm1({
   const [fk, setFk] = useState(0);
   const productFieldId = useId();
 
+  const { data: session } = useSession();
   const t = useTranslations();
 
   return (
@@ -66,7 +70,14 @@ export default function RfqForm1({
           key={fk}
           trigger={
             <Trigger asChild>
-              <Button color="primary">
+              <Button
+                color="primary"
+                onClick={() => {
+                  trackRfqFormInteraction("open", session, {
+                    trigger: "form1",
+                  });
+                }}
+              >
                 {t("form.createRfq.submitButton")}
               </Button>
             </Trigger>

@@ -2,7 +2,7 @@ import Footer from "@/components/layout/footer/Footer";
 import Header3 from "@/components/layout/header/Header3";
 import { Link } from "@/i18n/routing";
 
-export default async function NotFound() {
+export default function NotFound() {
   return (
     <>
       <Header3 session={null} />

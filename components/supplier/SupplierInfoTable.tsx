@@ -68,7 +68,8 @@ export default function SupplierInfoTable({
               {t("page.supplierDetail.exportHistory")}
             </th>
             <td className="border-fg-border-main text-fg-text-main border p-3">
-              {data.exportHistories?.map((item) => item.name).join(", ")}
+              {data.exportHistories?.map((item) => item.name).join(", ") ||
+                "N/A"}
             </td>
           </tr>
           <tr>
@@ -100,7 +101,7 @@ export default function SupplierInfoTable({
               {t("page.supplierDetail.country")}
             </th>
             <td className="border-fg-border-main text-fg-text-main border p-3">
-              {data.country?.name}
+              {data.country?.name || "N/A"}
             </td>
           </tr>
           <tr>

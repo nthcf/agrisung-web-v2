@@ -2,6 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { cx } from "cva";
+import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
@@ -9,6 +10,7 @@ import { useActionState, useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 import { submitRfq } from "@/actions/rfq";
+import { trackRfqFormInteraction } from "@/analytics";
 import { type Product, type Supplier } from "@/libs/cms";
 
 import Button from "../common/Button";
@@ -36,6 +38,7 @@ export default function RfqMainForm({
     success: false,
   });
 
+  const { data: session } = useSession();
   const [femail, setFemail] = useLocalStorage("rfq_femail", "");
   const [ffname, setFfname] = useLocalStorage("rfq_ffname", "");
   const [flname, setFlname] = useLocalStorage("rfq_flname", "");
@@ -108,7 +111,12 @@ export default function RfqMainForm({
             <Dialog.Close className="absolute top-6 right-6">
               <span className="icon-[octicon--x-16] text-fg-text-main-hc size-6" />
             </Dialog.Close>
-            <form className="h-full pb-24" action={action}>
+            <form
+              className="h-full pb-24"
+              action={action}
+              name="main_rfq_form"
+              id="main_rfq_form"
+            >
               <Dialog.Title className="text-x2xl text-fg-text-main-hc font-bold">
                 {t("form.mainRfq.title")}
               </Dialog.Title>
@@ -351,6 +359,9 @@ export default function RfqMainForm({
                     !detail ||
                     (!product && !productName2)
                   }
+                  onClick={() => {
+                    trackRfqFormInteraction("submit", session);
+                  }}
                 >
                   {t("form.mainRfq.button")}
                 </button>

@@ -1,9 +1,11 @@
 "use client";
 
 import { Trigger } from "@radix-ui/react-dialog";
+import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
+import { trackRfqFormInteraction } from "@/analytics";
 import { type Product, type Supplier } from "@/libs/cms";
 
 import Button from "../common/Button";
@@ -21,6 +23,7 @@ export default function DetailProductDescriptionCta({
   const [fk1, setFk1] = useState(0);
   const [fk2, setFk2] = useState(-1);
 
+  const { data: session } = useSession();
   const t = useTranslations();
 
   return (
@@ -31,7 +34,14 @@ export default function DetailProductDescriptionCta({
         supplier={supplier}
         trigger={
           <Trigger asChild>
-            <Button color="primary">
+            <Button
+              color="primary"
+              onClick={() => {
+                trackRfqFormInteraction("open", session, {
+                  trigger: "product_aside",
+                });
+              }}
+            >
               <span className="icon-[octicon--goal-16] size-5" />
               <span>{t("page.productDetail.cta1")}</span>
             </Button>
@@ -46,7 +56,15 @@ export default function DetailProductDescriptionCta({
         supplier={supplier}
         trigger={
           <Trigger asChild>
-            <Button>{t("page.productDetail.cta2")}</Button>
+            <Button
+              onClick={() => {
+                trackRfqFormInteraction("open", session, {
+                  trigger: "product_aside_customize",
+                });
+              }}
+            >
+              {t("page.productDetail.cta2")}
+            </Button>
           </Trigger>
         }
         onReset={() => {

@@ -25,6 +25,10 @@ export default async function ProductDetail({
 
   const pro = res.data[0];
 
+  if (!pro.supplier) {
+    notFound();
+  }
+
   const res1 = await getSupplier(pro.supplier.slug);
 
   if (!res1) {
@@ -33,21 +37,31 @@ export default async function ProductDetail({
 
   const sup = res1.data[0];
 
+  let breadcrumb: { link: string; text: string; active?: boolean }[] = [];
+
+  if (pro.processType) {
+    breadcrumb = [
+      {
+        link: `/search?q=${pro.processType.name}`,
+        text: pro.processType.name,
+      },
+    ];
+  }
+
+  if (pro.rawProduct) {
+    breadcrumb = [
+      ...breadcrumb,
+      {
+        link: `/search?q=${pro.rawProduct.name}`,
+        text: pro.rawProduct.name,
+        active: true,
+      },
+    ];
+  }
+
   return (
     <main className="bg-bg-main-pale">
-      <Breadcrumb
-        data={[
-          {
-            link: `/search?q=${pro.processType.name}`,
-            text: pro.processType.name,
-          },
-          {
-            link: `/search?q=${pro.rawProduct.name}`,
-            text: pro.rawProduct.name,
-            active: true,
-          },
-        ]}
-      />
+      <Breadcrumb data={breadcrumb} />
       <div className="container mx-auto space-y-4 px-4 py-5 lg:px-20 xl:px-34">
         <div className="relative flex items-start gap-6">
           <div className="flex-1 space-y-4">
@@ -65,11 +79,13 @@ export default async function ProductDetail({
             <DetailProductDescriptionPrice product={pro} supplier={sup} />
           </aside>
         </div>
-        <DetailProductSupplierProducts
-          data={sup.products.slice(0, 8)}
-          slug={sup.slug}
-          total={sup.products.length}
-        />
+        {sup.products && (
+          <DetailProductSupplierProducts
+            data={sup.products.slice(0, 8)}
+            slug={sup.slug}
+            total={sup.products.length}
+          />
+        )}
         <RfqForm1 />
       </div>
     </main>

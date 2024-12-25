@@ -30,7 +30,7 @@ export default async function SupplierDetailProducts({
       <div className="bg-bg-main-pale">
         <div className="container mx-auto space-y-4 px-4 py-4 lg:px-20 xl:px-34">
           <DetailSupplierProducts
-            data={sup.products}
+            data={sup.products ?? []}
             slug={sup.slug}
             hideViewAll
           />

@@ -35,11 +35,13 @@ export default async function SupplierDetail({
       <div className="bg-bg-main-pale">
         <div className="container mx-auto space-y-4 px-4 py-4 lg:px-20 xl:px-34">
           <DetailSupplierOverview data={sup} />
-          <DetailSupplierProducts
-            data={sup.products.slice(0, 8)}
-            slug={sup.slug}
-          />
-          {sup.medias && <DetailSupplierMedia data={sup} />}
+          {sup.products && (
+            <DetailSupplierProducts
+              data={sup.products.slice(0, 8)}
+              slug={sup.slug}
+            />
+          )}
+          {(sup.youtubeId || sup.medias) && <DetailSupplierMedia data={sup} />}
           <RfqForm1 hideProductField />
           <DetailSupplierRecommended data={data.recommended.suppliers} />
         </div>

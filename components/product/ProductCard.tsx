@@ -1,24 +1,31 @@
+"use client";
+
 import { cx } from "cva";
+import { useSession } from "next-auth/react";
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
 
+import { trackProductClick, trackSupplierClick } from "@/analytics";
 import { Link } from "@/i18n/routing";
 import { type Product } from "@/libs/cms";
 
 type ProductCardProps = {
+  contentClassname?: string;
   data: Product;
   featured?: boolean;
-  contentClassname?: string;
 } & React.ComponentPropsWithoutRef<"article">;
 
 export default function ProductCard({
   className,
+  contentClassname,
   data,
   featured,
-  contentClassname,
 }: ProductCardProps) {
+  const { data: session } = useSession();
   const t = useTranslations();
   const format = useFormatter();
+
+  const currency = data.currency?.alphabeticCode ?? "VND";
 
   return (
     <article
@@ -32,7 +39,12 @@ export default function ProductCard({
           {t("page.homepage.featuredSection.product")}
         </h3>
       )}
-      <Link href={`/product/${data.slug}`}>
+      <Link
+        href={`/product/${data.slug}`}
+        onClick={() => {
+          trackProductClick(data, session, { featured });
+        }}
+      >
         <div
           className={cx(
             "bg-bg-brand-bright relative w-full overflow-hidden rounded-sm",
@@ -55,7 +67,14 @@ export default function ProductCard({
       </Link>
       <div className={cx("space-y-1", contentClassname)}>
         <h4 className="text-fg-text-main-hc max-h-10 truncate text-sm font-medium text-ellipsis">
-          <Link href={`/product/${data.slug}`}>{data.name}</Link>
+          <Link
+            href={`/product/${data.slug}`}
+            onClick={() => {
+              trackProductClick(data, session, { featured });
+            }}
+          >
+            {data.name}
+          </Link>
         </h4>
         <div className="text-fg-text-main text-xs">
           <p className="line-clamp-2 h-8 whitespace-pre-wrap">
@@ -63,22 +82,31 @@ export default function ProductCard({
           </p>
         </div>
         <p className="text-fg-text-main-hc line-clamp-2 h-8 text-xs font-medium underline">
-          <Link href={`/supplier/${data.supplier?.slug}`}>
-            {data.supplier?.name}
-          </Link>
+          {data.supplier && (
+            <Link
+              href={`/supplier/${data.supplier.slug}`}
+              onClick={() => {
+                trackSupplierClick(data.supplier!, session, {
+                  click_at: "product_card",
+                });
+              }}
+            >
+              {data.supplier.name}
+            </Link>
+          )}
         </p>
         <p className="text-fg-text-main-hc font-bold">
-          {data.priceMin
+          {data.priceMin > 0
             ? format.number(data.priceMin, {
                 style: "currency",
-                currency: data.currency?.alphabeticCode || "VND",
+                currency,
               })
             : "N/A"}
           {" - "}
-          {data.priceMax
+          {data.priceMax > 0
             ? format.number(data.priceMax, {
                 style: "currency",
-                currency: data.currency?.alphabeticCode || "VND",
+                currency,
               })
             : "N/A"}
           <span className="text-fg-text-main text-sm font-medium"> / kg</span>

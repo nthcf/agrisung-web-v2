@@ -25,7 +25,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.rawProduct")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
-            {data.rawProduct?.name}
+            {data.rawProduct?.name || "N/A"}
           </td>
         </tr>
         <tr>
@@ -33,7 +33,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.productType")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
-            {data.processType?.name}
+            {data.processType?.name || "N/A"}
           </td>
         </tr>
         {/* <tr>
@@ -49,7 +49,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.variety")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
-            {data.varieties.map((v) => v.variety).join(", ")}
+            {data.varieties?.map((v) => v.variety).join(", ") || "N/A"}
           </td>
         </tr>
         <tr>
@@ -65,7 +65,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.samples")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
-            {data.samples.map((s) => s.sample).join(", ")}
+            {data.samples?.map((s) => s.sample).join(", ") || "N/A"}
           </td>
         </tr>
         <tr>
@@ -89,7 +89,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.paymentTerms")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
-            {data.paymentTerms.map((p) => p.paymentTerm).join(", ")}
+            {data.paymentTerms?.map((p) => p.paymentTerm).join(", ") || "N/A"}
           </td>
         </tr>
         <tr>
@@ -97,7 +97,7 @@ export default function ProductSpecsTable({ data }: ProductSpecsTableProps) {
             {t("page.productDetail.shipment")}
           </th>
           <td className="border-fg-border-main text-fg-text-main border p-3">
-            {data.shipments.map((s) => s.shipment).join(", ")}
+            {data.shipments?.map((s) => s.shipment).join(", ") || "N/A"}
           </td>
         </tr>
         <tr>

@@ -16,6 +16,8 @@ export default function DetailProductDescriptionPrice({
   const t = useTranslations();
   const format = useFormatter();
 
+  const currency = product.currency?.alphabeticCode ?? "VND";
+
   return (
     <div className="space-y-4 rounded-lg bg-white p-4">
       <div className="space-y-1">
@@ -23,17 +25,17 @@ export default function DetailProductDescriptionPrice({
           {t("page.productDetail.referencePricePerKg")}
         </p>
         <p className="font-heading text-x4xl text-fg-text-brand-hover font-bold">
-          {product.priceMin
+          {product.priceMin > 0
             ? format.number(product.priceMin, {
                 style: "currency",
-                currency: product.currency?.alphabeticCode || "VND",
+                currency,
               })
             : "N/A"}
           {" - "}
-          {product.priceMax
+          {product.priceMax > 0
             ? format.number(product.priceMax, {
                 style: "currency",
-                currency: product.currency?.alphabeticCode || "VND",
+                currency,
               })
             : "N/A"}
         </p>

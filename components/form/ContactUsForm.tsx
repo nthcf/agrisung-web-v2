@@ -2,10 +2,12 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { cx } from "cva";
+import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useActionState } from "react";
 
 import { submitContactForm } from "@/actions/form";
+import { trackContactUsFormInteraction } from "@/analytics";
 
 import Button from "../common/Button";
 
@@ -22,6 +24,7 @@ export default function ContactUsForm({
     success: false,
   });
 
+  const { data: session } = useSession();
   const t = useTranslations();
 
   if (state.success) {
@@ -69,7 +72,7 @@ export default function ContactUsForm({
           <Dialog.Description className="text-fg-text-main mt-3">
             {t("form.contactUs.description")}
           </Dialog.Description>
-          <form action={action}>
+          <form action={action} name="contact_us_form" id="contact_us_form">
             <div className="mt-4 flex items-center gap-3">
               <p className="text-fg-text-main w-30 shrink-0 text-right text-sm">
                 <span className="text-fg-text-danger">*</span>
@@ -152,7 +155,14 @@ export default function ContactUsForm({
             </div>
             <div className="mt-4 flex items-center gap-3">
               <div className="w-30"></div>
-              <Button color="primary" type="submit" disabled={pending}>
+              <Button
+                color="primary"
+                type="submit"
+                disabled={pending}
+                onClick={() => {
+                  trackContactUsFormInteraction("submit", session);
+                }}
+              >
                 {t("form.contactUs.submitButton")}
               </Button>
             </div>
