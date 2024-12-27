@@ -113,7 +113,7 @@ export const trackBannerClick = (
     GA_EVENTS.BANNER_CLICK,
     {
       banner_position: banner.position,
-      destination_url: banner.ctaLink,
+      banner_destination_url: banner.ctaLink,
       ...additionalData,
       location: window.location.pathname,
     },
@@ -129,7 +129,7 @@ export const trackRfqFormInteraction = (
   sendEvent(
     GA_EVENTS.RFQ_FORM_INTERACTION,
     {
-      action,
+      form_action: action,
       ...formData,
       location: window.location.pathname,
     },
@@ -145,7 +145,7 @@ export const trackContactUsFormInteraction = (
   sendEvent(
     GA_EVENTS.CONTACT_US_FORM_INTERACTION,
     {
-      action,
+      form_action: action,
       ...formData,
       location: window.location.pathname,
     },
