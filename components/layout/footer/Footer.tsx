@@ -55,10 +55,10 @@ export default function Footer() {
               {t("shared.contact")}
             </h3>
             <ul className="mt-4 space-y-4">
-              <li className="text-fg-text-main-hc flex gap-1 text-sm">
+              {/* <li className="text-fg-text-main-hc flex gap-1 text-sm">
                 <span className="icon-[carbon--phone-voice] text-fg-icon-main size-5 shrink-0" />
                 <span>{t("shared.phone")}</span>
-              </li>
+              </li> */}
               <li className="text-fg-text-main-hc flex gap-1 text-sm">
                 <span className="icon-[carbon--location] text-fg-icon-main size-5 shrink-0" />
                 <span>{t("shared.address")}</span>
@@ -160,6 +160,19 @@ export default function Footer() {
                 </Button>
               </li>
             </ul>
+            <div className="mt-4">
+              <a
+                href="//www.dmca.com/Protection/Status.aspx?ID=4cf35224-b228-4122-901e-13e60eb61db9"
+                title="DMCA.com Protection Status"
+                className="dmca-badge"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=4cf35224-b228-4122-901e-13e60eb61db9"
+                  alt="DMCA.com Protection Status"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>

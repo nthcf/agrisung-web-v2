@@ -59,6 +59,12 @@ export default async function AppLayout({
           defer
           src="//js-na1.hs-scripts.com/47057829.js"
         />
+        <Script
+          id="dmca-script-loader"
+          async
+          defer
+          src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"
+        />
       </body>
     </html>
   );
